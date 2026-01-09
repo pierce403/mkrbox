@@ -43,7 +43,10 @@ if [[ -z "$IMAGE" || "$IMAGE" == *":latest" ]]; then
   echo "   docker login nvcr.io" >&2
   echo "   # username: \$oauthtoken" >&2
   echo "   # password: <your NGC API key>" >&2
-  echo "4) Choose an Isaac Sim image tag from NGC (no 'latest')." >&2
+  echo "4) Open the Isaac Sim container page and choose a tag (no 'latest'):" >&2
+  echo "   https://catalog.ngc.nvidia.com/orgs/nvidia/containers/isaac-sim/tags" >&2
+  echo "   A tag is the version after the colon, e.g. ':5.1.0'." >&2
+  echo "   Example tag shown in NVIDIA docs: nvcr.io/nvidia/isaac-sim:5.1.0" >&2
   echo "5) Run with an explicit tag, for example:" >&2
   echo "   ./run-sim-container.sh --pull --image nvcr.io/nvidia/isaac-sim:<version>" >&2
   exit 1

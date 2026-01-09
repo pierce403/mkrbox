@@ -93,6 +93,13 @@ docker pull nvcr.io/nvidia/isaac-sim:<version>
 
 Note: there is no `:latest` tag. You must use an explicit version tag from NGC.
 
+How to find a tag (beginner-friendly):
+1. Open the Isaac Sim container tags page:
+   https://catalog.ngc.nvidia.com/orgs/nvidia/containers/isaac-sim/tags
+2. Pick a version tag (the part after the colon). Example from NVIDIA docs:
+   `nvcr.io/nvidia/isaac-sim:5.1.0`
+3. Use that tag in the pull/run commands.
+
 Run it (must accept EULA via env var):
 ```bash
 docker run --gpus all --rm \
