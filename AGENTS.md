@@ -18,14 +18,14 @@ Key ideas:
 - `index.html` - landing page
 - `join/`, `concept/`, `play/` - route folders with `index.html`
 - `SPEC.md`, `MODULES.md`, `LEVELS.md`, `SIM.md` - draft docs
-- `SIM_QUICKSTART.md` - sim/web client flow
+- `SIM_QUICKSTART.md` - sim/app client flow
 - `ARCHITECTURE.md`, `TODO.md` - product vision + roadmap
 - `CNAME` - domain config
 
 ## Build & Run Commands
 No build system yet for the static site.
 - Open `index.html` directly or serve with any static server.
-- `./play.sh` runs the React game app (expects `./web` with a `package.json`).
+- `./play.sh` runs the React game app (expects `./app` with a `package.json`).
 
 ## Coding & Content Conventions
 - Keep copy grounded: avoid "build anything" claims.

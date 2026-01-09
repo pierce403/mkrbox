@@ -309,7 +309,7 @@ Repository Layout (proposed)
 /scripts/
   bootstrap.sh
   run-sim.sh
-  run-web.sh
+  run-app.sh
 /docs/
   ARCHITECTURE.md
   SIM_QUICKSTART.md

@@ -130,7 +130,7 @@ Ship a playable "vibe craft" experience:
 
 ## Automation & CI
 
-- [ ] Lint + typecheck (web + python)
+- [ ] Lint + typecheck (app + python)
 - [ ] Unit tests for planner/state machine
 - [ ] Protocol contract tests
 - [ ] Smoke test: boot sim headless + complete Level 01 with 1 item
