@@ -11,6 +11,7 @@ LOG_FILE="$LOG_DIR/sim-container-$(date +%Y%m%d-%H%M%S).log"
 exec > >(tee -a "$LOG_FILE") 2>&1
 
 echo "MKRBOX sim container log: $LOG_FILE"
+echo "Stage 1/3: Checking prerequisites..."
 
 while [[ $# -gt 0 ]]; do
   case "$1" in
@@ -71,9 +72,16 @@ if [[ -z "$IMAGE" || "$IMAGE" == *":latest" ]]; then
 fi
 
 if [[ "$PULL_IMAGE" -eq 1 ]]; then
-  docker pull "$IMAGE"
+  echo "Stage 2/3: Pulling image $IMAGE (this can take a while) ..."
+  if docker pull --progress=plain "$IMAGE"; then
+    echo "Pull complete."
+  else
+    echo "Image pull failed. Check credentials (docker login nvcr.io) and tag." >&2
+    exit 1
+  fi
 fi
 
+echo "Stage 3/3: Starting container..."
 docker run --gpus all --rm \
   -e "ACCEPT_EULA=Y" \
   "$IMAGE" "${EXTRA_ARGS[@]}"
