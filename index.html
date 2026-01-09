@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MKRBOX — Modular Kinematic Replicator</title>
+    <meta
+      name="description"
+      content="Modular Kinematic Replicator: an open-source, meter-cubed fabrication box with tools, arms, and collaborative workflows."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Spline+Sans+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        color-scheme: light;
+        --ink: #0f1218;
+        --ink-soft: #1b2230;
+        --mist: #f5f2ee;
+        --copper: #c7693a;
+        --copper-bright: #f29a6a;
+        --steel: #5f6b7a;
+        --glass: rgba(255, 255, 255, 0.75);
+        --shadow: 0 24px 80px rgba(18, 20, 28, 0.18);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Space Grotesk", system-ui, -apple-system, sans-serif;
+        color: var(--ink);
+        background: radial-gradient(1200px 900px at 10% 10%, #f6d9c7 0%, #f1e6d8 35%, #e7eef5 70%, #d6e2f1 100%);
+        min-height: 100vh;
+      }
+
+      .noise {
+        position: fixed;
+        inset: 0;
+        opacity: 0.08;
+        pointer-events: none;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='.4'/%3E%3C/svg%3E");
+        mix-blend-mode: multiply;
+      }
+
+      main {
+        display: grid;
+        gap: 3.5rem;
+        padding: 4.5rem clamp(1.5rem, 4vw, 5rem) 6rem;
+      }
+
+      header {
+        display: grid;
+        gap: 1.5rem;
+        max-width: 800px;
+      }
+
+      .kicker {
+        font-family: "Spline Sans Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        font-size: 0.75rem;
+        color: var(--steel);
+      }
+
+      h1 {
+        font-size: clamp(2.5rem, 6vw, 4.3rem);
+        margin: 0;
+        line-height: 1.05;
+        letter-spacing: -0.02em;
+      }
+
+      h1 span {
+        color: var(--copper);
+      }
+
+      .lead {
+        font-size: clamp(1.1rem, 2.4vw, 1.45rem);
+        line-height: 1.6;
+        margin: 0;
+        color: var(--ink-soft);
+      }
+
+      .hero-card {
+        background: var(--glass);
+        border: 1px solid rgba(255, 255, 255, 0.6);
+        border-radius: 24px;
+        padding: 2.25rem;
+        box-shadow: var(--shadow);
+        backdrop-filter: blur(24px);
+        display: grid;
+        gap: 1.75rem;
+      }
+
+      .grid {
+        display: grid;
+        gap: 1.5rem;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      }
+
+      .chip {
+        border-radius: 16px;
+        padding: 1.25rem;
+        background: rgba(255, 255, 255, 0.7);
+        border: 1px solid rgba(199, 105, 58, 0.2);
+        display: grid;
+        gap: 0.75rem;
+      }
+
+      .chip h3 {
+        margin: 0;
+        font-size: 1.1rem;
+      }
+
+      .chip p {
+        margin: 0;
+        color: var(--steel);
+        line-height: 1.5;
+      }
+
+      .cta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        align-items: center;
+      }
+
+      .cta a {
+        text-decoration: none;
+        border-radius: 999px;
+        padding: 0.85rem 1.5rem;
+        font-weight: 600;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .cta a.primary {
+        background: var(--ink);
+        color: white;
+        box-shadow: 0 12px 24px rgba(15, 18, 24, 0.2);
+      }
+
+      .cta a.secondary {
+        background: rgba(255, 255, 255, 0.85);
+        color: var(--ink);
+        border: 1px solid rgba(15, 18, 24, 0.1);
+      }
+
+      .cta a:hover {
+        transform: translateY(-2px);
+      }
+
+      .specs {
+        display: grid;
+        gap: 1rem;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+      }
+
+      .specs li {
+        display: grid;
+        gap: 0.35rem;
+        padding: 0.9rem 1rem;
+        border-radius: 14px;
+        background: rgba(15, 18, 24, 0.04);
+      }
+
+      .specs strong {
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--copper);
+      }
+
+      footer {
+        font-family: "Spline Sans Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        font-size: 0.7rem;
+        color: var(--steel);
+      }
+
+      .stagger {
+        opacity: 0;
+        transform: translateY(14px);
+        animation: rise 0.8s ease forwards;
+      }
+
+      .stagger:nth-child(2) { animation-delay: 0.12s; }
+      .stagger:nth-child(3) { animation-delay: 0.24s; }
+      .stagger:nth-child(4) { animation-delay: 0.36s; }
+
+      @keyframes rise {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @media (max-width: 720px) {
+        main {
+          padding: 3.5rem 1.5rem 4.5rem;
+        }
+
+        .hero-card {
+          padding: 1.75rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="noise" aria-hidden="true"></div>
+    <main>
+      <header class="stagger">
+        <div class="kicker">Open Fabrication · MKRBOX</div>
+        <h1>Modular Kinematic Replicator <span>(MKRBOX)</span></h1>
+        <p class="lead">
+          A meter-cubed fabrication box designed to build almost anything it can reach —
+          by coordinating one or more arms, modular tools, and a human operator who can
+          supply parts on request.
+        </p>
+        <div class="cta">
+          <a class="primary" href="#participate">Join the build</a>
+          <a class="secondary" href="#specs">Read the concept</a>
+        </div>
+      </header>
+
+      <section class="hero-card stagger" id="specs">
+        <div class="grid">
+          <div class="chip">
+            <h3>1 m³ Workcell</h3>
+            <p>
+              A cubic meter envelope optimized for multi-axis reach, repeatability,
+              and fast tool changes.
+            </p>
+          </div>
+          <div class="chip">
+            <h3>Tooling Library</h3>
+            <p>
+              Interchangeable end-effectors for assembly, fastening, inspection,
+              wiring, and material handling.
+            </p>
+          </div>
+          <div class="chip">
+            <h3>Operator Requests</h3>
+            <p>
+              When a part is needed, the system asks the operator for delivery,
+              keeping builds human-collaborative.
+            </p>
+          </div>
+          <div class="chip">
+            <h3>Open Source Stack</h3>
+            <p>
+              Hardware, software, and documentation in the open — iterate, fork,
+              and contribute back.
+            </p>
+          </div>
+        </div>
+
+        <ul class="specs">
+          <li>
+            <strong>Capabilities</strong>
+            Multi-tool assembly, pick-and-place, routing, fastening, and inspection.
+          </li>
+          <li>
+            <strong>Control Layer</strong>
+            Modular motion + task planning, with real-time operator prompts.
+          </li>
+          <li>
+            <strong>Build Philosophy</strong>
+            Start simple, document everything, ship as a community of builders.
+          </li>
+        </ul>
+      </section>
+
+      <section class="hero-card stagger" id="participate">
+        <h2>How to participate</h2>
+        <div class="grid">
+          <div class="chip">
+            <h3>Define the box</h3>
+            <p>
+              Draft the 1 m³ chassis, safety envelope, and mounting standards.
+            </p>
+          </div>
+          <div class="chip">
+            <h3>Design the arm</h3>
+            <p>
+              Choose kinematics, payload targets, and tool-change interfaces.
+            </p>
+          </div>
+          <div class="chip">
+            <h3>Prototype workflows</h3>
+            <p>
+              Map how builds request parts, verify steps, and adapt to new tasks.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <footer>mkrbox.org · modular kinematic replicator · open spec in progress</footer>
+    </main>
+  </body>
+</html>
