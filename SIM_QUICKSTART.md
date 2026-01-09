@@ -103,6 +103,10 @@ Or use:
 ./run-app.sh
 ```
 
+Before first use, replace `app/public/omniverse/appstreamer.js` with the official
+Embedded Web Viewer client bundle. The placeholder file will otherwise report
+\"AppStreamer client missing\" in the UI.
+
 Then open the printed URL in Chrome/Edge.
 
 Note: the reference solution is peer-to-peer; one sim instance streams to one browser client. Multiple tabs will conflict.

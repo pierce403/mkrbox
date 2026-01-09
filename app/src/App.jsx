@@ -1,6 +1,7 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import './App.css'
 import { createMockSim } from './mockSim'
+import { connectStream } from './streaming/appStreamerClient'
 
 const LEVELS = [
   { id: 'level01-boot', name: 'Level 01: Boot Sequence' },
@@ -29,6 +30,9 @@ function App() {
   const [simPort, setSimPort] = useState(() => {
     return localStorage.getItem('mkrbox.simPort') || '49100'
   })
+  const [streamStatus, setStreamStatus] = useState('idle')
+  const streamRef = useRef(null)
+  const streamHandleRef = useRef(null)
 
   const sim = useMemo(() => {
     return createMockSim((event) => {
@@ -69,6 +73,14 @@ function App() {
     localStorage.setItem('mkrbox.simPort', simPort)
   }, [simPort])
 
+  useEffect(() => {
+    return () => {
+      if (streamHandleRef.current) {
+        streamHandleRef.current.disconnect()
+      }
+    }
+  }, [])
+
   const sendMessage = (event) => {
     sim.handleMessage(event)
   }
@@ -96,6 +108,21 @@ function App() {
     sendMessage({ event_type: 'mkrbox_set_level', payload: { levelId } })
     setPlan(null)
     setInputRequest(null)
+  }
+
+  const handleConnectStream = () => {
+    if (!streamRef.current) return
+    if (streamHandleRef.current) {
+      streamHandleRef.current.disconnect()
+    }
+    setStreamStatus('connecting')
+    const result = connectStream({
+      host: simHost,
+      port: simPort,
+      container: streamRef.current,
+    })
+    streamHandleRef.current = result
+    setStreamStatus(result.status)
   }
 
   return (
@@ -134,9 +161,21 @@ function App() {
 
         <section className="panel viewport-panel">
           <h2>Viewport</h2>
-          <div className="viewport-placeholder">
-            <p>Streaming viewport will render here.</p>
-            <p className="muted">Mock sim is active until Omniverse is connected.</p>
+          <div className="viewport-shell">
+            <div className="viewport-placeholder" ref={streamRef}>
+              <p>Streaming viewport will render here.</p>
+              <p className="muted">Mock sim is active until Omniverse is connected.</p>
+            </div>
+            <div className="stream-status">
+              <span className={`dot ${streamStatus === 'connected' ? 'live' : ''}`} />
+              <span>
+                {streamStatus === 'missing' && 'AppStreamer client missing'}
+                {streamStatus === 'connecting' && 'Connecting to stream...'}
+                {streamStatus === 'connected' && 'Stream connected'}
+                {streamStatus === 'error' && 'Stream error'}
+                {streamStatus === 'idle' && 'Stream idle'}
+              </span>
+            </div>
           </div>
           <div className="connect-panel">
             <h3>Connect to remote simulator</h3>
@@ -176,6 +215,9 @@ function App() {
                 />
               </label>
             </div>
+            <button type="button" onClick={handleConnectStream}>
+              Connect stream
+            </button>
             <p className="muted">
               When streaming is enabled, the client will connect to {simHost}:{simPort}.
             </p>

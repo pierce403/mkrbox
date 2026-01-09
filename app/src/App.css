@@ -128,6 +128,30 @@ h2 {
   font-size: 0.85rem;
 }
 
+.viewport-shell {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.stream-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: #5f6b7a;
+}
+
+.stream-status .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: #cbd1db;
+}
+
+.stream-status .dot.live {
+  background: #3cc16c;
+}
+
 .connect-panel {
   padding: 1.2rem;
   border-radius: 16px;
@@ -192,6 +216,16 @@ h2 {
   border-radius: 10px;
   border: 1px solid rgba(15, 18, 24, 0.15);
   font-size: 0.95rem;
+}
+
+.connect-panel button {
+  justify-self: start;
+  padding: 0.6rem 1.1rem;
+  border-radius: 999px;
+  border: none;
+  background: #0f1218;
+  color: white;
+  font-weight: 600;
 }
 
 .muted {
