@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 KIT_ROOT="${KIT_ROOT:-${OMNI_KIT_ROOT:-}}"
 KIT_APP=""
 
 if [[ "${1:-}" == "--container" ]]; then
   shift
-  "$ROOT_DIR/scripts/run-sim-container.sh" "$@"
+  "$ROOT_DIR/run-sim-container.sh" "$@"
   exit 0
 fi
 

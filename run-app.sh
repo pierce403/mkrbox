@@ -6,7 +6,6 @@ APP_DIR="$ROOT_DIR/app"
 
 if [[ ! -d "$APP_DIR" ]]; then
   echo "Missing app directory: $APP_DIR" >&2
-  echo "Create the React app in ./app (e.g. Vite/CRA) and try again." >&2
   exit 1
 fi
 
@@ -16,7 +15,7 @@ if [[ ! -f "$APP_DIR/package.json" ]]; then
 fi
 
 if ! command -v node >/dev/null 2>&1; then
-  echo "Node.js is required. Install Node.js v18+ and try again." >&2
+  echo "Node.js v18+ required." >&2
   exit 1
 fi
 
