@@ -43,6 +43,7 @@ No build system yet for the static site.
 - For new routes: create a folder with `index.html` (static host friendly).
 - If push fails due to remote updates, use `git pull --rebase` first.
 - Prefer ASCII content; keep formatting simple and scannable.
+- Save useful third-party docs into `docs/third_party/` and record source URLs + retrieval date in `docs/README.md`.
 
 ## Rapport & Collaboration Cues
 - User prefers direct, action-first responses.

@@ -1,0 +1,1175 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Class: AppStreamer &#8212; Omniverse Services</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/nvidia-sphinx-theme.css?v=933278ad" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=767de534" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+
+<script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript"
+  data-document-language="true" charset="UTF-8" data-domain-script="3e2b62ff-7ae7-4ac5-87c8-d5949ecafff5">
+</script>
+<script type="text/javascript">
+  function OptanonWrapper() {
+    var event = new Event('bannerLoaded');
+    window.dispatchEvent(event);
+  }
+</script>
+<script src="https://images.nvidia.com/aem-dam/Solutions/ot-js/ot-custom.js" type="text/javascript">
+</script>
+
+
+    <script rel="preload" src="../../../_static/modal-table.js?v=ab1aeb4e"></script>
+    <script rel="preload" src="../../../_static/table-filter.js?v=70f68801"></script>
+    <script src="../../../_static/documentation_options.js?v=91d07486"></script>
+    <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/scrollspy-patch.js?v=edc4054a"></script>
+    <script src="../../../_static/external-links.js?v=e8b80c26"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=65e89d2a"></script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'services/web-streaming-library/classes/AppStreamer';</script>
+    <script src="../../../_static/version-patch.js?v=3e13fdd2"></script>
+
+<script type="text/javascript" src="https://assets.adobedtm.com/5d4962a43b79/c1061d2c5e7b/launch-191c2462b890.min.js"></script>
+
+    <link rel="canonical" href="https://docs.omniverse.nvidia.com/services/latest/services/web-streaming-library/classes/AppStreamer.html" />
+    <link rel="icon" href="../../../_static/favicon.png"/>
+
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Enumeration: eAction" href="../enumerations/eAction.html" />
+    <link rel="prev" title="Web RTC Streaming Library" href="../overview.html" />
+
+<link rel="preload" as="image" href="https://www.nvidia.com/content/dam/1x1-00000000.png">
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Jan 08, 2026"/>
+
+
+  </head>
+
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+<img src="https://www.nvidia.com/content/dam/1x1-00000000.png" width="1" height="1" style="display:none;" alt="country_code">
+
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+<aside class="bd-header-announcement" aria-label="Announcement">
+  <div class="bd-header-announcement__content">Take the <a href='https://nvidiamr.co1.qualtrics.com/jfe/form/SV_agfVIXDT0wg6J6u'>Omniverse Documentation Annual User Survey</a> to help us improve our docs.</div>
+</aside>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+
+<a class="navbar-brand logo" href="../../../../latest/index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/nvidia-logo-horiz-rgb-blk-for-screen.svg" class="logo__image only-light" alt="Omniverse Services - Home"/>
+    <img src="../../../_static/nvidia-logo-horiz-rgb-wht-for-screen.svg" class="logo__image only-dark pst-js-only" alt="Omniverse Services - Home"/>
+  
+  
+    <p class="title logo__title">Omniverse Services</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/nvidiaomniverse" title="twitter" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-twitter fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">twitter</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.youtube.com/channel/UCSKUoczbGAcMld7HjpCR8OA" title="youtube" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-youtube fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">youtube</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.instagram.com/nvidiaomniverse" title="instagram" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-instagram fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">instagram</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.nvidia.com/en-us/omniverse/" title="www" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-globe fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">www</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.linkedin.com/showcase/nvidia-omniverse" title="linkedin" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-linkedin fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">linkedin</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.twitch.tv/nvidiaomniverse" title="twitch" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-twitch fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">twitch</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+
+
+  
+
+<a class="navbar-brand logo" href="../../../../latest/index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/nvidia-logo-horiz-rgb-blk-for-screen.svg" class="logo__image only-light" alt="Omniverse Services - Home"/>
+    <img src="../../../_static/nvidia-logo-horiz-rgb-wht-for-screen.svg" class="logo__image only-dark pst-js-only" alt="Omniverse Services - Home"/>
+  
+  
+    <p class="title logo__title">Omniverse Services</p>
+  
+</a>
+
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/nvidiaomniverse" title="twitter" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-twitter fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">twitter</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.youtube.com/channel/UCSKUoczbGAcMld7HjpCR8OA" title="youtube" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-youtube fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">youtube</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.instagram.com/nvidiaomniverse" title="instagram" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-instagram fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">instagram</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.nvidia.com/en-us/omniverse/" title="www" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-solid fa-globe fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">www</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.linkedin.com/showcase/nvidia-omniverse" title="linkedin" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-linkedin fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">linkedin</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://www.twitch.tv/nvidiaomniverse" title="twitch" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-twitch fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">twitch</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+
+
+<nav class="bd-docs-nav bd-links"
+     aria-label="Table of Contents">
+  <p class="bd-links__title" role="heading" aria-level="1">Table of Contents</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">Services</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../index.html">Services Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../design/getting_started.html">Get started with Services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../design/architecture.html">Architecture</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../developer/index.html">Developer guides</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../design/getting_started.html">Get started with Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../developer/containers.html">Containerizing Omniverse services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../developer/app_template.html">Kit application template</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../design/glossary.html">Glossary</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Core</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../core/index.html">Services Core</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../core/async_client.html">AsyncClient</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Facilities</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../facilities/index.html">Facilities Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../facilities/facility_authorization.html">Authorization Facility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../facilities/facility_databases.html">Database Facility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../facilities/facility_metrics.html">Metrics Facility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../facilities/facility_progress.html">Progress Facility</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">APIs</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../usd-search/overview.html">USD Search API</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../usd-search/architecture.html">Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../usd-search/capabilities.html">Capabilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../usd-search/get-started.html">Get Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../usd-search/deploy.html">Deploy, Configure, and Develop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../usd-search/performance.html">Performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../usd-search/observability.html">Observability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../usd-search/support-matrix.html">Support Matrix</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../usd-search/release-notes.html">Release Notes</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../usd-search/release-notes/1_2_0ga.html">USD Search API 1.2.0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../usd-search/release-notes/1_1_1ga.html">USD Search API 1.1.1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../usd-search/release-notes/1_1_0ga.html">USD Search API 1.1.0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../usd-search/release-notes/1_0_0ga.html">USD Search API 1.0.0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../usd-search/release-notes/1_0_0b.html">USD Search API 1.0.0 beta</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../usd-code/overview.html">USD Code API</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../usd-code/architecture.html">Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../usd-code/capabilities.html">Capabilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../usd-code/get-started.html">Get Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../usd-code/usage.html">Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../usd-code/performance.html">Performance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../usd-code/support-matrix.html">Support Matrix</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../usd-code/release-notes.html">Release Notes</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../usd-code/release-notes/1_0_0_ga.html">USD Code 1.0.0 GA (Feature Branch)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../usd-code/release-notes/1_0_0b.html">USD Code 1.0.0 Beta</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Libraries</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../overview.html">Web RTC Streaming Library</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Class: AppStreamer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../enumerations/eAction.html">Enumeration: eAction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../enumerations/eStatus.html">Enumeration: eStatus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../enumerations/LogFormat.html">Enumeration: LogFormat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../enumerations/LogLevel.html">Enumeration: LogLevel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../enumerations/StageStatus.html">Enumeration: StageStatus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../enumerations/StreamStatus.html">Enumeration: StreamStatus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../enumerations/StreamType.html">Enumeration: StreamType</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../type-aliases/ApplicationMessage.html">Type Alias: ApplicationMessage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../type-aliases/DirectConfig.html">Type Alias: DirectConfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../type-aliases/GFNConfig.html">Type Alias: GFNConfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../type-aliases/GetChildrenEvent.html">Type Alias: GetChildrenEvent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../type-aliases/LoadingStateEvent.html">Type Alias: LoadingStateEvent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../type-aliases/NVCFConfig.html">Type Alias: NVCFConfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../type-aliases/OpenStageEvent.html">Type Alias: OpenStageEvent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../type-aliases/StreamEvent.html">Type Alias: StreamEvent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../type-aliases/StreamMessage.html">Type Alias: StreamMessage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../type-aliases/StreamProps.html">Type Alias: StreamProps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../type-aliases/StreamStats.html">Type Alias: StreamStats</a></li>
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Transports</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../transports/index.html">Introduction</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../transports/transport_http.html">HTTP(S)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../transports/transport_kafka.html">Kafka</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../transports/transport_http.html">HTTP(S)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../transports/transport_kafka.html">Kafka</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Services Catalog</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../services_collect.html">Collect service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../services_convert.html">Asset Converter Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../services_render.html">Render service</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Omniverse Common</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../common/formats.html">Formats</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../common/technical-requirements.html">Technical Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../common/glossary-of-terms.html">Omniverse Glossary of Terms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../common/feedback.html">Feedback and Forums</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../common/legal.html">Omniverse Licenses</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../common/NVIDIA_Omniverse_License_Agreement.html">Omniverse License</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../common/licensing-notices-disclaimers.html">Licensing Disclaimer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../common/licenses.html">Other Licenses</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../common/redistributable-ov-software.html">Redistributable Omniverse Software</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../common/data-collection.html">Data Collection &amp; Usage</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference external" href="../../../../../nucleus/latest/index.html" title="(in Omniverse Nucleus)"><span>Nucleus Overview</span></a></li>
+<li class="toctree-l1"><a class="reference external" href="../../../../../farm/latest/index.html" title="(in Omniverse Farm)"><span>Omniverse Farm</span></a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../overview.html" class="nav-link">Web RTC Streaming Library</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Class: AppStreamer</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+<div class="header-article-item">
+  <div class="d-flex justify-content-end w-100">
+    <a href="https://surveys.hotjar.com/4904bf71-6484-47a7-83ff-4715cceabdb5" id="openPopupButton">Is this page helpful?</a>
+  </div>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="class-appstreamer">
+<h1>Class: AppStreamer<a class="headerlink" href="#class-appstreamer" title="Link to this heading">#</a></h1>
+<p>AppStreamer is the main module export that can be used to connect to, pause, un-pause, and terminate a streaming Omniverse Kit application session. This module may also be used to send/receive custom messages to/from the streaming kit application.</p>
+<section id="constructors">
+<h2>Constructors<a class="headerlink" href="#constructors" title="Link to this heading">#</a></h2>
+<section id="constructor">
+<h3>Constructor<a class="headerlink" href="#constructor" title="Link to this heading">#</a></h3>
+<blockquote>
+<div><p><strong>new AppStreamer</strong>(): <code class="docutils literal notranslate"><span class="pre">AppStreamer</span></code></p>
+</div></blockquote>
+<section id="returns">
+<h4>Returns<a class="headerlink" href="#returns" title="Link to this heading">#</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">AppStreamer</span></code></p>
+</section>
+</section>
+</section>
+<section id="accessors">
+<h2>Accessors<a class="headerlink" href="#accessors" title="Link to this heading">#</a></h2>
+<section id="streamstatus">
+<h3>streamStatus<a class="headerlink" href="#streamstatus" title="Link to this heading">#</a></h3>
+<section id="get-signature">
+<h4>Get Signature<a class="headerlink" href="#get-signature" title="Link to this heading">#</a></h4>
+<blockquote>
+<div><p><strong>get</strong> <code class="docutils literal notranslate"><span class="pre">static</span></code> <strong>streamStatus</strong>(): <a class="reference internal" href="../enumerations/StreamStatus.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">StreamStatus</span></code></span></a></p>
+</div></blockquote>
+<p>Gets the current status of the stream.</p>
+<section id="id1">
+<h5>Returns<a class="headerlink" href="#id1" title="Link to this heading">#</a></h5>
+<p><a class="reference internal" href="../enumerations/StreamStatus.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">StreamStatus</span></code></span></a></p>
+<p>The current status of the stream.</p>
+</section>
+</section>
+</section>
+</section>
+<section id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Link to this heading">#</a></h2>
+<section id="connect">
+<h3>connect()<a class="headerlink" href="#connect" title="Link to this heading">#</a></h3>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">static</span></code> <strong>connect</strong>(<code class="docutils literal notranslate"><span class="pre">props</span></code>): <code class="docutils literal notranslate"><span class="pre">Promise</span></code>&lt;<a class="reference internal" href="../type-aliases/StreamEvent.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">StreamEvent</span></code></span></a>&gt;</p>
+</div></blockquote>
+<p>Connects to the streaming kit app specified by the input props.</p>
+<section id="parameters">
+<h4>Parameters<a class="headerlink" href="#parameters" title="Link to this heading">#</a></h4>
+<section id="props">
+<h5>props<a class="headerlink" href="#props" title="Link to this heading">#</a></h5>
+<p><a class="reference internal" href="../type-aliases/StreamProps.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">StreamProps</span></code></span></a></p>
+<p>The StreamProps that contain the initialization data for the stream.</p>
+</section>
+</section>
+<section id="id2">
+<h4>Returns<a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">Promise</span></code>&lt;<a class="reference internal" href="../type-aliases/StreamEvent.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">StreamEvent</span></code></span></a>&gt;</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="getchildren">
+<h3>getChildren()<a class="headerlink" href="#getchildren" title="Link to this heading">#</a></h3>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">static</span></code> <strong>getChildren</strong>(<code class="docutils literal notranslate"><span class="pre">primPath</span></code>, <code class="docutils literal notranslate"><span class="pre">filters</span></code>?): <code class="docutils literal notranslate"><span class="pre">Promise</span></code>&lt;<a class="reference internal" href="../type-aliases/GetChildrenEvent.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">GetChildrenEvent</span></code></span></a>&gt;</p>
+</div></blockquote>
+<p>Send a request to get the children of a prim.</p>
+<section id="id3">
+<h4>Parameters<a class="headerlink" href="#id3" title="Link to this heading">#</a></h4>
+<section id="primpath">
+<h5>primPath<a class="headerlink" href="#primpath" title="Link to this heading">#</a></h5>
+<p><code class="docutils literal notranslate"><span class="pre">string</span></code></p>
+<p>Path of the prim used to return the children of the prim.</p>
+</section>
+<section id="filters">
+<h5>filters<a class="headerlink" href="#filters" title="Link to this heading">#</a></h5>
+<p><code class="docutils literal notranslate"><span class="pre">string</span></code>[] = <code class="docutils literal notranslate"><span class="pre">[]</span></code></p>
+<p>Array of USD prim types to filter for children of the prim.</p>
+</section>
+</section>
+<section id="id4">
+<h4>Returns<a class="headerlink" href="#id4" title="Link to this heading">#</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">Promise</span></code>&lt;<a class="reference internal" href="../type-aliases/GetChildrenEvent.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">GetChildrenEvent</span></code></span></a>&gt;</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="getstageloadingstate">
+<h3>getStageLoadingState()<a class="headerlink" href="#getstageloadingstate" title="Link to this heading">#</a></h3>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">static</span></code> <strong>getStageLoadingState</strong>(): <code class="docutils literal notranslate"><span class="pre">Promise</span></code>&lt;<a class="reference internal" href="../type-aliases/LoadingStateEvent.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">LoadingStateEvent</span></code></span></a>&gt;</p>
+</div></blockquote>
+<p>Send a request to retrieve the current loading state of the Kit app.</p>
+<section id="id5">
+<h4>Returns<a class="headerlink" href="#id5" title="Link to this heading">#</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">Promise</span></code>&lt;<a class="reference internal" href="../type-aliases/LoadingStateEvent.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">LoadingStateEvent</span></code></span></a>&gt;</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="makeprimsselectable">
+<h3>makePrimsSelectable()<a class="headerlink" href="#makeprimsselectable" title="Link to this heading">#</a></h3>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">static</span></code> <strong>makePrimsSelectable</strong>(<code class="docutils literal notranslate"><span class="pre">paths</span></code>): <code class="docutils literal notranslate"><span class="pre">Promise</span></code>&lt;<a class="reference internal" href="../type-aliases/StreamEvent.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">StreamEvent</span></code></span></a>&gt;</p>
+</div></blockquote>
+<p>Send a request to make prims selectable.</p>
+<section id="id6">
+<h4>Parameters<a class="headerlink" href="#id6" title="Link to this heading">#</a></h4>
+<section id="paths">
+<h5>paths<a class="headerlink" href="#paths" title="Link to this heading">#</a></h5>
+<p><code class="docutils literal notranslate"><span class="pre">string</span></code>[]</p>
+<p>Array of USD prim paths to make selectable.</p>
+</section>
+</section>
+<section id="id7">
+<h4>Returns<a class="headerlink" href="#id7" title="Link to this heading">#</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">Promise</span></code>&lt;<a class="reference internal" href="../type-aliases/StreamEvent.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">StreamEvent</span></code></span></a>&gt;</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="openstage">
+<h3>openStage()<a class="headerlink" href="#openstage" title="Link to this heading">#</a></h3>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">static</span></code> <strong>openStage</strong>(<code class="docutils literal notranslate"><span class="pre">url</span></code>): <code class="docutils literal notranslate"><span class="pre">Promise</span></code>&lt;<a class="reference internal" href="../type-aliases/OpenStageEvent.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">OpenStageEvent</span></code></span></a>&gt;</p>
+</div></blockquote>
+<p>Send a request to open a stage in Kit.</p>
+<section id="id8">
+<h4>Parameters<a class="headerlink" href="#id8" title="Link to this heading">#</a></h4>
+<section id="url">
+<h5>url<a class="headerlink" href="#url" title="Link to this heading">#</a></h5>
+<p><code class="docutils literal notranslate"><span class="pre">string</span></code></p>
+</section>
+</section>
+<section id="id9">
+<h4>Returns<a class="headerlink" href="#id9" title="Link to this heading">#</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">Promise</span></code>&lt;<a class="reference internal" href="../type-aliases/OpenStageEvent.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">OpenStageEvent</span></code></span></a>&gt;</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="resetstage">
+<h3>resetStage()<a class="headerlink" href="#resetstage" title="Link to this heading">#</a></h3>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">static</span></code> <strong>resetStage</strong>(<code class="docutils literal notranslate"><span class="pre">deselectPrims</span></code>?): <code class="docutils literal notranslate"><span class="pre">Promise</span></code>&lt;<a class="reference internal" href="../type-aliases/StreamEvent.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">StreamEvent</span></code></span></a>&gt;</p>
+</div></blockquote>
+<p>Send a request to reset a stage in Kit.</p>
+<section id="id10">
+<h4>Parameters<a class="headerlink" href="#id10" title="Link to this heading">#</a></h4>
+<section id="deselectprims">
+<h5>deselectPrims<a class="headerlink" href="#deselectprims" title="Link to this heading">#</a></h5>
+<p><code class="docutils literal notranslate"><span class="pre">boolean</span></code> = <code class="docutils literal notranslate"><span class="pre">true</span></code></p>
+<p>Specify whether or not to deselect prims.</p>
+</section>
+</section>
+<section id="id11">
+<h4>Returns<a class="headerlink" href="#id11" title="Link to this heading">#</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">Promise</span></code>&lt;<a class="reference internal" href="../type-aliases/StreamEvent.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">StreamEvent</span></code></span></a>&gt;</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="resize">
+<h3>resize()<a class="headerlink" href="#resize" title="Link to this heading">#</a></h3>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">static</span></code> <strong>resize</strong>(<code class="docutils literal notranslate"><span class="pre">width</span></code>, <code class="docutils literal notranslate"><span class="pre">height</span></code>): <code class="docutils literal notranslate"><span class="pre">Promise</span></code>&lt;<a class="reference internal" href="../type-aliases/StreamEvent.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">StreamEvent</span></code></span></a>&gt;</p>
+</div></blockquote>
+<p>Make a request to update the resolution of the streaming application.</p>
+<p>If the requested size is larger than the maximum size (the size specified in the stream config), the stream resolution will not be updated and promise rejection will be thrown.</p>
+<p>If fitStreamResolution is set to true, the stream resolution will not be updated and promise rejection will be thrown.</p>
+<section id="id12">
+<h4>Parameters<a class="headerlink" href="#id12" title="Link to this heading">#</a></h4>
+<section id="width">
+<h5>width<a class="headerlink" href="#width" title="Link to this heading">#</a></h5>
+<p><code class="docutils literal notranslate"><span class="pre">number</span></code></p>
+<p>The requested width. MaxValue 4096.</p>
+</section>
+<section id="height">
+<h5>height<a class="headerlink" href="#height" title="Link to this heading">#</a></h5>
+<p><code class="docutils literal notranslate"><span class="pre">number</span></code></p>
+<p>The requested height. MaxValue 4096.</p>
+</section>
+</section>
+<section id="id13">
+<h4>Returns<a class="headerlink" href="#id13" title="Link to this heading">#</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">Promise</span></code>&lt;<a class="reference internal" href="../type-aliases/StreamEvent.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">StreamEvent</span></code></span></a>&gt;</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="sendmessage">
+<h3>sendMessage()<a class="headerlink" href="#sendmessage" title="Link to this heading">#</a></h3>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">static</span></code> <strong>sendMessage</strong>(<code class="docutils literal notranslate"><span class="pre">message</span></code>): <code class="docutils literal notranslate"><span class="pre">Promise</span></code>&lt;<a class="reference internal" href="../type-aliases/StreamEvent.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">StreamEvent</span></code></span></a>&gt;</p>
+</div></blockquote>
+<p>Sends the provided custom message to the streaming Kit application.</p>
+<section id="id14">
+<h4>Parameters<a class="headerlink" href="#id14" title="Link to this heading">#</a></h4>
+<section id="message">
+<h5>message<a class="headerlink" href="#message" title="Link to this heading">#</a></h5>
+<p><a class="reference internal" href="../type-aliases/ApplicationMessage.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">ApplicationMessage</span></code></span></a></p>
+<p>A custom message to send to the streaming application.</p>
+</section>
+</section>
+<section id="id15">
+<h4>Returns<a class="headerlink" href="#id15" title="Link to this heading">#</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">Promise</span></code>&lt;<a class="reference internal" href="../type-aliases/StreamEvent.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">StreamEvent</span></code></span></a>&gt;</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="setfitstreamresolution">
+<h3>setFitStreamResolution()<a class="headerlink" href="#setfitstreamresolution" title="Link to this heading">#</a></h3>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">static</span></code> <strong>setFitStreamResolution</strong>(<code class="docutils literal notranslate"><span class="pre">fitStreamResolution</span></code>): <code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+</div></blockquote>
+<p>Sets the fit stream resolution flag.</p>
+<p>If fitStreamResolution is true, the stream resolution will be updated to fit the video element current size and stream resolution will be automatically updated to fit any subsequent changes to the video element size.</p>
+<p>If fitStreamResolution is false, the stream resolution will be set to the initial width and height specified in the stream config.</p>
+<section id="id16">
+<h4>Parameters<a class="headerlink" href="#id16" title="Link to this heading">#</a></h4>
+<section id="fitstreamresolution">
+<h5>fitStreamResolution<a class="headerlink" href="#fitstreamresolution" title="Link to this heading">#</a></h5>
+<p><code class="docutils literal notranslate"><span class="pre">boolean</span></code></p>
+</section>
+</section>
+<section id="id17">
+<h4>Returns<a class="headerlink" href="#id17" title="Link to this heading">#</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">void</span></code></p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="setselectedprims">
+<h3>setSelectedPrims()<a class="headerlink" href="#setselectedprims" title="Link to this heading">#</a></h3>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">static</span></code> <strong>setSelectedPrims</strong>(<code class="docutils literal notranslate"><span class="pre">paths</span></code>): <code class="docutils literal notranslate"><span class="pre">Promise</span></code>&lt;<a class="reference internal" href="../type-aliases/StreamEvent.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">StreamEvent</span></code></span></a>&gt;</p>
+</div></blockquote>
+<p>Send a request to select a list of prims from a stage in Kit.</p>
+<section id="id18">
+<h4>Parameters<a class="headerlink" href="#id18" title="Link to this heading">#</a></h4>
+<section id="id19">
+<h5>paths<a class="headerlink" href="#id19" title="Link to this heading">#</a></h5>
+<p><code class="docutils literal notranslate"><span class="pre">string</span></code>[]</p>
+<p>AArray of USD prim paths that can be selected.</p>
+</section>
+</section>
+<section id="id20">
+<h4>Returns<a class="headerlink" href="#id20" title="Link to this heading">#</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">Promise</span></code>&lt;<a class="reference internal" href="../type-aliases/StreamEvent.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">StreamEvent</span></code></span></a>&gt;</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="start">
+<h3>start()<a class="headerlink" href="#start" title="Link to this heading">#</a></h3>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">static</span></code> <strong>start</strong>(): <code class="docutils literal notranslate"><span class="pre">Promise</span></code>&lt;<a class="reference internal" href="../type-aliases/StreamEvent.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">StreamEvent</span></code></span></a>&gt;</p>
+</div></blockquote>
+<p>Starts/restarts the stream.</p>
+<section id="id21">
+<h4>Returns<a class="headerlink" href="#id21" title="Link to this heading">#</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">Promise</span></code>&lt;<a class="reference internal" href="../type-aliases/StreamEvent.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">StreamEvent</span></code></span></a>&gt;</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="stop">
+<h3>stop()<a class="headerlink" href="#stop" title="Link to this heading">#</a></h3>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">static</span></code> <strong>stop</strong>(): <code class="docutils literal notranslate"><span class="pre">Promise</span></code>&lt;<a class="reference internal" href="../type-aliases/StreamEvent.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">StreamEvent</span></code></span></a>&gt;</p>
+</div></blockquote>
+<p>Stops (pauses) the stream.</p>
+<section id="id22">
+<h4>Returns<a class="headerlink" href="#id22" title="Link to this heading">#</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">Promise</span></code>&lt;<a class="reference internal" href="../type-aliases/StreamEvent.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">StreamEvent</span></code></span></a>&gt;</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="terminate">
+<h3>terminate()<a class="headerlink" href="#terminate" title="Link to this heading">#</a></h3>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">static</span></code> <strong>terminate</strong>(<code class="docutils literal notranslate"><span class="pre">terminateApp</span></code>?): <code class="docutils literal notranslate"><span class="pre">Promise</span></code>&lt;<a class="reference internal" href="../type-aliases/StreamEvent.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">StreamEvent</span></code></span></a>&gt;</p>
+</div></blockquote>
+<p>Terminates the stream. The stream reference will be reset and will no longer be accessible. Setup will need to be called to connect to a new session.</p>
+<p>If <code class="docutils literal notranslate"><span class="pre">terminateApp</span></code> is true, then the Kit app instance will also be terminated. This currently only applies to OVC v1 stream API and NVCF.</p>
+<section id="id23">
+<h4>Parameters<a class="headerlink" href="#id23" title="Link to this heading">#</a></h4>
+<section id="terminateapp">
+<h5>terminateApp<a class="headerlink" href="#terminateapp" title="Link to this heading">#</a></h5>
+<p><code class="docutils literal notranslate"><span class="pre">boolean</span></code> = <code class="docutils literal notranslate"><span class="pre">false</span></code></p>
+<p>Whether or not to terminate the Kit app instance.</p>
+</section>
+</section>
+<section id="id24">
+<h4>Returns<a class="headerlink" href="#id24" title="Link to this heading">#</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">Promise</span></code>&lt;<a class="reference internal" href="../type-aliases/StreamEvent.html"><span class="std std-doc"><code class="docutils literal notranslate"><span class="pre">StreamEvent</span></code></span></a>&gt;</p>
+</section>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../overview.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Web RTC Streaming Library</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../enumerations/eAction.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Enumeration: eAction</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+
+
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#constructors">Constructors</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#constructor">Constructor</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#returns">Returns</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accessors">Accessors</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#streamstatus">streamStatus</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#get-signature">Get Signature</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Returns</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#methods">Methods</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#connect">connect()</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#parameters">Parameters</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#props">props</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Returns</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#getchildren">getChildren()</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Parameters</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#primpath">primPath</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#filters">filters</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Returns</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#getstageloadingstate">getStageLoadingState()</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Returns</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#makeprimsselectable">makePrimsSelectable()</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Parameters</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#paths">paths</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Returns</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#openstage">openStage()</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Parameters</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#url">url</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">Returns</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resetstage">resetStage()</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">Parameters</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#deselectprims">deselectPrims</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">Returns</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resize">resize()</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">Parameters</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#width">width</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#height">height</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">Returns</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sendmessage">sendMessage()</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">Parameters</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#message">message</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">Returns</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setfitstreamresolution">setFitStreamResolution()</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">Parameters</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#fitstreamresolution">fitStreamResolution</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">Returns</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setselectedprims">setSelectedPrims()</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">Parameters</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">paths</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">Returns</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#start">start()</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">Returns</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stop">stop()</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id22">Returns</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#terminate">terminate()</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id23">Parameters</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#terminateapp">terminateApp</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id24">Returns</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+
+<script type="text/javascript">if (typeof _satellite !== "undefined") {_satellite.pageBottom();}</script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+<a class="footer-brand logo" href="https://www.nvidia.com">
+  <img src="../../../_static/nvidia-logo-horiz-rgb-1c-blk-for-screen.svg" class="logo__image only-light" alt="NVIDIA"/>
+  <img src="../../../_static/nvidia-logo-horiz-rgb-1c-wht-for-screen.svg" class="logo__image only-dark" alt="NVIDIA"/>
+</a></div>
+      
+        <div class="footer-item">
+
+<div class="footer-links">
+  
+  
+  <a class="external" href="https://www.nvidia.com/en-us/about-nvidia/privacy-policy/">Privacy Policy</a>
+   | 
+  
+  
+  
+  <a class="external" href="https://www.nvidia.com/en-us/about-nvidia/privacy-center/">Your Privacy Choices</a>
+   | 
+  
+  
+  
+  <a class="external" href="https://www.nvidia.com/en-us/about-nvidia/terms-of-service/">Terms of Service</a>
+   | 
+  
+  
+  
+  <a class="external" href="https://www.nvidia.com/en-us/about-nvidia/accessibility/">Accessibility</a>
+   | 
+  
+  
+  
+  <a class="external" href="https://www.nvidia.com/en-us/about-nvidia/company-policies/">Corporate Policies</a>
+   | 
+  
+  
+  
+  <a class="external" href="https://www.nvidia.com/en-us/product-security/">Product Security</a>
+   | 
+  
+  
+  
+  <a class="external" href="https://www.nvidia.com/en-us/contact/">Contact</a>
+  
+  
+  
+</div>
+</div>
+      
+        <div class="footer-item">
+
+
+
+
+  <p class="copyright">
+    
+      Copyright © 2023-2026, NVIDIA Corporation.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item"><p class="last-updated">
+  Last updated on Jan 08, 2026.
+  <br/>
+</p></div>
+      
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+  </body>
+</html>

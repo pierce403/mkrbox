@@ -1,0 +1,1999 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>1. NGC User Guide &#8212; NVIDIA GPU Cloud Documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/nvidia-sphinx-theme.css?v=df3ac72c" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=767de534" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script rel="preload" src="_static/modal-table.js"></script>
+    <script src="_static/documentation_options.js?v=91d07486"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/scrollspy-patch.js?v=edc4054a"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=65e89d2a"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'ngc-user-guide';</script>
+    <script src="_static/version-patch.js?v=3e13fdd2"></script>
+    <link rel="canonical" href="https://docs.nvidia.com/ngc/latest/ngc-user-guide.html" />
+    <link rel="icon" href="_static/favicon.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="2. NGC Catalog User Guide" href="ngc-catalog-user-guide.html" />
+    <link rel="prev" title="NVIDIA GPU Cloud Documentation" href="index.html" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+    <meta name="docbuild:last-update" content="Dec 19, 2025"/>
+
+    <script src="https://assets.adobedtm.com/5d4962a43b79/c1061d2c5e7b/launch-191c2462b890.min.js" ></script>
+    
+
+
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/nvidia-logo-horiz-rgb-blk-for-screen.svg" class="logo__image only-light" alt="NVIDIA GPU Cloud Documentation - Home"/>
+    <img src="_static/nvidia-logo-horiz-rgb-wht-for-screen.svg" class="logo__image only-dark pst-js-only" alt="NVIDIA GPU Cloud Documentation - Home"/>
+  
+  
+    <p class="title logo__title">NVIDIA GPU Cloud Documentation</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/nvidia-logo-horiz-rgb-blk-for-screen.svg" class="logo__image only-light" alt="NVIDIA GPU Cloud Documentation - Home"/>
+    <img src="_static/nvidia-logo-horiz-rgb-wht-for-screen.svg" class="logo__image only-dark pst-js-only" alt="NVIDIA GPU Cloud Documentation - Home"/>
+  
+  
+    <p class="title logo__title">NVIDIA GPU Cloud Documentation</p>
+  
+</a>
+
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+
+
+<nav class="bd-docs-nav bd-links"
+     aria-label="Table of Contents">
+  <p class="bd-links__title" role="heading" aria-level="1">Table of Contents</p>
+  <div class="bd-toc-item navbar-nav"><p aria-level="2" class="caption" role="heading"><span class="caption-text">NGC Documentation</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">1. NGC User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ngc-catalog-user-guide.html">2. NGC Catalog User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ngc-private-registry-user-guide.html">3. NGC Private Registry User Guide</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="notices.html">Notices</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis"><span class="section-number">1. </span>NGC User Guide</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="ngc-user-guide">
+<h1><span class="section-number">1. </span>NGC User Guide<a class="headerlink" href="#ngc-user-guide" title="Link to this heading">#</a></h1>
+<p>This document is a comprehensive guide to NVIDIA GPU Cloud (NGC), providing detailed instructions on setting up, managing, and optimizing your cloud environment, including creating accounts, managing users, accessing pre-trained models, and leveraging NGC’s suite of AI and HPC tools.</p>
+<section id="what-is-nvidia-ngc">
+<span id="id1"></span><h2><span class="section-number">1.1. </span>What is NVIDIA NGC?<a class="headerlink" href="#what-is-nvidia-ngc" title="Link to this heading">#</a></h2>
+<p>NVIDIA NGC™ is a cloud platform providing fully managed services, including <a class="reference external" href="https://www.nvidia.com/en-us/data-center/products/ai-enterprise/">NVIDIA AI Enterprise</a>, <a class="reference external" href="https://www.nvidia.com/en-us/data-center/dgx-cloud/">NVIDIA DGX™ Cloud</a>, and <a class="reference external" href="https://www.nvidia.com/en-us/ai-data-science/products/riva/">NVIDIA Riva Studio</a> for Natural Language Understanding (NLU) and speech AI solutions. AI practitioners can leverage <a class="reference external" href="https://www.nvidia.com/en-us/data-center/dgx-cloud/">DGX Cloud</a> for model training, <a class="reference external" href="https://www.nvidia.com/en-us/data-center/products/ai-enterprise/">NVIDIA AI Enterprise</a> to obtain the latest NVIDIA NIM™ models, and the <a class="reference external" href="https://docs.nvidia.com/ngc/ngc-private-registry-user-guide/index.html">NGC Private Registry</a> for securely sharing proprietary AI software. NGC also hosts a <a class="reference external" href="https://catalog.ngc.nvidia.com/">catalog</a> of GPU-optimized AI software, SDKs, and Jupyter Notebooks to accelerate AI workflows and offers support through <a class="reference external" href="https://www.nvidia.com/en-us/data-center/products/ai-enterprise/">NVIDIA AI Enterprise</a>.</p>
+<p>Enterprises access their AI cloud services via a dedicated virtual NVIDIA Cloud Account (NCA) linked to the NGC organization where their services are enabled.</p>
+</section>
+<section id="why-ngc-software">
+<span id="id4"></span><h2><span class="section-number">1.2. </span>Why NGC Software<a class="headerlink" href="#why-ngc-software" title="Link to this heading">#</a></h2>
+<p>NGC provides software to meet the needs of data scientists, developers, and researchers across various levels of AI expertise.</p>
+<p>All software hosted on NGC undergoes thorough scans for common vulnerabilities and exposures (CVEs), crypto, and private keys.</p>
+<p>In addition to security scanning, NGC software is tested against a wide range of GPU-enabled platforms, including public cloud instances, workstations, and OEM servers designed for data center or edge deployments. Supported GPUs include H100, V100, A100, T4, Jetson, and the RTX Quadro.</p>
+<p>NGC software is tested and assured to scale across multiple GPUs and, in some cases, across multiple nodes, ensuring users can fully utilize their GPU-powered servers out of the box.</p>
+<p>For select containers, NVIDIA offers NGC Support Services to run software on DGX platforms or certified OEM servers. The service gives enterprise IT direct access to NVIDIA subject matter experts to address software issues and minimize system downtime quickly.</p>
+</section>
+<section id="ngc-organizations-and-teams">
+<span id="ngc-orgs-and-teams"></span><h2><span class="section-number">1.3. </span>NGC Organizations and Teams<a class="headerlink" href="#ngc-organizations-and-teams" title="Link to this heading">#</a></h2>
+<p>An NGC organization (org) is linked to an NVIDIA Cloud Account (NCA) and shares the same account number. The dedicated account instance is used to enable and manage NVIDIA cloud services.</p>
+<p>Users can access an NGC org in the following ways:</p>
+<ol class="arabic simple">
+<li><p><strong>Sign-Up through the NGC Portal</strong>: A user can sign up for a free NGC org through the NGC <a class="reference external" href="https://ngc.nvidia.com/signin">sign-in</a> portal and create a new NVIDIA cloud account that grants access to an NGC org enabled with NVIDIA Catalog access (public artifacts only).</p></li>
+<li><p><strong>Entitlement Message</strong>: NVIDIA sends a message to the company or person granted entitlement for a service delivered in NGC. This can happen through a purchase order, early trial program, or other commercially related offers. The recipient follows the entitlement steps to be granted an NVIDIA Cloud Account and gain access to their NGC service.</p></li>
+<li><p><strong>Account Owner Invitation</strong>: The account owner adds a user to an NCA account and grants the required permissions to access the NGC org. The account owner will invite the user through an <a class="reference internal" href="#ngc-org-owner-users"><span class="std std-ref">NCA invitation email</span></a> or add the user using a corporate <a class="reference internal" href="#ngc-idp-rules"><span class="std std-ref">AD group membership</span></a> rule mapped to the NGC org. Note that only <em>enterprise</em> type orgs support the ability for account owners to manage additional users.</p></li>
+</ol>
+<p>Users who sign up for an NGC org through the NGC sign-in portal get assigned an NCA account linked to an <em>individual</em> org that is automatically enabled with the <a class="reference external" href="https://docs.nvidia.com/ngc/ngc-catalog-user-guide/index.html">NGC Catalog</a> service and grants authenticated access to the catalog. An <em>individual</em> org is only accessible by a single user, the org owner. The NCA account linked to the org supports additional users, but these users cannot be assigned NGC access permissions.</p>
+<p>An NVIDIA premium cloud service subscription, such as NVIDIA AI Enterprise or NVIDIA DGX Cloud, will be granted through purchase, an early access program, or the NGC Activate Subscription portal. Subscriptions get enabled on <em>enterprise</em> NGC orgs. Alternatively, an <em>individual</em> org is converted to an <em>enterprise</em> org when a user activates their subscription through the NGC Activate Subscription portal. An NGC <em>enterprise</em> org is linked to an NCA account and supports additional users, subdividing NGC resources into NGC teams, and role-based access rules.</p>
+<section id="nvidia-cloud-accounts-and-ngc">
+<span id="ngc-cloud-accounts"></span><h3><span class="section-number">1.3.1. </span>NVIDIA Cloud Accounts and NGC<a class="headerlink" href="#nvidia-cloud-accounts-and-ngc" title="Link to this heading">#</a></h3>
+<p>NVIDIA Cloud Accounts (NCA) provide a convenient and scalable way to set up and manage access to NVIDIA cloud services for various users within your company.</p>
+<img alt="NGC Organizations and Teams" src="_images/ngc-orgs-and-teams.png" />
+<p>NCA is required for managing user access within NGC. It is fully integrated with NGC, allowing user management to be handled within the NGC environment. Adding users through the NGC <strong>Add User</strong> pane automates the process of updating the NCA account, saving NGC owners and administrators the step of navigating to the NCA user interface.</p>
+<img alt="NGC Add User Step 1" src="_images/ngc-add-user-step-1.png" />
+<p>After the user is added, the next step (Step 2) requires the NGC owner or administrator to assign access permissions to the service entitlements hosted in the NGC org (for example, NVIDIA AI Enterprise or NVIDIA DGX Cloud).</p>
+<p>As a follow-up step, the owner or administrator can navigate to the NCA UI console to set up essential services like the following:</p>
+<ul class="simple">
+<li><p>Set up an account recovery email (Highly recommended)</p></li>
+<li><p>Add additional NCA administrators (Highly recommended)</p></li>
+<li><p>Enter company information</p></li>
+<li><p>Manage user tenancy status</p></li>
+</ul>
+<p>Removing a user from NGC doesn’t remove their associated NCA account. The user’s access permissions within the NGC organization are revoked, but the NCA account itself remains active. To completely remove a user from all NVIDIA cloud services, the user must be removed at the NCA account level.</p>
+<p>While users can be added and assigned permissions within the NGC UI console, administrators should be aware of additional steps necessary to manage the NCA account.</p>
+<p>To learn more about NCA, visit <a class="reference external" href="https://cloudaccounts.nvidia.com/docs/userguide/">NVIDIA Cloud Accounts</a>.</p>
+</section>
+<section id="ngc-teams">
+<span id="id5"></span><h3><span class="section-number">1.3.2. </span>NGC Teams<a class="headerlink" href="#ngc-teams" title="Link to this heading">#</a></h3>
+<p>NGC organizations (orgs) serve as the top-level container for enterprise deployments. Within an org, administrators can create teams to implement role-based access control and segment private registry resources by department or project.</p>
+<p>Teams provide isolated registry namespaces, ensuring members can share containers, models, and resources within their team while maintaining separation from other teams in the organization.</p>
+<p>User management permissions:</p>
+<ul class="simple">
+<li><p>Org owners and org-level user admins: Create teams and manage users across all teams</p></li>
+<li><p>Team-level user admins: Manage users within their assigned team only</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>NVIDIA does not provide user management services; customers are responsible for all user provisioning</p>
+</div>
+<p>To create an NGC team, follow these steps:</p>
+<ol class="arabic">
+<li><p>Log in to your NGC org.</p></li>
+<li><p>Select <strong>Organization</strong> from the user account menu.</p>
+<img alt="NGC Organization Menu User Account" src="_images/ngc-org-menu-user-account.png" />
+</li>
+<li><p>On the dashboard or in the left navigation, select <strong>Teams</strong>.</p>
+<img alt="NGC Organization Teams Menu" src="_images/ngc-org-teams-menu.png" />
+</li>
+<li><p>On the <strong>Teams</strong> page, click <strong>Create Team</strong> on the upper right corner.</p>
+<img alt="New NGC Create Team" src="_images/new-ngc-create-team.png" />
+</li>
+<li><p>Enter a team name and description. Note that names must be all lowercase.</p></li>
+<li><p>Click <strong>Create Team</strong> to finish.</p></li>
+</ol>
+</section>
+<section id="ngc-org-owner-and-other-org-users">
+<span id="ngc-org-owner-users"></span><h3><span class="section-number">1.3.3. </span>NGC Org Owner and Other Org Users<a class="headerlink" href="#ngc-org-owner-and-other-org-users" title="Link to this heading">#</a></h3>
+<p>When an NGC org is created, an NVIDIA Cloud Account (NCA) is required to access the NGC org. The NCA account is automatically generated, and the user needs to name it. The user is assigned the owner role in NCA and NGC as the initial user.</p>
+<p>As mentioned previously, an individual org is only accessible by the org owner; additional users are not supported. To verify the type of org you manage, sign in to NGC to access your org. Under the user account menu, select <strong>Organization</strong>, and then select <strong>Organization Profile</strong> in the left navigation pane.</p>
+<img alt="Organization Type Enterprise" src="_images/org-type-enterprise.png" />
+<p>The org owner possesses the highest admin privileges in an NGC org. The org owner of an <em>enterprise</em> org can add and remove NGC teams and users, and assign NGC permissions to each added user by managing the assignment of teams and roles. When a new user gets added, the org owner invites the user to join the NVIDIA Cloud Account, then assigns access to the entire org or limits the user’s access to a team or a set of teams created within the org. Then, the org owner controls the user’s access by assigning the permissions (roles) necessary to perform their functions within the org or team.</p>
+<p>An org supports up to three org owners, and only an org owner can add or invite additional org owners to share in the NGC org management responsibilities. In NCA, only one owner is supported, therefore, to support the additional NGC org owners, the account owner must assign the NCA “Admin” role when creating the add user invitation. For details, see the steps to add additional org owners. To prevent accidentally adding an outside user as an org owner, the email address domain between all org owners’ users must match.</p>
+<p>For example, if the users’ email addresses are <code class="docutils literal notranslate"><span class="pre">john&#64;intelligence.ai</span></code>, <code class="docutils literal notranslate"><span class="pre">jane&#64;intelligence.ai</span></code>, and <code class="docutils literal notranslate"><span class="pre">peter&#64;intelligence.ai</span></code>, then all three can be added as org owners because their email address domains match. In contrast, if Peter’s email address was <code class="docutils literal notranslate"><span class="pre">peter&#64;artificial.ai</span></code>, then Peter cannot be added as an org owner.</p>
+<p>Follow the steps in the next section to add a new org owner or additional users with different access permissions.</p>
+<section id="adding-ngc-users-to-an-org">
+<span id="ngc-adding-users"></span><h4><span class="section-number">1.3.3.1. </span>Adding NGC Users to an Org<a class="headerlink" href="#adding-ngc-users-to-an-org" title="Link to this heading">#</a></h4>
+<p>The following section guides you through the steps to add a new org owner or additional users with different access permissions.
+Only NGC org owners and user admins can perform user management operations.
+NVIDIA <strong>cannot</strong> manage users on behalf of a customer.</p>
+<ol class="arabic">
+<li><p><a class="reference external" href="https://ngc.nvidia.com/signin">Sign in to NGC</a>. Select the correct NCA account linked to the NGC org you want to manage, and click <strong>Continue</strong>.</p>
+<img alt="Sign In NCA Resized" src="_images/sign-in-nca-resized.png" />
+</li>
+<li><p>Select <strong>Organization</strong> from the user account menu. On the dashboard or in the left navigation, select <strong>Users</strong>.</p>
+<img alt="Organization Users Navigation" src="_images/org-users-nav.png" />
+</li>
+<li><p>Click <strong>Add User</strong> at the top-right corner.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>If your org is linked to an external IdP/SSO service, managing user membership using <a class="reference internal" href="#ngc-idp-rules"><span class="std std-ref">NGC IdP Membership Rules</span></a> is recommended. If your IdP doesn’t support groups, you can use the NGC add user service.</p>
+</div>
+<img alt="NGC Users Invite" src="_images/ngc-users-invite.png" />
+</li>
+<li><p>In <strong>Step 1</strong>, invite the user to be an “admin” if they require the ability to manage users in the NCA account, or assign the “member” role in NCA if they do not manage users.</p>
+<ul class="simple">
+<li><p>Enter the user email address, making sure the domain matches your email domain.</p></li>
+<li><p>Assign the NVIDIA Cloud Account Role “Administrator” or “Member.”</p></li>
+<li><p>Customize the invitation email to inform the user what this is for (optional).</p></li>
+<li><p>Set an expiry for the invitation link (default: 6 hours).</p></li>
+<li><p>Click <strong>Add User and Send Invitation</strong> to proceed to <strong>Step 2</strong>.</p></li>
+</ul>
+<img alt="NGC Invite New User Email" src="_images/ngc-invite-new-user-email.png" />
+</li>
+<li><p>After completing <strong>Step 1</strong>, you will see a successful invitation dialog and <strong>Step 2</strong> configuration buttons become active.</p>
+<ol class="upperalpha">
+<li><p>User Role</p>
+<p>To assign a role to the user:</p>
+<ul>
+<li><p>Select <strong>Organization</strong> for role assignment.</p></li>
+<li><p>Under the Organization roles, select <strong>Owner</strong>.</p></li>
+<li><p>Click <strong>Add Role</strong> to finish.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>When adding a user who does not need to manage users or NGC teams, assign them the “member” role in NCA and do not assign the Owner or User Admin role in NGC.
+If the user later needs to manage users, update their status in NCA to “admin” and grant them the User Admin role in NGC.
+You can manage these permissions in <a class="reference external" href="https://cloudaccounts.nvidia.com/">NVIDIA Cloud Accounts (NCA)</a>.</p>
+</div>
+<img alt="Organization User Update Step 2" src="_images/org-user-update-step2.png" />
+</li>
+</ul>
+</li>
+<li><p>Controlled Permissions</p>
+<p>To assign controlled permissions to a user:</p>
+<ul>
+<li><p>Click the <strong>Organization</strong> or <strong>Team</strong> radio button.</p></li>
+<li><p>Assign a “role” under each NGC application, depending on the level of access to grant the user.</p>
+<img alt="Organization User Update Step 2 Controlled Permissions" src="_images/org-user-update-step2-controlled-perms.png" />
+</li>
+</ul>
+<p>In this example, the user added is assigned the <strong>Viewer</strong> role under NVIDIA AI Enterprise and the <strong>User</strong> role under Private Registry. These permissions limit the user to viewing and pulling artifacts from the NVIDIA Catalog and pushing and pulling artifacts to the org’s private registry.</p>
+<p>To learn more about NGC product roles, refer to the documentation for each product.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>NVIDIA NGC is introducing a new user role, “Public API Endpoints User,” to control access to NVIDIA inferencing credits used for calling NVIDIA API Catalog NIM endpoints. This role must be assigned to NGC organization users who need to generate an NGC Personal Key to use API Catalog credits. For more information, go to <a class="reference internal" href="#assigning-services-to-personal-api-key"><span class="std std-ref">Assigning Services to Your Personal API Key</span></a>. To update user roles, go to <a class="reference internal" href="#ngc-updating-user-roles"><span class="std std-ref">Updating User Roles</span></a>.</p>
+</div>
+</li>
+<li><p>Team Role Assignment</p>
+<p>Assigning the user permissions at a <strong>Team</strong> level grants them access only to resources (such as containers, models) shared with that specific team. To grant a user access to resources across the entire org, assign the user roles at the Organization level.</p>
+</li>
+</ol>
+</li>
+<li><p>The user added will receive an NCA invitation email message that includes the NCA URL to accept the invite and access the NGC org. Share the link to <a class="reference internal" href="#nv-account-new-user-from-invite"><span class="std std-ref">Accepting an NCA Invitation to Access NGC</span></a> with the invited user.</p></li>
+</ol>
+<p>In the case of org owners, after all three org owners are added, any org owner can replace another org owner when needed. An org owner can remove another org owner by going to the ‘users’ list and selecting <strong>Remove User</strong>.</p>
+<img alt="NGC Remove User" src="_images/ngc-remove-user.png" />
+<p>When an org owner is deleted, an email notification is sent to the remaining active owners about the deletion event. Using the same steps above, a replacement owner can be invited.</p>
+</section>
+<section id="updating-user-roles">
+<span id="ngc-updating-user-roles"></span><h4><span class="section-number">1.3.3.2. </span>Updating User Roles<a class="headerlink" href="#updating-user-roles" title="Link to this heading">#</a></h4>
+<p>The following section guides you through the steps to update user roles.</p>
+<ol class="arabic">
+<li><p>After signing in and selecting the NGC org to update, navigate to the <strong>Organization &gt; Users</strong> page.</p>
+<img alt="NGC Profile Menu Organization" src="_images/ngc-profile-menu-org.png" />
+<img alt="NGC Organization Dashboard Users" src="_images/ngc-org-dashboard-users.png" />
+</li>
+<li><p>To locate the user, you can search by either email address or name using the filtering bar.</p>
+<img alt="NGC Organization Users Confirmed" src="_images/ngc-org-users-confirmed.png" />
+</li>
+<li><p>Click on the user you want to modify, then click <strong>Edit Membership</strong> at the top of the page.</p>
+<img alt="NGC Organization Users Edit Membership" src="_images/ngc-org-users-edit-membership.png" />
+</li>
+<li><p>Select the desired roles to add to the user and click <strong>Add Role</strong>. A confirmation message will appear.</p>
+<img alt="NGC Organization Users Update" src="_images/ngc-org-users-update.png" />
+</li>
+<li><p>To remove roles, find the assigned roles in the table at the bottom of the page. Click the <strong>X</strong> to remove that role from the user.</p>
+<img alt="NGC Organization Roles Delete" src="_images/ngc-org-roles-delete.png" />
+<p>Afterwards, you’ll see a confirmation dialog.</p>
+</li>
+</ol>
+</section>
+<section id="removing-a-user-from-an-ngc-org">
+<span id="ngc-removing-users"></span><h4><span class="section-number">1.3.3.3. </span>Removing a User from an NGC Org<a class="headerlink" href="#removing-a-user-from-an-ngc-org" title="Link to this heading">#</a></h4>
+<p>The following section guides you through the steps to remove a user from an NGC org.</p>
+<p>Only the organization owner or a user admin can remove a user from the org.</p>
+<p>To remove a user from an NGC org, follow these steps:</p>
+<ol class="arabic">
+<li><p>Click on your user account icon to open the menu, then select <strong>Organization</strong> and click on <strong>Users</strong>.</p>
+<img alt="NGC Organization User List" src="_images/ngc-org-user-list.png" />
+</li>
+<li><p>Use the filter tool to find the email address of the user you want to remove.</p>
+<img alt="NGC Organization User Filter" src="_images/ngc-org-user-filter.png" />
+</li>
+<li><p>Click the <strong>Actions</strong> ellipsis and select <strong>Remove User</strong>.</p>
+<img alt="NGC Organization User Remove" src="_images/ngc-org-user-remove.png" />
+</li>
+</ol>
+<p>Removing a user from the NGC org will revoke all their access to NGC. However, the user will still remain an active tenant member in the NVIDIA Cloud Account (NCA), where user tenancy is managed.</p>
+<p>In NGC, you grant access permissions (roles) to a user, and removing the user only removes these permissions. To completely delete the user from NCA, follow the steps provided in the <a class="reference external" href="https://cloudaccounts.nvidia.com/docs/userguide">NCA User Guide</a>.</p>
+</section>
+<section id="securing-the-owner-account-with-multi-factor-authentication">
+<span id="ngc-org-owner-securing"></span><h4><span class="section-number">1.3.3.4. </span>Securing the Owner Account with Multi-Factor Authentication<a class="headerlink" href="#securing-the-owner-account-with-multi-factor-authentication" title="Link to this heading">#</a></h4>
+<p>When you create your owner account, you receive an NVIDIA identity account that is protected by a password you set at the time of owner account creation. You can further secure access to your owner account by setting up multi-factor authentication using the directions below:</p>
+<ol class="arabic">
+<li><p>Go to <a class="reference external" href="https://www.nvidia.com/en-us/">NVIDIA</a> and click the sign-in icon.</p>
+<img alt="Secure Organization Owner NVIDIA Account" src="_images/secure-org-owner-nv-account.png" />
+</li>
+<li><p>Sign in with the credentials you set up during the org owner account setup.</p></li>
+<li><p>From your NVIDIA user profile page, navigate to the bottom, click on <strong>Security</strong> settings, and click <strong>Update</strong>.</p>
+<img alt="Secure Organization Owner Security Update" src="_images/secure-org-owner-security-update.png" />
+</li>
+<li><p>You will be prompted to enter your password again to access security settings.</p></li>
+<li><p>Navigate to the <strong>Multi-factor Security</strong> settings.</p>
+<img alt="Secure Organization Owner Multi-Factor" src="_images/secure-org-owner-multi-factor.png" />
+</li>
+<li><p>You can now configure your identity account for two-factor authentication. Go to the <a class="reference external" href="https://login.nvgs.nvidia.com/v1/help/nfactor">NVIDIA N-factor</a> help page for details on how to set it up.</p></li>
+</ol>
+</section>
+<section id="contacting-your-org-owner">
+<span id="ngc-org-owner-contacting"></span><h4><span class="section-number">1.3.3.5. </span>Contacting your Org Owner<a class="headerlink" href="#contacting-your-org-owner" title="Link to this heading">#</a></h4>
+<p>As a user within an NGC organization, you may need to contact the organization owner to request a new service subscription or add a new user. NGC simplifies this communication with the <strong>Contact Admin</strong> option in your user account menu.</p>
+<ol class="arabic">
+<li><p>First, sign into the NGC application with your organization. Then click on your user ID in the top right corner to access the user account menu.</p>
+<img alt="NGC Organization Owner Contact Admin" src="_images/ngc-org-owner-contact-admin.png" />
+</li>
+<li><p>Select <strong>Contact Admin</strong> to open the email editor dialog.</p>
+<img alt="NGC Organization Owner Contact Templates" src="_images/ngc-org-owner-contact-templates.png" />
+<p>Within this editor, you can choose from the following email templates:</p>
+<ul class="simple">
+<li><p><strong>Product Request</strong>: Use this template when requesting a specific product for your &lt;org-name&gt; organization. For example, “I’d like to request the [product name] product for the &lt;org-name&gt; organization.”</p></li>
+<li><p><strong>Team Access Request</strong>: Select this template if you need to request access to the org or a particular team, such as “[team-name],” within your &lt;org-name&gt; organization.</p></li>
+</ul>
+<p>Both templates come with pre-populated message content, but you can edit or delete portions of the message to create a customized message to send to your organization owner.</p>
+<img alt="NGC Organization Owner Contact Admin Dialog" src="_images/ngc-org-owner-contact-admin-dialog.png" />
+</li>
+<li><p>Once you are ready to send the message, click <strong>Send</strong>.</p>
+<p>The organization owner will receive an email from <code class="docutils literal notranslate"><span class="pre">noreply-ngc&#64;nvidia.com</span></code> that will include your email address. The following is a sample email message:</p>
+<img alt="NGC Organization Owner Contact Email" src="_images/ngc-org-owner-contact-email.png" />
+<p>By following these steps and using the <strong>Contact Admin</strong> option, you can easily initiate communication with your organization owner.</p>
+</li>
+</ol>
+</section>
+<section id="external-user-groups">
+<span id="ngc-external-user-groups"></span><h4><span class="section-number">1.3.3.6. </span>External User Groups<a class="headerlink" href="#external-user-groups" title="Link to this heading">#</a></h4>
+<p>As an NGC organization owner or administrator, you may need to share resources with users outside your organization. While you could add these external users as regular account members, this poses security risks since account members automatically receive access to certain account services. Instead, NGC provides a more secure way to collaborate with external users through <em>External User Groups</em>.</p>
+<p>External User Groups let you control exactly what external users can access in your NGC organization. Unlike regular account members, external users receive only the specific permissions you assign to their group. You can manage access by:</p>
+<ul class="simple">
+<li><p>Adding or removing group permissions</p></li>
+<li><p>Adding or removing group members</p></li>
+</ul>
+<p>For managing access in your organization, NGC recommends:</p>
+<ul class="simple">
+<li><p><strong>For your company’s internal users</strong>: Add them as account members by:</p>
+<ul>
+<li><p>Inviting them with the <strong>Users</strong> management page.</p></li>
+<li><p>Using your <a class="reference internal" href="#ngc-federating-idp"><span class="std std-ref">Enterprise Identity Provider (IdP)</span></a> to grant access to the org with IdP groups.</p></li>
+</ul>
+</li>
+<li><p><strong>For external users</strong> (users with email domains outside your company or IdP): Use External User Groups.</p></li>
+</ul>
+<section id="external-user-groups-quick-reference">
+<span id="id6"></span><h5><span class="section-number">1.3.3.6.1. </span>External User Groups: Quick Reference<a class="headerlink" href="#external-user-groups-quick-reference" title="Link to this heading">#</a></h5>
+<div class="pst-scrollable-table-container"><table class="table-compact table" id="table-external-user-groups-quick-reference">
+<colgroup>
+<col style="width: 40.0%" />
+<col style="width: 60.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Supported NGC Applications</strong></p></td>
+<td><p>Private Registry and Catalog</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Maximum Users per Group</strong></p></td>
+<td><p>1,000</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Maximum Groups per Organization</strong></p></td>
+<td><p>100</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="creating-an-external-user-group">
+<span id="id7"></span><h5><span class="section-number">1.3.3.6.2. </span>Creating an External User Group<a class="headerlink" href="#creating-an-external-user-group" title="Link to this heading">#</a></h5>
+<p>To create and configure an External User Group:</p>
+<ol class="arabic">
+<li><p>Sign in to the NGC organization you want to share access to and select <strong>Organization</strong> from the menu.</p>
+<img alt="External User Group User Organization Menu" src="_images/eug-user-org-menu.png" />
+</li>
+<li><p>Select <strong>External User Groups</strong> from the left navigation or dashboard.</p>
+<img alt="External User Group Organization Dashboard" src="_images/eug-org-dashboard.png" />
+</li>
+<li><p>Click <strong>Create Group</strong>.</p>
+<img alt="External User Group Organization Create Group" src="_images/eug-org-create-group.png" />
+</li>
+<li><p>Configure your group settings:</p>
+<ol class="upperalpha">
+<li><p><strong>Name</strong>: Enter a descriptive name that identifies the group’s purpose.</p></li>
+<li><p><strong>Description</strong>: Add a brief description explaining the resources this group will access.</p></li>
+<li><p><strong>Other Options</strong>: By default, leave the checkbox unchecked to manage external users from any domain or Identity Provider (IdP). If you check the box, only onboarded IdPs will be supported. To allow users from additional IdPs, keep the box unchecked.</p></li>
+<li><p><strong>Assign Permissions</strong>: Configure access rights for group members:</p>
+<ol class="loweralpha">
+<li><p><strong>Assign Context of the Permissions</strong>: Choose between organization-wide or team-specific access. For details, see <a class="reference internal" href="#ngc-teams"><span class="std std-ref">NGC Teams</span></a>.</p></li>
+<li><p><strong>Services and Roles</strong>: Select the services members can access and their permission levels.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>For Private Registry permissions, refer to the available <a class="reference external" href="https://docs.nvidia.com/ngc/gpu-cloud/ngc-private-registry-user-guide/index.html#user-roles">role types</a>.
+For Catalog access, <strong>Read</strong> access allows users to view artifacts under your organization’s <em>NVIDIA AI Enterprise essentials</em> subscription.</p>
+</div>
+</li>
+</ol>
+<p>Click <strong>Create User Group</strong> when you’re ready.</p>
+<img alt="External User Group Organization Create Details" src="_images/eug-org-create-details.png" />
+</li>
+</ol>
+</li>
+<li><p>Invite users to your External User Group.</p>
+<p>You can invite external users using either of these methods:</p>
+<ol class="upperalpha">
+<li><p><strong>From the groups list</strong>: Click the ellipsis menu (<strong>⋮</strong>) under <strong>Actions</strong> and select <strong>Invite Users</strong>.</p>
+<img alt="External User Group Organization Invite User" src="_images/eug-org-invite-user.png" />
+<img alt="External User Group Organization Invite User 2" src="_images/eug-org-invite-user-2.png" />
+</li>
+<li><p><strong>From the group details page</strong>: Click <strong>Invite User</strong>.</p>
+<img alt="External User Group Shared Private Registry Confirmed Users" src="_images/eug-org-shared-private-registry-confirmed-users.png" />
+</li>
+</ol>
+</li>
+<li><p>Configure the invitation to be sent to the external users.</p>
+<ol class="upperalpha">
+<li><p><strong>Subject</strong>: Customize the email subject to help recipients identify your invitation.</p></li>
+<li><p><strong>Invitation Expiry</strong>: Set the invitation’s validity period. After expiration, users cannot access shared permissions via the email invitation. Available periods:</p>
+<ul class="simple">
+<li><p>1 hour</p></li>
+<li><p>6 hours</p></li>
+<li><p>24 hours</p></li>
+<li><p>1 week</p></li>
+<li><p>1 month</p></li>
+</ul>
+</li>
+<li><p><strong>Message</strong>: Add a personalized message to provide context about the invitation.</p></li>
+<li><p><strong>Role of Users</strong>: All invited users receive the fixed ‘member’ role. This role is separate from NGC organization permissions and does not affect access levels.</p></li>
+<li><p><strong>Email Address</strong>: Enter the email addresses for your external users. Click <strong>Add another user</strong> to include additional users. When finished, click <strong>Invite Users</strong>.</p>
+<img alt="External User Group Invite Users Dialog" src="_images/eug-invite-users-dialog.png" />
+<p>After sending the invitations, you’ll see a “Users successfully created” message.</p>
+<img alt="External User Group Added User" src="_images/eug-added-user.png" />
+<p>You can monitor pending invitations in the group details page.</p>
+<img alt="External User Group Organization Pending Invitations" src="_images/eug-org-pending-invitations.png" />
+<p>When users accept their invitations, they become “Confirmed Users.” You can monitor their API key status and resend expired invitations if needed. Resent invitations maintain the same validity period as the original.</p>
+</li>
+</ol>
+</li>
+</ol>
+</section>
+<section id="managing-external-users-personal-api-keys">
+<span id="id8"></span><h5><span class="section-number">1.3.3.6.3. </span>Managing External Users’ Personal API Keys<a class="headerlink" href="#managing-external-users-personal-api-keys" title="Link to this heading">#</a></h5>
+<p>As an NGC organization administrator, you can manage API keys for your external users through the following capabilities:</p>
+<ul class="simple">
+<li><p>Monitor API key status and usage</p></li>
+<li><p>Revoke compromised keys (requiring users to generate new ones)</p></li>
+<li><p>Remove users from the External User Group to prevent key generation or rotation</p></li>
+</ul>
+<p>The administrator interface provides two main views:</p>
+<ul>
+<li><p>External user’s personal key view:</p>
+<img alt="External User Group Organization Personal Keys" src="_images/eug-org-personal-keys.png" />
+</li>
+<li><p>External users list view:</p>
+<img alt="External User Group Organization Confirmed Users" src="_images/eug-org-confirmed-users.png" />
+</li>
+</ul>
+</section>
+<section id="guide-for-external-users-accepting-invitations">
+<span id="id9"></span><h5><span class="section-number">1.3.3.6.4. </span>Guide for External Users: Accepting Invitations<a class="headerlink" href="#guide-for-external-users-accepting-invitations" title="Link to this heading">#</a></h5>
+<p>Follow these steps to accept your invitation to join an external user group:</p>
+<ol class="arabic">
+<li><p>Check your email for an invitation from <a class="reference external" href="mailto:noreply-ngc&#37;&#52;&#48;nvidia&#46;com">noreply-ngc<span>&#64;</span>nvidia<span>&#46;</span>com</a>. Click <strong>Access Org</strong> in the email.</p>
+<img alt="External User Group Email Invitation Cosmos Organization" src="_images/eug-email-invitation-cosmos-org.png" />
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you can’t find the invitation email, check your spam/junk folder.</p>
+</div>
+</li>
+<li><p>Sign in to NGC. If you’re new to NVIDIA, you’ll be prompted to create an account. Otherwise, use your existing credentials.</p></li>
+<li><p>Select the organization under <strong>External User In</strong>.</p>
+<img alt="External User Group External User In" src="_images/eug-external-user-in.png" />
+<p>You now have access to the shared NGC organization.</p>
+</li>
+</ol>
+</section>
+<section id="setting-up-api-access">
+<span id="id10"></span><h5><span class="section-number">1.3.3.6.5. </span>Setting Up API Access<a class="headerlink" href="#setting-up-api-access" title="Link to this heading">#</a></h5>
+<p>To access shared organization resources via CLI or API, you’ll need to generate a personal key:</p>
+<ol class="arabic">
+<li><p>On the <strong>API Keys</strong> page, click <strong>Generate Personal Key</strong>.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>If the <strong>Generate Personal Key</strong> button is inactive, follow these steps:</p>
+<ol class="arabic simple">
+<li><p>Create an NVIDIA Cloud Account (NCA) where you are an active member.</p></li>
+<li><p>Create and activate an NGC organization in that account. This organization will authorize your personal key for the shared organization where you are an external user.</p></li>
+<li><p>Return to generate your key.</p></li>
+</ol>
+</div>
+<p>To create your NCA and NGC organization:</p>
+<ol class="arabic">
+<li><p>Click <strong>Create NVIDIA NGC Org</strong> and authenticate with your NVIDIA Cloud Account credentials.</p>
+<img alt="External User Group Setup API Key NGC Organization" src="_images/eug-setup-api-key-ngc-org.png" />
+</li>
+<li><p>Enter a name for your NCA and click <strong>Create NVIDIA Cloud Account</strong>.</p>
+<img alt="Create NCA Dialog" src="_images/create-nca-dialog.png" />
+</li>
+<li><p>Click <strong>Continue</strong> to return to the NGC Personal Key management page.</p></li>
+</ol>
+</li>
+<li><p>Configure your personal key:</p>
+<ol class="loweralpha simple">
+<li><p><strong>Key Name</strong>: Enter a descriptive name that identifies the key’s purpose.</p></li>
+<li><p><strong>Expiration</strong>: Choose a preset period, set a custom date, or select “never expire”.</p></li>
+<li><p><strong>Services Included</strong>: Select the services this key will access.</p></li>
+<li><p><strong>User Organization</strong>: Select an NGC organization you belong to (required for key authorization).</p></li>
+</ol>
+<img alt="Generate Personal Key" src="_images/generate-personal-key.png" />
+<p>Click <strong>Generate Personal Key</strong>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Copy and store your key immediately - it will only be shown once.</p>
+</div>
+<p>For additional information:</p>
+<ul class="simple">
+<li><p>See the <a class="reference internal" href="#ngc-api-keys"><span class="std std-ref">NGC API keys documentation</span></a> for general API key information.</p></li>
+<li><p>Refer to the <a class="reference external" href="https://docs.nvidia.com/ngc/gpu-cloud/ngc-private-registry-user-guide/index.html#intro-to-ngc-cli">NGC Catalog and NGC CLI guide</a> for using your key with CLI clients.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+</section>
+</section>
+<section id="transferring-your-product-activation-invitation">
+<span id="ngc-transfer-invitation"></span><h3><span class="section-number">1.3.4. </span>Transferring Your Product Activation Invitation<a class="headerlink" href="#transferring-your-product-activation-invitation" title="Link to this heading">#</a></h3>
+<p>When you receive an NGC product activation email, and you want to activate the product in an account you don’t own, you must transfer the product activation invitation to the account owner. Follow the steps below to transfer.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The account selector supports activation invitation transfers only for invitations received <strong>directly from NGC</strong>. For “NVIDIA entitlement certificate” activations, <a class="reference internal" href="#ngc-org-owner-contacting"><span class="std std-ref">contact your org owner</span></a>.</p>
+</div>
+<ol class="arabic">
+<li><p>To transfer a product, at the <strong>Activate Product</strong> page, click <strong>View All NVIDIA Cloud Accounts</strong>. This displays accounts you are a member of but do not own; those without the ‘owner’ tag are not owned by you. Review carefully to identify the account associated with the desired NGC organization before starting the transfer process.</p>
+<img alt="NGC Activate Product Step 2" src="_images/ngc-activate-product-s2.png" />
+</li>
+<li><p>Click the <strong>Transfer Product Activation</strong> link under the <strong>Actions</strong> column.</p></li>
+<li><p>Review the pop-up indicating that the transfer cannot be undone and confirm that you are certain about proceeding with the transfer.</p>
+<img alt="NGC Transfer Product Activation Confirm" src="_images/ngc-transfer-product-activation-confirm.png" />
+</li>
+<li><p>Check the default email template for accuracy, then click <strong>Transfer Product Activation</strong>. Editing is optional if the content is correct.</p>
+<img alt="NGC Transfer Product Activation Email Template" src="_images/ngc-transfer-product-activation-email-template.png" />
+</li>
+</ol>
+</section>
+</section>
+<section id="accessing-ngc-org">
+<span id="id11"></span><h2><span class="section-number">1.4. </span>Accessing NGC Org<a class="headerlink" href="#accessing-ngc-org" title="Link to this heading">#</a></h2>
+<p>Activating an NVIDIA NGC product depends on how you obtained the product activation message. This chapter provides comprehensive instructions for activating your NGC product, regardless of whether you received an NGC email invitation from NGC (<code class="docutils literal notranslate"><span class="pre">noreply-ngc&#64;nvidia.com</span></code>), an NVIDIA commercial entitlement certificate (<code class="docutils literal notranslate"><span class="pre">noreply&#64;nvidia.com</span></code>), or registered for a free individual NGC organization. It outlines the steps to create and link your NVIDIA Identity account and NVIDIA Cloud Account to your NGC organization, and details the activation process required to access NGC products.</p>
+<section id="activating-your-ngc-product-from-an-ngc-email-invitation">
+<span id="ngc-ea-product-activation"></span><h3><span class="section-number">1.4.1. </span>Activating Your NGC Product from an NGC Email Invitation<a class="headerlink" href="#activating-your-ngc-product-from-an-ngc-email-invitation" title="Link to this heading">#</a></h3>
+<p>Customers can try upcoming NVIDIA NGC AI products through <a class="reference external" href="https://developer.nvidia.com">NVIDIA Developer</a> or by engaging directly with the NVIDIA product team. Once approved, you will receive a welcome email from NVIDIA NGC, similar to the image shown below, guiding you on how to begin your onboarding process and activate the software. To access NGC, you need to be a tenant of an <strong>NVIDIA Cloud Account</strong> used to manage access to NGC for you and additional users. The following sections explain how to use your NVIDIA NGC welcome email.</p>
+<img alt="NGC Early Access Welcome Email" src="_images/ngc-ea-welcome-email.png" />
+<p>If you’re already an NVIDIA NGC user, go directly to <a class="reference internal" href="#ngc-product-activation-existing-user"><span class="std std-ref">NGC Product Activation by Invitation - Existing User</span></a>.</p>
+<section id="ngc-product-activation-by-invitation-new-user">
+<span id="ngc-product-activation-new-user"></span><h4><span class="section-number">1.4.1.1. </span>NGC Product Activation by Invitation - New User<a class="headerlink" href="#ngc-product-activation-by-invitation-new-user" title="Link to this heading">#</a></h4>
+<p>This section describes the steps necessary to activate a new NGC product as a new user to NVIDIA NGC.</p>
+<ol class="arabic">
+<li><p>Go to your inbox to find the email “Welcome to NVIDIA NGC”. Click the <strong>Accept invitation and sign-in</strong> button.</p>
+<img alt="NGC Early Access Welcome Email" src="_images/ngc-ea-welcome-email.png" />
+</li>
+<li><p>To create your NVIDIA sign-in identity account, type in a password and confirm it (must meet the complexity check), review the NVIDIA account Terms of Use and Privacy Policy, and click <strong>Create Account</strong> to accept and proceed with your identity account creation.</p>
+<img alt="NGC Create Account New" src="_images/ngc-create-account-new.png" />
+</li>
+<li><p>A verification email is sent to your email address.</p>
+<img alt="NGC Verify Email Code" src="_images/ngc-verify-email-code.png" />
+</li>
+<li><p>Open the email, copy the code, paste it in the <strong>Verify Your Email</strong> screen, and click   <strong>Continue</strong>.</p>
+<img alt="NGC Verification Code Email" src="_images/ngc-verification-code-email.png" />
+<img alt="NGC Verification Code Enter" src="_images/ngc-verification-code-enter.png" />
+<p>You may see an additional browser page open to validate the creation of your user account. Close this page and return to the browser page you started on.</p>
+</li>
+<li><p>In the <strong>Almost done!</strong> dialog, select your communication preferences, and then click <strong>Submit</strong>.</p>
+<img alt="NGC Almost Done New" src="_images/ngc-almost-done-new.png" />
+</li>
+<li><p>You must now complete the creation of your new NVIDIA Cloud Account. Provide a meaningful name (spaces are not allowed) that helps you identify it easily against other accounts you own or are a member of.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Creating a new NCA will generate a new NGC org where your product will be activated. The NGC org is directly linked to this NCA.</p>
+</div>
+<img alt="NGC Create NCA Test" src="_images/ngc-create-nca-test.png" />
+</li>
+<li><p>You’ve now activated your NGC product, and you will be redirected to the NGC org subscription page where you can verify your product is active.</p>
+<img alt="NGC Organization Subscriptions Activate" src="_images/ngc-org-subscriptions-activate.png" />
+</li>
+</ol>
+<p>That’s it! You’re all set up with your product.</p>
+<p><strong>Optional</strong>: You should have received a welcome email from your NVIDIA Cloud account. You can choose to complete the setup of your account now or at a later time.</p>
+<p>Complete the steps in <a class="reference internal" href="#sign-in-account-owner"><span class="std std-ref">Setting up your NCA Account</span></a> to configure your NCA account. The users you add to your NGC org are automatically added to the NCA account. To remove users or update NCA-related tenancy settings for a user, you need to take these actions in NCA.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You cannot access NGC and NGC permissions cannot be assigned in NCA. NCA only manages user tenancy membership. To add users and assign NGC permissions, perform these actions in <a class="reference internal" href="#ngc-adding-users"><span class="std std-ref">Adding NGC Users to an Org</span></a>.</p>
+</div>
+</section>
+<section id="ngc-product-activation-by-invitation-existing-user">
+<span id="ngc-product-activation-existing-user"></span><h4><span class="section-number">1.4.1.2. </span>NGC Product Activation by Invitation - Existing User<a class="headerlink" href="#ngc-product-activation-by-invitation-existing-user" title="Link to this heading">#</a></h4>
+<p>This section describes the steps to activate a new NGC product invitation received if you already have an NVIDIA NGC organization.</p>
+<ol class="arabic">
+<li><p>Go to your inbox to find the email “Welcome to NVIDIA NGC”. Click the <strong>Accept invitation and sign-in</strong> button.</p>
+<img alt="NGC Early Access Welcome Email" src="_images/ngc-ea-welcome-email.png" />
+</li>
+<li><p>Sign in to your NVIDIA identity account.</p>
+<img alt="NGC Login JDOE" src="_images/ngc-login-jdoe.png" />
+<img alt="NGC Login NVIDIA Account JDOE" src="_images/ngc-login-nvidia-account-jdoe.png" />
+</li>
+<li><p>Review the product details you want to activate on the <strong>Activate Product</strong> page, select the account under which the product should be activated, and click <strong>Activate Product</strong>. By default, only the accounts eligible to activate the product are displayed. Alternatively, you can activate the new product under a new account and NGC organization by clicking <strong>Activate with a new NVIDIA Cloud Account</strong>.</p>
+<img alt="NGC Activate Product Step 2 Existing User" src="_images/ngc-activate-product-s2-existing-user.png" />
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you want to activate the product in an account you are not an owner of, you must transfer the product activation invitation to the owner. You can find the transfer steps here.</p>
+</div>
+</li>
+<li><p>You’ve now activated your NGC product, and you will be redirected to the NGC org subscription page where you can verify your product is active. Click the <strong>Launch</strong> button for the service you want to access.</p>
+<img alt="NGC Organization Subscriptions Activate" src="_images/ngc-org-subscriptions-activate.png" />
+</li>
+</ol>
+<p>That’s it! You’re all set up with your product.</p>
+<p><strong>Optional</strong>: You should have received a welcome email from your NVIDIA Cloud account. You can choose to complete the setup of your account now or at a later time.</p>
+<p>Complete the steps in <a class="reference internal" href="#sign-in-account-owner"><span class="std std-ref">Setting up your NCA Account</span></a> to configure your NCA account. The users you add to your NGC org are automatically added to the NCA account. To remove users or update NCA-related tenancy settings for a user, you need to take these actions in NCA.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You cannot access NGC and NGC permissions cannot be assigned in NCA. NCA only manages user tenancy membership. To add users and assign NGC permissions, perform these actions in <a class="reference internal" href="#ngc-adding-users"><span class="std std-ref">Adding NGC Users to an Org</span></a>.</p>
+</div>
+</section>
+</section>
+<section id="activating-ngc-product-from-an-nvidia-commercial-entitlement-certificate">
+<span id="accessing-ngc-comm-entitlement"></span><h3><span class="section-number">1.4.2. </span>Activating NGC Product from an NVIDIA Commercial Entitlement Certificate<a class="headerlink" href="#activating-ngc-product-from-an-nvidia-commercial-entitlement-certificate" title="Link to this heading">#</a></h3>
+<p>When you procure a software subscription for an NVIDIA product, you’ll receive an <em>entitlement certificate attachment</em> in an email with instructions on how to claim your entitlement. The following steps guide you through the entitlement registration process.</p>
+<ol class="arabic">
+<li><p><strong>Find the Entitlement Certificate Email</strong></p>
+<p>Open your email inbox and locate the email titled “NVIDIA Entitlement Certificate - Ref” containing your entitlement certificate attachment.</p>
+<p>Here is a sample entitlement certificate email:</p>
+<img alt="NGC Entitlement Certificate Email" src="_images/ngc-entitlement-cert-email.png" />
+<p>The entitlement certificate is provided as a PDF attachment. The following is an example:</p>
+<img alt="NGC Entitlement Certificate 1" src="_images/ngc-entitlement-cert-1.png" />
+<p>The PDF also includes instructions for using the certificate. Here is an example:</p>
+<img alt="NGC Entitlement Certificate 2" src="_images/ngc-entitlement-cert-2.png" />
+</li>
+<li><p><strong>Login or Register</strong></p>
+<ul class="simple">
+<li><p>If you’re an existing NVIDIA customer, click <strong>Already have an entitlement? Please Login</strong>.</p></li>
+<li><p>If you’re a new NVIDIA customer, click <strong>register</strong> to begin claiming your entitlement.</p></li>
+</ul>
+</li>
+<li><p><strong>Sign In</strong></p>
+<p>Enter your username. If you are using an NVIDIA user account, your username will be your email address.
+If you are signing in through your corporate single sign-on portal, please use your company username.
+After entering your username, click <strong>Sign In</strong>.</p>
+<img alt="Commercial Entitlement Login Resized" src="_images/comm-entitlement-login-resized.png" />
+<ul class="simple">
+<li><p>Existing NVIDIA customers: Enter your password, and then click <strong>Login</strong>.</p></li>
+<li><p>New customers: Create a new identity user account by setting a password.</p></li>
+</ul>
+</li>
+<li><p><strong>Select or Create an NVIDIA Cloud Account (NCA)</strong></p>
+<p>Follow the steps below for returning or new customers.</p>
+<ul>
+<li><p><strong>For returning customers:</strong></p>
+<p>The registration page displays different options for product activation.</p>
+<img alt="Commercial Entitlement Select NCA" src="_images/comm-entitlement-select-nca.png" />
+<ul>
+<li><p><strong>Option A: Use an existing NCA</strong></p>
+<ol class="arabic simple">
+<li><p>In the NCA pane, select <strong>View Eligible NVIDIA Cloud Accounts</strong> to review available accounts that you own.</p></li>
+<li><p>Check the associated NGC org and active product subscriptions for each account.</p></li>
+<li><p>Select the desired account and click <strong>Continue</strong>.</p></li>
+</ol>
+</li>
+<li><p><strong>Option B: Create a separate org</strong></p>
+<ol class="arabic simple">
+<li><p>Click <strong>Create new NCA</strong> to activate your product in a separate NGC org.</p></li>
+<li><p>Follow the steps below for creating new accounts.</p></li>
+</ol>
+</li>
+<li><p><strong>Option C: Use an account you don’t own</strong></p>
+<p>If you need to activate the product in an account you’re a member of, but is owned by someone else (under <strong>View Other NVIDIA Cloud Accounts</strong>):</p>
+<ol class="arabic simple">
+<li><p>Cancel the current registration process.</p></li>
+<li><p>Contact the account owner to request product activation.</p></li>
+<li><p>See <a class="reference internal" href="#ngc-org-owner-contacting"><span class="std std-ref">Contacting your Org Owner</span></a> for more details.</p></li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p><strong>For new or returning customers choosing to create a new account:</strong></p>
+<p>You will be prompted to create a new NCA.</p>
+<ol class="arabic simple">
+<li><p>Choose a meaningful account name for easy identification.</p></li>
+<li><p>Click <strong>Create NVIDIA Cloud Account</strong> when done.</p></li>
+</ol>
+<img alt="Commercial Entitlement Create NCA Resized" src="_images/comm-entitlement-create-nca-resized.png" />
+</li>
+</ul>
+</li>
+<li><p><strong>Complete Entitlement Registration</strong></p>
+<p>After selecting or creating an NCA, you will be directed to the entitlement registration page. Fill out the required fields and click <strong>Register</strong>.</p>
+<img alt="Commercial Entitlement Register Resized" src="_images/comm-entitlement-register-resized.png" />
+<p><strong>Required Information:</strong></p>
+<ul class="simple">
+<li><dl class="simple">
+<dt><strong>Primary Contact Information</strong></dt><dd><ul>
+<li><p>First Name</p></li>
+<li><p>Last Name</p></li>
+<li><p>Email Address</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><strong>Primary Contact Details</strong></dt><dd><ul>
+<li><p>Location (Country)</p></li>
+<li><p>Address</p></li>
+<li><p>Phone</p></li>
+<li><p>Job Role</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</li>
+<li><p><strong>Email Confirmation and Access</strong></p>
+<p>After a successful registration, you’ll receive an email from NVIDIA Application Hub:</p>
+<p>Click <strong>Log In</strong> to go to the hub.</p>
+<img alt="Commercial Entitlement Welcome Email Resized" src="_images/comm-entitlement-welcome-email-resized.png" />
+</li>
+<li><p>Click the <strong>NVIDIA NGC</strong> card to access your software subscription in NGC.</p>
+<img alt="Commercial Entitlement App Hub" src="_images/comm-entitlement-app-hub.png" />
+<p>When you are in NGC, you can add additional users for them to access NGC by following steps in <a class="reference internal" href="#ngc-adding-users"><span class="std std-ref">Adding NGC Users to an Org</span></a>.</p>
+<p>Your registration is now complete!</p>
+</li>
+</ol>
+<p><strong>Optional</strong>: You can login to <a class="reference external" href="https://cloudaccounts.nvidia.com">NVIDIA Cloud Accounts</a> to set up your <a class="reference internal" href="#set-up-nca-recovery-email"><span class="std std-ref">recovery email</span></a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You cannot access NGC and NGC permissions cannot be assigned in NCA. NCA only manages user tenancy membership. To add users and assign NGC permissions, perform these actions in <a class="reference internal" href="#ngc-adding-users"><span class="std std-ref">Adding NGC Users to an Org</span></a>.</p>
+</div>
+</section>
+<section id="signing-up-for-a-free-individual-ngc-org">
+<span id="ngc-sign-up-free-ind"></span><h3><span class="section-number">1.4.3. </span>Signing Up for a Free Individual NGC Org<a class="headerlink" href="#signing-up-for-a-free-individual-ngc-org" title="Link to this heading">#</a></h3>
+<p>This section describes the steps to sign up for an individual NGC org to access NGC Catalog artifacts gated by authentication. While setting up the NGC org, an NVIDIA Cloud Account is also created.</p>
+<ol class="arabic">
+<li><p>Go to the <a class="reference external" href="https://ngc.nvidia.com/signin">NGC sign-in page</a> from your browser, enter your email address, and then click <strong>Continue</strong>.</p>
+<img alt="Login New Organization" src="_images/login-new-org.png" />
+</li>
+<li><p>To create your NVIDIA sign-in identity account, type in a password and confirm it (must meet the complexity check), review the NVIDIA account Terms of Use and Privacy Policy, and click <strong>Create Account</strong> to accept and proceed with your identity account creation.</p>
+<img alt="NGC Create Account New" src="_images/ngc-create-account-new.png" />
+</li>
+<li><p>A verification email is sent to your email address.</p>
+<img alt="NGC Verify Email Code" src="_images/ngc-verify-email-code.png" />
+</li>
+<li><p>Open the email, copy the code, paste it in the <strong>Verify Your Email</strong> screen, and click <strong>Continue</strong>.</p>
+<img alt="NGC Verification Code Email" src="_images/ngc-verification-code-email.png" />
+<img alt="NGC Verification Code Enter" src="_images/ngc-verification-code-enter.png" />
+<p>You may see an additional browser page open to validate the creation of your user account. Close this page and return to the browser page you started on.</p>
+</li>
+<li><p>In the <strong>Almost done!</strong> dialog, select your communication preferences, and then click <strong>Submit</strong>.</p>
+<img alt="NGC Almost Done New" src="_images/ngc-almost-done-new.png" />
+</li>
+<li><p>Give your NVIDIA Cloud Account (NCA) a name that will help you identify it easily the next time you sign-in.</p>
+<img alt="Create NVIDIA Cloud Account" src="_images/create-nvidia-cloud-account.png" />
+</li>
+<li><p>Complete your user profile at the <strong>Set Your Profile</strong> screen, agree to the NVIDIA GPU Cloud Terms of Use, and then click <strong>Submit</strong>.</p>
+<img alt="Set Your Profile" src="_images/set-your-profile.png" />
+<p>Your NVIDIA account is created, and you are automatically redirected to your individual NGC org.</p>
+<img alt="NGC Default Landing Page" src="_images/ngc-default-landing-page.png" />
+<p>Your registration is now complete.</p>
+</li>
+</ol>
+<p><strong>Optional</strong>: From the NCA email, complete the steps in <a class="reference internal" href="#sign-in-account-owner"><span class="std std-ref">Setting up your NCA Account</span></a> to configure your NCA account. The users you add to your NGC org are automatically added to the NCA account. To remove users or update NCA-related tenancy settings for a user, you need to take these actions in NCA.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You cannot access NGC and NGC permissions cannot be assigned in NCA. NCA only manages user tenancy membership. To add users and assign NGC permissions, perform these actions in <a class="reference internal" href="#ngc-adding-users"><span class="std std-ref">Adding NGC Users to an Org</span></a>.</p>
+</div>
+</section>
+<section id="setting-up-your-nca-account">
+<span id="sign-in-account-owner"></span><h3><span class="section-number">1.4.4. </span>Setting up your NCA Account<a class="headerlink" href="#setting-up-your-nca-account" title="Link to this heading">#</a></h3>
+<p>To finish setting up your NVIDIA Cloud Account, find your NCA invitation email message in your inbox and click <strong>Log In Now</strong>.</p>
+<ol class="arabic">
+<li><p>Your NVIDIA Cloud Account (NCA) provides the services to set up a recovery email address in case your existing one becomes unavailable, manage access for additional users (subscription required), and set up billing information to purchase consumption-based NVIDIA cloud products.</p>
+<img alt="NGC NCA Welcome Email" src="_images/ngc-nca-welcome-email.png" />
+</li>
+<li><p>Enter your email address to log in and click <strong>Continue</strong>.</p>
+<img alt="NCA Login Email" src="_images/nca-login-email.png" />
+</li>
+<li><p>Enter the credentials you created for your NVIDIA identity account.</p>
+<img alt="NGC NVIDIA Account Sign In" src="_images/ngc-nvidia-account-signin.png" />
+</li>
+<li><p>On the NCA landing page you can find the details of your account. Here you can setup a recovery email address that can be used to regain access if the email address you used to create your account becomes unavailable. Go to <a class="reference internal" href="#set-up-nca-recovery-email"><span class="std std-ref">Setting Up NCA Recovery Email</span></a> for steps on how to setup your recovery email.</p></li>
+</ol>
+<section id="setting-up-nca-recovery-email">
+<span id="set-up-nca-recovery-email"></span><h4><span class="section-number">1.4.4.1. </span>Setting Up NCA Recovery Email<a class="headerlink" href="#setting-up-nca-recovery-email" title="Link to this heading">#</a></h4>
+<p>To set up your NVIDIA Cloud Account (NCA) recovery email, follow these steps.</p>
+<ol class="arabic">
+<li><p>Click <strong>Edit</strong> on the <strong>Account Details</strong> pane under the <strong>Account Management &gt; Details</strong> page.</p>
+<img alt="NCA Details" src="_images/nca-details.png" />
+</li>
+<li><p>On the <strong>Edit - Details</strong> dialog, enter the email address that you want to use for account recovery. This email address must be different from the address used to create the account. You can optionally set a description of this account, click <strong>Save</strong>.</p>
+<img alt="NCA Details Edit" src="_images/nca-details-edit.png" />
+</li>
+<li><p>Check to see that the recovery email status on the <strong>Account Details</strong> pane changed to <strong>Pending</strong>.</p>
+<img alt="NCA Details Recovery Pending" src="_images/nca-details-recovery-pending.png" />
+</li>
+<li><p>Go to your recovery email inbox, search for the NVIDIA message with the title “NVIDIA Cloud Account, Verify Your Recovery Email”, and click <strong>Verify</strong>.</p>
+<img alt="NCA Recovery Email" src="_images/nca-recovery-email.png" />
+</li>
+<li><p>You should see that your email has been verified.</p>
+<img alt="NCA Email Verified" src="_images/nca-email-verified.png" />
+</li>
+<li><p>Go back to your NCA console and check the recovery email status has updated with the address you assigned.</p>
+<img alt="NCA Details Recovery Complete" src="_images/nca-details-recovery-complete.png" />
+</li>
+</ol>
+</section>
+</section>
+<section id="accepting-an-nca-invitation-to-access-ngc">
+<span id="nv-account-new-user-from-invite"></span><h3><span class="section-number">1.4.5. </span>Accepting an NCA Invitation to Access NGC<a class="headerlink" href="#accepting-an-nca-invitation-to-access-ngc" title="Link to this heading">#</a></h3>
+<p>Follow these steps to accept an invitation to join an NVIDIA Cloud Account and access NGC.</p>
+<ol class="arabic">
+<li><p>Check your email inbox for a message titled “You’ve been invited to an NVIDIA Cloud Account.” Open the email and click <strong>Login</strong> to proceed.</p>
+<img alt="NCA Invitation Email" src="_images/nca-invitation-email.png" />
+</li>
+<li><p>If you are new to NVIDIA, you are prompted to create an NVIDIA identity account. Create a password that is at least 9 characters long and uses a mix of uppercase and lowercase letters, numbers, and special characters. If you already have an NVIDIA identity account, enter your password to continue. You can skip to Step 6 below.</p>
+<img alt="Create Identity Account" src="_images/create-identity-account.png" />
+<p>You will be asked to verify your email address in a confirmation email.</p>
+<img alt="Verify Email Identity Account" src="_images/verify-email-identity-account.png" />
+</li>
+<li><p>Check your email inbox for a message titled “NVIDIA Accounts”. Open the email and click <strong>Verify Email Address</strong>.</p>
+<img alt="Email Verification Identity Account" src="_images/email-verification-identity-account.png" />
+<p>The email confirmation message will display in your browser.</p>
+<img alt="Email Verified Identity Account" src="_images/email-verified-identity-account.png" />
+</li>
+<li><p>NVIDIA would like permission to send you the latest news related to our software and products, as well as learn more about how you use our websites to make sure we send you information relevant to you. Select your options and click <strong>Submit</strong>.</p>
+<img alt="Almost Done Identity Account" src="_images/almost-done-identity-account.png" />
+</li>
+<li><p>You are prompted by NVIDIA Cloud Accounts to accept the invitation to join your company’s account. Click <strong>Accept Invitation</strong> to continue joining.</p>
+<img alt="Invitation Details Identity Account" src="_images/invitation-details-identity-account.png" />
+</li>
+<li><p>Enter your password (required for security).</p>
+<img alt="NGC Sign In Existing User Dark" src="_images/ngc-sign-in-existing-user-dark.png" />
+</li>
+<li><p>Accept the terms of use and privacy policy to access your software subscription.</p>
+<img alt="Terms of Service Identity Account" src="_images/tos-identity-account.png" />
+<p>You can now access the NGC org.</p>
+</li>
+</ol>
+</section>
+</section>
+<section id="using-an-external-sso-for-ngc-org-authentication">
+<span id="ngc-org-auth-sso"></span><h2><span class="section-number">1.5. </span>Using an External SSO for NGC Org Authentication<a class="headerlink" href="#using-an-external-sso-for-ngc-org-authentication" title="Link to this heading">#</a></h2>
+<p>An enterprise org can federate its external SSO/IdP identity service to centralize user authentication and manage access to NVIDIA cloud services. This section covers how to configure NGC org authentication through an external SSO provider such as Azure AD or Okta.</p>
+<p>The setup process to federate an NGC org to an external SSO identity provider is now guided by an NVIDIA IdP onboarding wizard app and the steps are performed by the customer. To gain access to the IdP onboarding app, contact your NVIDIA sales representative or submit a support case with <a class="reference external" href="https://enterprise-support.nvidia.com/s/">NVIDIA Enterprise Support</a>. If you don’t have an NVIDIA sales rep or an active support contract, please email <a class="reference external" href="mailto:ngc-sso&#37;&#52;&#48;nvidia&#46;com">integration-requests</a> and submit the following information in your request message:</p>
+<ul>
+<li><p>Your company name</p></li>
+<li><p>A list of email domains that must be associated with the partner (for example, acme.com, acme.net). The list can only include domains owned by the customer.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the request is submitted by email, an identity verification process will be required before the IdP onboarding can be started.</p>
+</div>
+</li>
+<li><p>The email addresses of the customer representatives who are expected to perform the IdP federation configuration steps.</p></li>
+</ul>
+<section id="federating-idp-with-nvidia-cloud-services">
+<span id="ngc-federating-idp"></span><h3><span class="section-number">1.5.1. </span>Federating IdP with NVIDIA Cloud Services<a class="headerlink" href="#federating-idp-with-nvidia-cloud-services" title="Link to this heading">#</a></h3>
+<p>When your request to federate your IdP is approved, you will receive an email with the NVIDIA URL to access the IdP onboarding configuration tool. Follow the steps below.</p>
+<ol class="arabic">
+<li><p><strong>Access the Tool</strong></p>
+<p>Locate the NVIDIA email, then either create an NVIDIA identity account with your work email or sign in with an existing account.</p>
+<img alt="NGC ID Federation Integration" src="_images/ngc-idfed-integration.png" />
+</li>
+<li><p><strong>Initial Setup</strong></p>
+<p>After you log in, you will see the initial screen of the IdP onboarding tool. Complete the required fields and click <strong>Next</strong>.</p>
+<ul class="simple">
+<li><p><strong>Your company name</strong>: NVIDIA will verify your employment.</p></li>
+<li><p><strong>Your identity management system</strong>: Select your IdP (for example, Azure AD, Okta) from the dropdown.</p></li>
+<li><p><strong>Your email domains</strong>: Enter the domains managed by your IdP.</p></li>
+</ul>
+<img alt="NGC ID Federation Create Account" src="_images/ngc-idfed-create-account.png" />
+</li>
+<li><p><strong>Onboarding Wizard</strong></p>
+<p>You will be guided through a configuration wizard based on the IdP system you selected (Azure AD, OpenID Connect, or SAML).</p>
+<ul>
+<li><p><strong>Entra ID (Azure AD)</strong></p>
+<img alt="NGC ID Federation Entra ID" src="_images/ngc-idfed-entra-id.png" />
+</li>
+<li><p><strong>OpenID Connect Provider</strong></p>
+<img alt="NGC ID Federation OpenID" src="_images/ngc-idfed-openid.png" />
+</li>
+<li><p><strong>SAML</strong></p>
+<img alt="NGC ID Federation SAML" src="_images/ngc-idfed-saml.png" />
+</li>
+</ul>
+</li>
+<li><p><strong>Perform a Login Test</strong></p>
+<p>After completing the IdP onboarding configuration, follow the instructions to test the login process.</p>
+<ul>
+<li><p>Read the Login test instructions and click <strong>Next</strong>.</p>
+<img alt="NGC ID Federation Login Test" src="_images/ngc-idfed-login-test.png" />
+</li>
+<li><p>Review your login test results. If successful across all login services, click <strong>Confirm</strong>. If not, troubleshoot your IdP system and retest.</p>
+<img alt="NGC ID Federation Login Test Result" src="_images/ngc-idfed-login-test-result.png" />
+</li>
+</ul>
+</li>
+<li><p><strong>(Optional) Seek Support or Reassign Task</strong></p>
+<p>Use the “Help” button to access support options.</p>
+<img alt="NGC ID Federation Help" src="_images/ngc-idfed-help.png" />
+<p>You can also reassign the task to complete the IdP configuration to a colleague.</p>
+<img alt="NGC ID Federation Reassign" src="_images/ngc-idfed-reassign.png" />
+</li>
+<li><p><strong>Complete the IdP onboarding</strong></p>
+<p>Once your login test is successful, you will see a success message.</p>
+<img alt="NGC ID Federation Success" src="_images/ngc-idfed-success.png" />
+<p>The NVIDIA team will finalize the onboarding generally within one business day, and you will receive a confirmation email.</p>
+<img alt="NGC ID Federation Complete" src="_images/ngc-idfed-complete.png" />
+</li>
+</ol>
+<p>Once your IdP is federated, NVIDIA cloud platforms are not automatically enabled to authenticate users through your external IdP. Since your company may have users accessing NVIDIA cloud platforms with NVIDIA-based identity user accounts, we would like to assist in identifying these users, communicating upcoming changes, and planning the migration of enterprise entitlements to their new external IdP-based identity user accounts. Please contact <a class="reference external" href="mailto:ngc-sso&#37;&#52;&#48;nvidia&#46;com">ngc-sso<span>&#64;</span>nvidia<span>&#46;</span>com</a> to conduct this audit and coordinate the transition.</p>
+</section>
+<section id="authenticating-and-managing-user-access">
+<span id="ngc-user-auth-managing"></span><h3><span class="section-number">1.5.2. </span>Authenticating and Managing User Access<a class="headerlink" href="#authenticating-and-managing-user-access" title="Link to this heading">#</a></h3>
+<p>This chapter covers the steps required to authenticate users through an enterprise SSO/IdP identity service, add new users, manage user permissions and roles, and ensure secure access to organizational resources.</p>
+<p>After an NGC org is federated against an enterprise SSO/IdP identity service, the users signing into NGC will automatically be prompted to authenticate against their enterprise SSO/IdP service and redirected back to NGC after a successful sign-in. To add new users to an org federated to an external SSO/IdP provider, the org owner follows the steps described in <a class="reference internal" href="#ngc-adding-users"><span class="std std-ref">Adding NGC Users to an Org</span></a>. Alternatively, suppose the external IdP provider supports OIDC claims to identify the user’s membership to a group or set of groups. In that case, NGC can be configured to map these OIDC claims to NGC org, teams, and role assignments. See the <a class="reference internal" href="#ngc-idp-rules"><span class="std std-ref">NGC IdP Membership Rules</span></a> section for more details.</p>
+<p>Note that NGC orgs no longer manage user tenancy; users and/or groups are assigned “permissions” to access NGC org resources and are tenants of the NVIDIA Cloud Account (NCA) linked to the NGC org. Users and groups are now added to the NVIDIA Cloud Account.</p>
+<p>If you are managing user memberships using IdP-based group tags (claims), you need to add these groups both in the NCA account under “Add Groups” and in the NGC org under “External IdP &gt; IdP rules.” (In the future, we will deliver a feature where groups are added in NCA and discovered automatically in NGC to assign access permissions.)</p>
+<p>To ensure access to the NCA account and NGC org is never lost, even if the IdP service is rendered inaccessible, configure a “Recovery email address” under the NCA account. This email address will be used to authenticate you outside of your IdP. For more information about email recovery, refer to <a class="reference internal" href="#set-up-nca-recovery-email"><span class="std std-ref">Setting Up NCA Recovery Email</span></a>.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>For NVIDIA to automatically detect the deletion or deactivation of a user managed by the external IdP, the customer must also integrate their IdP user management service to our NVIDIA identity federation system using “SCIM” or “Security Event Tokens” and allow the user to update events to flow to NVIDIA. NVIDIA will use these events to ensure deleted user accounts from the enterprise side are reflected across all NVIDIA services. Any credential assets (for example, API keys) owned by the removed user are immediately revoked upon receiving the deletion or deactivation event.</p>
+<p>During the federation process, NVIDIA will share our IdP federation “Synchronization of users and group changes” document, and we will need to record a written acknowledgment (email is okay) of receipt of this information and a decision on whether or not you (customer) will implement the security event integration.</p>
+</div>
+<p>Some NVIDIA products (like NGC) provide a UI option for customers to manually disable/deactivate/dis-enroll users manually within the NVIDIA application and trigger the revocation of credential assets by deleting the user. For example, NGC supports removing a user from an NGC org, and this event automatically triggers the revocation of user-owned NGC API keys.</p>
+<p><em>However, such application-specific admin functions do not remove users from other NVIDIA applications unless the removal is performed at the NCA account level</em>. The <em>risk</em> with this process is that if the user were part of other NVIDIA services that grant credential assets, these assets would remain as active dangling assets against those services because the user account remains “active” in our central identity service and NCA. The user’s API keys are thus not revoked. The only way to guarantee NVIDIA-wide user account removal is to integrate user event sharing with the NVIDIA IdP federation service, and the customer <em>must</em> be guided to execute the NVIDIA recommended de-provisioning operations in the NVIDIA IdP federation service.</p>
+</section>
+<section id="ngc-idp-membership-rules">
+<span id="ngc-idp-rules"></span><h3><span class="section-number">1.5.3. </span>NGC IdP Membership Rules<a class="headerlink" href="#ngc-idp-membership-rules" title="Link to this heading">#</a></h3>
+<p>An enterprise org can be federated to an external SSO/IdP identity service to centrally manage a company’s rules for user authentication to cloud services.</p>
+<p>When the NGC org is linked to an external IdP, the org owner will see the ability to start creating membership rules under the <strong>Organization &gt; External IdP</strong> configuration page.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Only the org owner or the user_admin roles can manage IdP rules.</p>
+<p>If you are an org owner, even if you are a member of a group configured in an IdP rule, the rule will not update your roles. By default, the org owner inherits admin privileges across all enablements and services in the owned org, and these role assignments are immutable.</p>
+</div>
+<img alt="NGC IDP Create Rule" src="_images/ngc-idp-create-rule.png" />
+<p>If the NGC org is not linked to an enterprise-owned SSO IdP provider, the ‘External IdP’ web prompt is disabled with a message stating the org is not linked to an IdP. You can request to link your org to an enterprise-owned SSO IdP by emailing <a class="reference external" href="mailto:ngc-sso&#37;&#52;&#48;nvidia&#46;com">ngc-sso<span>&#64;</span>nvidia<span>&#46;</span>com</a>.</p>
+<img alt="NGC IDP Organization External" src="_images/ngc-idp-org-external.png" />
+<p>The membership rules feature uses Open ID Connect (OIDC) claims containing the user’s membership attributes. However, if your integration is based on SAML, our IdP federation service will translate your SAML based identities and group labels to the appropriate OIDC Id-token and group labels our Cloud Platforms expect.</p>
+<p><strong>Sample ID-token expected by NGC</strong></p>
+<img alt="NGC IDP OIDC Claim" src="_images/ngc-idp-oidc-claim.png" />
+<p>The ID-token contains several claims that carry attributes associated with the user. Specifically, we are interested in the “groups” claims values that map users to specific membership groups in their Active Directory (AD) service.</p>
+<p>It’s important to note that the external IdP uses the name “groups” to carry membership attribute values in the example above. However, other IdP providers may use a different name for their membership attribute claim. If your IdP provider uses a different claim name, check that NGC supports it by emailing <a class="reference external" href="mailto:ngc-sso&#37;&#52;&#48;nvidia&#46;com">ngc-sso<span>&#64;</span>nvidia<span>&#46;</span>com</a>.</p>
+<p>An org owner or user_admin will create membership rules by mapping the name (alias) value of the IdP ‘groups’ claim to NGC org roles and permissions. Within the enterprise AD service, users assigned to these groups will receive the roles and permissions assigned to the group name in the NGC IdP rules.</p>
+<p><strong>Example</strong></p>
+<p>In this example, we are using Okta as the enterprise-owned SSO IdP provider. It is assumed the same person managing Okta also has NGC org owner permissions.</p>
+<p><strong>Okta Settings</strong></p>
+<ol class="arabic">
+<li><p>First, the NGC org gets linked as a client application to the Okta IdP service.</p>
+<img alt="NGC IDP Okta 1" src="_images/ngc-idp-okta-1.png" />
+</li>
+<li><p>On Okta, managed users get assigned to the NGC client application, enabling them to sign in to NGC using their Okta SSO account.</p>
+<p>At this point, users <em>have not</em> been assigned to a ‘group’.</p>
+<img alt="NGC IDP Okta 2" src="_images/ngc-idp-okta-2.png" />
+</li>
+<li><p>On Okta, secure AD groups are created, and users can be assigned to a group or a set of groups.</p>
+<img alt="NGC IDP Okta 3" src="_images/ngc-idp-okta-3.png" />
+</li>
+<li><p>In this example, Adam and Amy are assigned to the <strong>NGC_AIE_PR_Admin</strong> group. Note that this is being done manually using the Okta user management feature, but this is typically managed automatically by using an enterprise active directory integrated into the IdP provider.</p>
+<img alt="NGC IDP Okta 4" src="_images/ngc-idp-okta-4.png" />
+</li>
+<li><p>At this point, Adam and Amy can sign into NGC, but there isn’t an IdP rule that assigns them NGC org roles and permissions. The next section covers creating the NGC IdP membership rules that will grant Adam and Amy their roles.</p></li>
+</ol>
+<p><strong>Configuring NGC</strong></p>
+<p>After the IdP groups are created and users are assigned to secure AD groups on the Okta IdP side, the administrator (org owner) is ready to configure NGC IdP membership rules.</p>
+<p><strong>NGC</strong></p>
+<ol class="arabic">
+<li><p>In the NGC web application, go to NGC <strong>External IdP</strong> settings and click <strong>Create Rule</strong>.</p></li>
+<li><p>Type in a <strong>Rule Name</strong> that describes the purpose of the rule.</p></li>
+<li><p>Then, under the <strong>If group equals</strong> field, enter the name of the IdP ‘group’ claim that will map to this rule. Note that the name must match exactly and is case-sensitive.</p></li>
+<li><p>Finally, assign the NGC team or org-level access, and assign cloud service roles to grant to users that are assigned to the group. Click <strong>Save</strong>.</p>
+<img alt="NGC IDP Rule Details" src="_images/ngc-idp-rule-details.png" />
+</li>
+<li><p>Once the rule is saved, the org owner must activate the rules to apply the membership roles to Adam and Amy when they sign in.</p>
+<img alt="NGC IDP Active Confirm" src="_images/ngc-idp-active-confirm.png" />
+</li>
+</ol>
+<p>This completes the creation of an NGC IdP membership rule.</p>
+<p>The org owner or user_admin can create multiple rules to support multiple group claim values from the IdP. An example of multiple IdP membership rules created can be seen below.</p>
+<img alt="NGC IDP External Rules" src="_images/ngc-idp-external-rules.png" />
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>The NGC IdP membership rules do not go into effect until they are “activated”. Users’ accounts that were added using the manual method will continue to use NGC role permissions assigned through ‘Users’ invite user membership configurations.</p>
+</div>
+<p>When the <strong>Activate Rules</strong> button is clicked, the org owner or user_admin is prompted to confirm activation of the IdP rules. When the rules are activated, the NGC IDP rule system reviews user memberships previously added to the org using the “user invitation” method. The NGC IdP rule system will check if the user account maps to a new IdP membership rule. If one does, the previous account membership is deleted, and a new user account membership using the same email address and IdP association will be created. The permissions and roles that get assigned to the new account membership are based on the IdP ‘groups’ claim attribute.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Previous user accounts that are determined not to have an associated IdP rule remain as active user accounts under “Users” account memberships. An org owner or user admin can remove these users if the org should only be accessible by members mapped to IdP rules.</p>
+</div>
+</section>
+</section>
+<section id="activating-your-subscription-offer-dependent">
+<span id="activating-subscription"></span><h2><span class="section-number">1.6. </span>Activating Your Subscription (Offer Dependent)<a class="headerlink" href="#activating-your-subscription-offer-dependent" title="Link to this heading">#</a></h2>
+<p>This section describes activating a subscription and linking it to your NGC Account.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>These steps are only required for customers who have been given an activation code as part of the purchase of a GPU or DPU.</p>
+</div>
+<ol class="arabic">
+<li><p>Access the activation page directly via <a class="reference external" href="https://org.ngc.nvidia.com/activate">Activate Subscription</a>.</p></li>
+<li><p>Sign in to NGC with your email address and password if prompted. If you have not created an NGC account, <a class="reference external" href="https://org.ngc.nvidia.com/activate">create one now</a>.</p></li>
+<li><p>On the <strong>Activate Subscription</strong> page, enter your Business Information using your company’s headquarters address and the serial number or activation code described by the specific offer. If entering multiple serial numbers or activation codes, use a comma to separate each.</p></li>
+<li><p>Click <strong>Activate Subscription</strong>.</p>
+<img alt="Activate Subscription" src="_images/activate-subscription.png" />
+</li>
+<li><p>Once the system validates the serial numbers, review the information displayed and click <strong>Request Activation</strong>.</p>
+<img alt="Request Subscription" src="_images/request-subscription.png" />
+</li>
+<li><p>The <strong>Subscriptions</strong> page will display for your organization with the active NVIDIA AI Enterprise subscription.</p></li>
+<li><p>Use the left navigation and click <strong>Enterprise Catalog</strong> to access the NVIDIA AI Enterprise software suite.</p>
+<img alt="Enterprise Catalog Menu" src="_images/enterprise-catalog-menu.png" />
+</li>
+</ol>
+</section>
+<section id="switching-orgs-or-team-after-logging-into-ngc">
+<span id="ngc-org-team-switch"></span><h2><span class="section-number">1.7. </span>Switching Orgs or Team After Logging into NGC<a class="headerlink" href="#switching-orgs-or-team-after-logging-into-ngc" title="Link to this heading">#</a></h2>
+<p>This section describes switching to a different org or team after logging in.</p>
+<p>In the top menu bar, click your user account icon. Then, select your org menu to expand the view to other available orgs. If you manage many orgs, you can use the search field to find the specific org you want to select. Select the desired org by clicking it once.</p>
+<img alt="NGC Switching Organization Team" src="_images/ngc-switching-org-team.png" />
+<p>Depending on the org or team you select, your current page may also refresh.</p>
+</section>
+<section id="ngc-api-keys">
+<span id="id12"></span><h2><span class="section-number">1.8. </span>NGC API Keys<a class="headerlink" href="#ngc-api-keys" title="Link to this heading">#</a></h2>
+<p>NVIDIA NGC API keys are required to authenticate with NGC services using NGC CLI, Docker CLI, or direct API requests.</p>
+<p>NGC provides two types of API keys:</p>
+<p><strong>Personal Keys</strong></p>
+<ul class="simple">
+<li><p>Any NGC org user can generate a personal key.</p></li>
+<li><p>An NGC org user can grant a personal key up to the permissions assigned to them in the NGC org.</p></li>
+<li><p>A personal key is linked to the user’s NGC org lifecycle.</p>
+<ul>
+<li><p>If the user’s permissions change, the available permissions that can be or are assigned to the personal key also change.</p></li>
+<li><p>If the user is removed from the NGC org, the key’s validity is revoked.</p></li>
+</ul>
+</li>
+<li><p>Supports updating permissions, rotation, and deletion (immediate revocation).</p>
+<ul>
+<li><p>Org owners and user_admins can revoke any member’s key on demand.</p></li>
+</ul>
+</li>
+<li><p>Each user can generate up to eight personal keys.</p></li>
+</ul>
+<p>Use personal keys to begin using NGC services within your sandbox. Personal keys are best suited for individuals working on early development and testing code before moving to pre-production and production releases.</p>
+<p>To learn how to authorize the services you have access to in the org and generate a personal key, go to <a class="reference internal" href="#generating-personal-api-key"><span class="std std-ref">Generating a Personal API Key</span></a>.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Use the legacy NGC API Key to authenticate with Base Command Platform, Fleet Command, or other NGC services that don’t support “Personal key” authentication. For cross-org authorization, continue using the legacy NGC API Key. NVIDIA plans to deprecate the legacy NGC API key after 2025. NVIDIA encourages you to use the Personal Key, but if you need to continue using the legacy API key, go to <a class="reference internal" href="#generating-legacy-api-key"><span class="std std-ref">Generating a Legacy NGC API Key</span></a> to find out where to create a new one. Also, your current NGC API key will continue to work.</p>
+</div>
+<p><strong>Service Keys</strong></p>
+<ul class="simple">
+<li><p>The lifecycle of service keys is linked to the NGC org account, not associated with an individual user.</p></li>
+<li><p>Only NGC org owners and user_admins can manage service keys.</p></li>
+<li><p>A service key can be scoped to access only the permissions and services required, or full access to the services enabled in the org.</p></li>
+<li><p>Supports scoped permissions, updating permissions, on-demand revocation, rotation, and deletion.</p></li>
+<li><p>An NGC org can have up to 50 service keys.</p></li>
+</ul>
+<p>Use service keys when you require automated communication between machines and deploying to pre-production and production environments where you do not want to depend on a user’s membership status in the NGC org.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Service keys currently do not support listing artifacts in NGC CLI or Docker CLI. This functionality will be added in the future. In the meantime, use a Personal API key to list artifacts.</p>
+</div>
+<p><strong>Examples using NGC API Keys</strong></p>
+<p>Here are some examples of using NGC API keys to authenticate with NGC CLI and Docker CLI:</p>
+<p><strong>NGC CLI</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ngc<span class="w"> </span>config<span class="w"> </span><span class="nb">set</span>
+</pre></div>
+</div>
+<p>Paste your key value at the API_KEY prompt:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>[Enter API key [****API-Key]. Choices: [&lt;VALID_APIKEY&gt;]
+</pre></div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Always use the latest NGC CLI version to access the newest features, bug fixes, performance improvements, and security updates. Check for the latest versions at <a class="reference external" href="https://org.ngc.nvidia.com/setup/installers/cli">NGC CLI Installers</a> or run <code class="docutils literal notranslate"><span class="pre">ngc</span> <span class="pre">version</span> <span class="pre">list</span></code> to view the latest releases, then upgrade using</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ngc<span class="w"> </span>version<span class="w"> </span>upgrade
+</pre></div>
+</div>
+</div>
+<p><strong>Docker CLI</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>login<span class="w"> </span>nvcr.io<span class="w"> </span>--username<span class="w"> </span><span class="s1">&#39;$oauthtoken&#39;</span>
+</pre></div>
+</div>
+<p>For the username, enter <code class="docutils literal notranslate"><span class="pre">'$oauthtoken'</span></code> exactly as shown. It is a special name that indicates that you will authenticate with an API key. Paste your key value at the Password prompt.</p>
+<section id="supported-ngc-applications-and-api-key-types">
+<span id="ngc-apps-api-keys"></span><h3><span class="section-number">1.8.1. </span>Supported NGC Applications and API Key Types<a class="headerlink" href="#supported-ngc-applications-and-api-key-types" title="Link to this heading">#</a></h3>
+<p>The NVIDIA NGC applications/services that support Personal and Service Keys are listed below:</p>
+<div class="pst-scrollable-table-container"><table class="table-expandable table-compact table" id="table-applications-api-key-types">
+<caption><span class="caption-text">NGC Applications and Services</span><a class="headerlink" href="#table-applications-api-key-types" title="Link to this table">#</a></caption>
+<colgroup>
+<col style="width: 30.0%" />
+<col style="width: 70.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>NGC Application/
+Services</p></th>
+<th class="head"><p>Service Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>NVIDIA NGC Catalog</p></td>
+<td><p>Grants your key permission to
+access or download containers
+and artifacts from the NGC
+Catalog. The permission level
+matches your account’s
+permissions for the catalog.</p></td>
+</tr>
+<tr class="row-odd"><td><p>NVIDIA NGC Private
+Registry</p></td>
+<td><p>The key is authorized to perform
+actions on your organization’s
+private registry service, such
+as pulling, retrieving,
+creating, or deleting containers
+and artifacts. The permission
+level assigned to the key
+matches the permission level of
+your user account. Therefore,
+your user account must have
+permissions for the Private
+Registry.</p></td>
+</tr>
+<tr class="row-even"><td><p>NVIDIA Cloud Functions</p></td>
+<td><p>This authorization allows your
+key to perform actions on your
+organization’s cloud functions
+service. If your organization
+has private functions published
+by NVIDIA, or if your cloud
+functions service enables you to
+create, deploy, and run your own
+functions, your personal key
+will have the same permissions
+as your user account for the
+cloud functions service.
+Therefore, it’s important that
+your user account has the
+necessary permissions for Cloud
+Functions.</p></td>
+</tr>
+<tr class="row-odd"><td><p>NVIDIA Public API
+Endpoints</p></td>
+<td><p>Grants permission for your key
+to access NVIDIA NIM inference
+endpoints listed in the <a class="reference external" href="https://build.nvidia.com/">NVIDIA
+API Catalog</a>.
+Therefore, your user account
+must have Public API Endpoints
+permissions.</p></td>
+</tr>
+<tr class="row-even"><td><p>NVIDIA Secrets Manager</p></td>
+<td><p>Authorizes your key to perform
+actions on the NVIDIA Secrets
+Manager service, which is used
+to store and manage secrets.
+Your key will have the same
+permission level as your user
+account, so your user account
+must possess Secrets Manager
+permissions.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="generating-ngc-api-keys">
+<span id="generating-api-key"></span><h3><span class="section-number">1.8.2. </span>Generating NGC API Keys<a class="headerlink" href="#generating-ngc-api-keys" title="Link to this heading">#</a></h3>
+<p>Generating API keys is essential for authenticating with NGC services using the NGC CLI, Docker CLI, or direct API requests.</p>
+<section id="generating-a-personal-api-key">
+<span id="generating-personal-api-key"></span><h4><span class="section-number">1.8.2.1. </span>Generating a Personal API Key<a class="headerlink" href="#generating-a-personal-api-key" title="Link to this heading">#</a></h4>
+<ol class="arabic">
+<li><p>Sign in to the NGC website.
+From a browser, go to <a class="reference external" href="https://ngc.nvidia.com/signin">https://ngc.nvidia.com/signin</a> and then enter your email and password.</p></li>
+<li><p>Click your user account icon in the top-right corner and select <strong>Setup</strong>.</p>
+<img alt="NGC User Profile Menu Setup" src="_images/ngc-user-profile-menu-setup.png" />
+</li>
+<li><p>Click <strong>Generate API Key</strong> from the available options.</p>
+<img alt="API Key Generate" src="_images/api-key-generate.png" />
+</li>
+<li><p>On the <strong>Setup &gt; API Keys</strong> page, click <strong>+ Generate Personal Key</strong> on the menu or the pane.</p>
+<img alt="API Key Generate Page" src="_images/api-key-generate-page.png" />
+</li>
+<li><p>In the <strong>Generate Personal Key</strong> dialog, fill in the required information for your key.</p>
+<img alt="API Key Generate Personal Key Dialog" src="_images/api-key-generate-personal-key-dialog.png" />
+<ul>
+<li><p><strong>Key Name</strong>: Enter a unique name for your key.</p></li>
+<li><p><strong>Expiration</strong>: Choose the expiration date for the key.</p>
+<img alt="API Key Generate Personal Key Expiration" src="_images/api-key-generate-personal-key-expiration.png" />
+</li>
+<li><p><strong>Services Included</strong>: Choose from the available services the key is permitted to access. Refer to <a class="reference internal" href="#assigning-services-to-personal-api-key"><span class="std std-ref">Assigning Services to Your Personal API Key</span></a> to learn more about each service and when to assign service access to your Personal Key.</p></li>
+</ul>
+</li>
+<li><p>Click <strong>Generate Personal Key</strong> when finished.</p></li>
+<li><p>Your API key appears in the following dialog.</p>
+<p>NGC does not save your key, so store it securely. You can copy your API Key to the clipboard by selecting <strong>Copy Personal Key</strong> or using the copy icon to the right of the API key.</p>
+<img alt="API Key Generate Personal Key Confirm" src="_images/api-key-generate-personal-key-confirm.png" />
+<p>You can generate up to eight personal keys and manage them from the <strong>Setup &gt; Personal Keys</strong> dashboard. To activate or deactivate a key, click the <strong>Active</strong> toggle. The <strong>Actions</strong> (ellipsis) menu allows you to rotate or delete a personal key.</p>
+<img alt="API Key Generate Personal Key Dashboard" src="_images/api-key-generate-personal-key-dashboard.png" />
+</li>
+</ol>
+<section id="assigning-services-to-your-personal-api-key">
+<span id="assigning-services-to-personal-api-key"></span><h5><span class="section-number">1.8.2.1.1. </span>Assigning Services to Your Personal API Key<a class="headerlink" href="#assigning-services-to-your-personal-api-key" title="Link to this heading">#</a></h5>
+<p>The services you can assign to a personal API key depend on two factors:</p>
+<ul class="simple">
+<li><p>The services enabled for the NGC org where you generate the API key.</p></li>
+<li><p>The service roles assigned to you by your NGC org owner or administrator.</p></li>
+</ul>
+<p>For example, consider an NGC org with the following services enabled:</p>
+<img alt="NGC Organization Subscriptions" src="_images/ngc-org-subscriptions.png" />
+<p>An NGC user account might have the following access roles assigned:</p>
+<img alt="NGC User Account Example" src="_images/ngc-user-account-example.png" />
+<p>In this scenario, the NGC org has enabled NVIDIA Microservices, Private Registry, NVIDIA AI Enterprise, and Cloud Functions (NVCF). The user account has been granted access roles for all these services. Therefore, a personal API key can be generated with permissions to access one or all of them.</p>
+<img alt="NGC Generate Personal Key Dialog" src="_images/ngc-generate-personal-key-dialog.png" />
+<p>If a service is unavailable for assignment to the API key, it indicates that the org owner or administrator has not granted the user the necessary role for that service.</p>
+<p>For details about each service listed above and its function, see the table <a class="reference internal" href="#ngc-apps-api-keys"><span class="std std-ref">Supported NGC Applications and API Key Types</span></a>.</p>
+</section>
+<section id="generating-a-legacy-ngc-api-key">
+<span id="generating-legacy-api-key"></span><h5><span class="section-number">1.8.2.1.2. </span>Generating a Legacy NGC API Key<a class="headerlink" href="#generating-a-legacy-ngc-api-key" title="Link to this heading">#</a></h5>
+<p>To generate a legacy API key, go to <strong>Setup &gt; API Keys</strong> and click <strong>+ Generate Legacy Key</strong> in the Legacy Keys drop-down.</p>
+<img alt="API Key Legacy Key" src="_images/api-key-legacy-key.png" />
+<p>In the <strong>Generate Legacy Key</strong> dialog, click on <strong>+ Generate Legacy Key</strong>.</p>
+<img alt="API Key Generate Legacy Key" src="_images/api-key-generate-legacy-key.png" />
+</section>
+</section>
+<section id="generating-a-service-api-key">
+<span id="generating-service-api-key"></span><h4><span class="section-number">1.8.2.2. </span>Generating a Service API Key<a class="headerlink" href="#generating-a-service-api-key" title="Link to this heading">#</a></h4>
+<ol class="arabic">
+<li><p>Sign in to the NGC website.
+From a browser, go to <a class="reference external" href="https://ngc.nvidia.com/signin">https://ngc.nvidia.com/signin</a> and then enter your email and password.</p></li>
+<li><p>Select <strong>Organization</strong> from the user account menu on the upper right.</p>
+<img alt="NGC Catalog User Account Menu Organization" src="_images/ngc-catalog-user-account-menu-org.png" />
+</li>
+<li><p>Select <strong>Service Keys</strong> on the organization dashboard.</p>
+<img alt="NGC Organization Dashboard Service Keys" src="_images/ngc-org-dashboard-service-keys.png" />
+</li>
+<li><p>On the <strong>Organization &gt; Service Keys</strong> page, click <strong>+ Create Service Key</strong> to create a key.</p>
+<img alt="API Key Create Service Key Page" src="_images/api-key-create-service-key-page.png" />
+</li>
+<li><p>In the <strong>Create Service Key</strong> dialog, you can select one or more services to authorize for the service API key, and configure scoped permissions that apply to either all entities or a specific subset accessible through those services.
+Begin by entering the required configuration details.</p>
+<img alt="API Key Create Service Key Form" src="_images/api-key-create-service-key-form.png" />
+<ol class="arabic">
+<li><p><strong>Service</strong>: Select a service. Service keys currently support a range of services, including NVIDIA Cloud Functions, NIM API endpoints, NGC Catalog, and Private Registry.</p>
+<img alt="API Key Create Service Key Service" src="_images/api-key-create-service-key-service.png" />
+</li>
+<li><p><strong>Scope</strong>: Specifies the exact permissions or actions the key can perform for a selected NGC service. Examples for Private Registry and NGC Catalog include “Get Container”, “Get Container list”, “Get Artifact”, and “Get Artifact list”.
+Other services list the scopes (actions) that can be assigned to the key.</p>
+<img alt="API Key Create Service Key Scope" src="_images/api-key-create-service-key-scope.png" />
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Select only the permissions you need (least privilege). Refer to <a class="reference internal" href="#least-privilege-service-key-recipes"><span class="std std-ref">Least-Privilege Service Key Recipes</span></a> for more information.</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>When generating a key for Private Registry or NGC Catalog services and granting access to containers, assign the scopes <strong>Get Container</strong> and <strong>Get Container list</strong> to your service key. For other artifact types, assign <strong>Get Artifact</strong> and <strong>Get Artifact list</strong>. These are the minimum scopes required to discover artifacts that need to be managed. Refer to the <a class="reference external" href="https://docs.nvidia.com/ngc/gpu-cloud/ngc-catalog-user-guide/index.html">NGC Catalog User Guide</a> and <a class="reference external" href="https://docs.nvidia.com/ngc/gpu-cloud/ngc-private-registry-user-guide/index.html">Private Registry User Guide</a> for more information.</p>
+</div>
+</li>
+<li><p><strong>Entity Type</strong>: An <em>entity</em> is a resource that can be managed with the appropriate permissions and access controls. In Private Registry, an entity can be a container or a collection of containers that, depending on the permitted scopes, can be downloaded, updated, or deleted. In NVIDIA Cloud Functions, an entity is an “inference function” that can be listed, invoked, or deleted based on the scopes assigned to the service key.</p>
+<img alt="API Key Create Service Key Entity Type" src="_images/api-key-create-service-key-entity-type.png" />
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Choose the smallest unit that matches your use case. Refer to <a class="reference internal" href="#least-privilege-service-key-recipes"><span class="std std-ref">Least-Privilege Service Key Recipes</span></a> for more information.</p>
+</div>
+</li>
+<li><p><strong>Entity Value</strong>: Specifies whether the key has access to all entities in the NGC org and teams, or only to a single entity or a defined list of entities within the org.</p>
+<img alt="API Key Create Service Key Entity Value" src="_images/api-key-create-service-key-entity-value.png" />
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>If a service key requires access to all organization-level and NGC team-level entity types, define two entity values for the key.</p>
+<img alt="NGC Catalog Containers Entity Types" src="_images/api-key-create-service-key-entity-types.png" />
+<p>The example above shows the <strong>Entity Value</strong> configuration required for the service key to access all entities at the organizational level and across all NGC teams.</p>
+</div>
+</li>
+</ol>
+</li>
+<li><p>Click <strong>Next Step</strong> to review your key configuration.</p>
+<img alt="API Key Create Service Key Form Next Step" src="_images/api-key-create-service-key-form-next-step.png" />
+</li>
+<li><p>Once you have verified the configuration, click <strong>Confirm</strong> to generate your service key. Your service key appears in the next dialog.</p>
+<img alt="API Key Create Service Key Confirm" src="_images/api-key-create-service-key-confirm.png" />
+</li>
+<li><p>NGC does not save your key, so store it securely. You can copy your API Key to the clipboard by clicking the copy icon to the right of the API key or the <strong>Copy Service Key</strong> button.</p>
+<img alt="API Key Create Service Key Copy Key" src="_images/api-key-create-service-key-copy-key.png" />
+<p>Make sure to copy the key value before leaving this page. Once you navigate away, the key value cannot be retrieved, and replacing it will require generating a new key.</p>
+</li>
+</ol>
+<section id="managing-service-api-keys">
+<h5><span class="section-number">1.8.2.2.1. </span>Managing Service API Keys<a class="headerlink" href="#managing-service-api-keys" title="Link to this heading">#</a></h5>
+<p>NGC supports multiple Service API keys, which are managed from the <strong>Organization &gt; Service Keys</strong> dashboard.</p>
+<p>To activate or deactivate a key, click the <strong>Active</strong> toggle. The <strong>Actions</strong> (ellipsis) menu allows you to rotate or delete a service key.</p>
+<img alt="API Key Create Service Key Dashboard" src="_images/api-key-create-service-key-dashboard.png" />
+</section>
+<section id="least-privilege-service-key-recipes">
+<span id="id13"></span><h5><span class="section-number">1.8.2.2.2. </span>Least-Privilege Service Key Recipes<a class="headerlink" href="#least-privilege-service-key-recipes" title="Link to this heading">#</a></h5>
+<p>Here are some examples of least-privilege service key recipes:</p>
+<ul class="simple">
+<li><p>Private Registry: List, push and pull only containers</p>
+<ul>
+<li><p><strong>Service</strong>: Private Registry</p></li>
+<li><p><strong>Entity Type</strong>: All Containers</p></li>
+<li><p><strong>Entity Value</strong>: &lt;org name&gt;/* and &lt;org name&gt;/*/*</p></li>
+<li><p><strong>Scope</strong>: List Container, Upload Container, Download Container</p></li>
+</ul>
+</li>
+<li><p>NGC Catalog: Read-only pull for a single model</p>
+<ul>
+<li><p><strong>Service</strong>: Catalog</p></li>
+<li><p><strong>Entity Type</strong>: Specific Model</p></li>
+<li><p><strong>Entity Value</strong>: nvidia/ace/nemovision-4b-v2-instruct</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+</section>
+</section>
+<section id="secure-sharing-service">
+<span id="id14"></span><h2><span class="section-number">1.9. </span>Secure Sharing Service<a class="headerlink" href="#secure-sharing-service" title="Link to this heading">#</a></h2>
+<p>NGC Secure Share is a security-focused service designed to help NGC users share sensitive credentials and secrets with each other. This service eliminates risky credential-sharing practices such as sending passwords or API keys through email, chat, or public forums.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Exchanging credentials in clear text or through unprotected channels can result in the compromise of both user artifacts and the hosted services in NGC. Always utilize Secure Share to distribute sensitive information.</p>
+</div>
+<p>Secure Share enables secure, auditable, and ephemeral sharing of secrets—including API keys, usernames/passwords, and tokens—between NGC users and collaborators. Instead of transmitting credentials in an unsafe medium, users generate a secure, time-limited “Secure Share link” that is strictly controlled by access policies.</p>
+<p><strong>Key Features</strong></p>
+<ul class="simple">
+<li><p>End-to-end encryption for all shared secrets</p></li>
+<li><p>Recipient restriction: limit access to specified organization</p></li>
+<li><p>Burn-after-read: each link will expire after a single access</p></li>
+<li><p>Short link lifespan: customizable expiration (5 min to 24 hours)</p></li>
+<li><p>No secrets stored after access: secrets are unrecoverable after viewing or expiration</p></li>
+</ul>
+<p><strong>Common Use Cases</strong></p>
+<ul class="simple">
+<li><p>Safely hand off API keys between team members</p></li>
+<li><p>Securely provide one-time passwords or recovery codes to partners or support</p></li>
+<li><p>Distribute model secrets or other credentials during project onboarding</p></li>
+</ul>
+<section id="securely-sharing-secrets">
+<span id="id15"></span><h3><span class="section-number">1.9.1. </span>Securely Sharing Secrets<a class="headerlink" href="#securely-sharing-secrets" title="Link to this heading">#</a></h3>
+<p>Follow these steps to securely share credentials using NGC Secure Share:</p>
+<ol class="arabic">
+<li><p>Log in and access Secure Share Service.</p>
+<ul class="simple">
+<li><p>If not already signed in, log in to the NGC web portal using your NVIDIA credentials.</p></li>
+<li><p>In the top right corner, click your profile and go to Setup, then click Secure Share.</p></li>
+<li><p>Alternatively, you can navigate directly to <a class="reference external" href="https://org.ngc.nvidia.com/setup/secure-share">https://org.ngc.nvidia.com/setup/secure-share</a>.</p></li>
+</ul>
+</li>
+<li><p>Start a new share.</p>
+<ul class="simple">
+<li><p>Click on <strong>Share Secure Link</strong>.</p></li>
+</ul>
+</li>
+<li><p>Enter secret details.</p>
+<ul class="simple">
+<li><p>Give the share a name.</p></li>
+<li><p>Provide a description of what is being shared.</p></li>
+<li><p>Set the recipient organization.</p>
+<ul>
+<li><p>For sharing with an organization you are a member of, pick from the list.</p></li>
+<li><p>For sharing with an external organization, you must know the exact NGC organization name for external recipients. This is needed to ensure proper access controls. Please obtain this information from your recipient before sharing. Refer to <a class="reference internal" href="#finding-your-organization-name"><span class="std std-ref">Finding your Organization Name</span></a> for more information.</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>Paste or type the credential or secret (for example, API key, username/password) you want to share.</p></li>
+<li><p>Set the expiration time for the link: from 5 minutes to 24 hours.</p></li>
+</ul>
+</li>
+<li><p>Click <strong>Create Link &amp; Copy to Clipboard</strong>.</p></li>
+<li><p>Provide the link to the recipient.</p>
+<p>Send the link directly to the intended recipient (for example, email or direct chat).</p>
+<img alt="NGC Secure Share Dialog" src="_images/ngc-secure-share-dialog.png" />
+</li>
+</ol>
+</section>
+<section id="receiving-a-secure-share-link">
+<span id="receiving-secure-share-link"></span><h3><span class="section-number">1.9.2. </span>Receiving a Secure Share Link<a class="headerlink" href="#receiving-a-secure-share-link" title="Link to this heading">#</a></h3>
+<p>When someone invites you to access a shared secret:</p>
+<ol class="arabic">
+<li><p>Receive Secure Share link.</p>
+<ul class="simple">
+<li><p>Watch for a direct message (for example, email or chat) with a secure share link.</p></li>
+</ul>
+</li>
+<li><p>Open the link and authenticate.</p>
+<ul class="simple">
+<li><p>Click the link. If prompted, sign in with your NGC credentials.</p></li>
+<li><p>You’ll be redirected to the Secure Share access interface.</p></li>
+</ul>
+</li>
+<li><p>Decide to view now or wait until later.</p>
+<ul class="simple">
+<li><p>You have only one opportunity to view and copy the secret.</p></li>
+<li><p>You will be given the option to choose <strong>Reveal Later</strong> or <strong>Reveal Now</strong>.</p></li>
+</ul>
+<img alt="NGC Secure Links" src="_images/ngc-secure-links.png" />
+</li>
+<li><p>If you choose to access the secret now:</p>
+<ul class="simple">
+<li><p>Click <strong>Reveal Now</strong>.</p></li>
+<li><p>You will be given the option to copy the secret to your clipboard or discard it.</p></li>
+<li><p>After choosing either option, the secret is no longer accessible.</p></li>
+</ul>
+<img alt="NGC Secure Link Contents" src="_images/ngc-secure-link-contents.png" />
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If access is denied (wrong org, expired, or already viewed), contact the sender for a new link.</p>
+</div>
+</li>
+</ol>
+</section>
+<section id="finding-your-organization-name">
+<span id="id16"></span><h3><span class="section-number">1.9.3. </span>Finding your Organization Name<a class="headerlink" href="#finding-your-organization-name" title="Link to this heading">#</a></h3>
+<p>To accept a Secure Share link sent to your NGC organization, you may need to confirm or provide your organization name. This can be done within the Secure Share service UI.</p>
+<p>How to get your NGC organization name:</p>
+<ol class="arabic">
+<li><p>Navigate to <a class="reference external" href="https://org.ngc.nvidia.com/setup/secure-share">https://org.ngc.nvidia.com/setup/secure-share</a>.</p></li>
+<li><p>Click <strong>Lookup Org Names</strong>.</p></li>
+<li><p>If you belong to multiple orgs, find the relevant one from the list and click the copy button.</p>
+<img alt="NGC Secure Copy Organization Name" src="_images/ngc-secure-copy-org-name.png" />
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>For security, always verify you are entering or selecting the correct organization to avoid access issues or failed link attempts. If you are unsure or you cannot find your organization name, contact your NGC administrator.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You cannot receive shares to organizations in which you are an external user.</p>
+</div>
+</li>
+</ol>
+</section>
+</section>
+<section id="notification-services">
+<h2><span class="section-number">1.10. </span>Notification Services<a class="headerlink" href="#notification-services" title="Link to this heading">#</a></h2>
+<p>The NGC Notification Services feature enables NGC users to subscribe to email notifications to receive service change events. By subscribing to notifications, users can stay updated with the latest changes and developments in the NGC cloud platform and its services.</p>
+<p>NGC customers can be informed of the following types of changes:</p>
+<ul class="simple">
+<li><p>Customer-impacting service enhancements (release notes)</p></li>
+<li><p>Security vulnerabilities (CVEs) and scanning reports</p></li>
+<li><p>Software end-of-life announcements</p></li>
+<li><p>Scheduled web portal maintenance to an NGC property</p></li>
+</ul>
+<p>NGC customers can subscribe to notifications in the following ways:</p>
+<ul>
+<li><p>During their first sign-in, the NGC portal will pop up a modal allowing users to set their notifications preferences.</p>
+<img alt="Notification Email Preferences" src="_images/notif-email-preferences.png" />
+<p>The following sample toast notification confirms the user’s email preference settings:</p>
+<img alt="Notification Email Preferences Confirm" src="_images/notif-email-preferences-confirm.png" />
+</li>
+<li><p>After their initial sign-in, users can edit their notification preferences under their NGC user account settings page.</p>
+<img alt="Notification Email Preferences Account" src="_images/notif-email-preferences-account.png" />
+</li>
+</ul>
+<p>Notification preferences are organized based on the subscriptions enabled within the organization. Access to these preferences will be gated by the service roles assigned to each user.</p>
+</section>
+<section id="appendix">
+<h2><span class="section-number">1.11. </span>Appendix<a class="headerlink" href="#appendix" title="Link to this heading">#</a></h2>
+<section id="nvidia-ngc-network-protocols">
+<h3><span class="section-number">1.11.1. </span>NVIDIA NGC Network Protocols<a class="headerlink" href="#nvidia-ngc-network-protocols" title="Link to this heading">#</a></h3>
+<p>The table below lists the required network protocols and port configurations for communication with NVIDIA NGC services.</p>
+<p>To enable access, ensure that these ports are open in your web proxy, which connects your network to external services.</p>
+<div class="pst-scrollable-table-container"><table class="table-expandable table-compact table" id="table-required-network-protocols">
+<caption><span class="caption-text">Required Network Protocols</span><a class="headerlink" href="#table-required-network-protocols" title="Link to this table">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Location</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>URL</p></th>
+<th class="head"><p>Port</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>NGC</p></td>
+<td><p>Authentication URL</p></td>
+<td><p><a class="reference external" href="https://authn.nvidia.com">https://authn.nvidia.com</a></p></td>
+<td><p>443</p></td>
+</tr>
+<tr class="row-odd"><td><p>NGC</p></td>
+<td><p>Container Registry URL</p></td>
+<td><p><a class="reference external" href="https://nvcr.io">https://nvcr.io</a></p></td>
+<td><p>443</p></td>
+</tr>
+<tr class="row-even"><td><p>NGC</p></td>
+<td><p>Container Registry URL</p></td>
+<td><p><a class="reference external" href="https://layers.nvcr.io">https://layers.nvcr.io</a></p></td>
+<td><p>443</p></td>
+</tr>
+<tr class="row-odd"><td><p>NGC</p></td>
+<td><p>Helm Chart Registry
+URL</p></td>
+<td><p><a class="reference external" href="https://helm.ngc.nvidia.com">https://helm.ngc.nvidia.com</a></p></td>
+<td><p>443</p></td>
+</tr>
+<tr class="row-even"><td><p>NGC</p></td>
+<td><p>API URL</p></td>
+<td><p><a class="reference external" href="https://api.ngc.nvidia.com">https://api.ngc.nvidia.com</a></p></td>
+<td><p>443</p></td>
+</tr>
+<tr class="row-odd"><td><p>NGC</p></td>
+<td><p>Telemetry URL</p></td>
+<td><p><a class="reference external" href="https://prod.otel.kaizen">https://prod.otel.kaizen</a>.
+nvidia.com</p></td>
+<td><p>8282</p></td>
+</tr>
+<tr class="row-even"><td><p>NGC</p></td>
+<td><p>Catalog</p></td>
+<td><p><a class="reference external" href="https://files.ngc.nvidia.com">https://files.ngc.nvidia.com</a></p></td>
+<td><p>443</p></td>
+</tr>
+<tr class="row-odd"><td><p>NGC</p></td>
+<td><p>Catalog</p></td>
+<td><p><a class="reference external" href="https://xfiles.ngc.nvidia.com">https://xfiles.ngc.nvidia.com</a></p></td>
+<td><p>443</p></td>
+</tr>
+<tr class="row-even"><td><p>NGC</p></td>
+<td><p>Catalog</p></td>
+<td><p><a class="reference external" href="https://xlfiles.ngc.nvidia.com">https://xlfiles.ngc.nvidia.com</a></p></td>
+<td><p>443</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">NVIDIA GPU Cloud Documentation</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="ngc-catalog-user-guide.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>NGC Catalog User Guide</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+
+
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-nvidia-ngc">1.1. What is NVIDIA NGC?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-ngc-software">1.2. Why NGC Software</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ngc-organizations-and-teams">1.3. NGC Organizations and Teams</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nvidia-cloud-accounts-and-ngc">1.3.1. NVIDIA Cloud Accounts and NGC</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ngc-teams">1.3.2. NGC Teams</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ngc-org-owner-and-other-org-users">1.3.3. NGC Org Owner and Other Org Users</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-ngc-users-to-an-org">1.3.3.1. Adding NGC Users to an Org</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-user-roles">1.3.3.2. Updating User Roles</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#removing-a-user-from-an-ngc-org">1.3.3.3. Removing a User from an NGC Org</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#securing-the-owner-account-with-multi-factor-authentication">1.3.3.4. Securing the Owner Account with Multi-Factor Authentication</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#contacting-your-org-owner">1.3.3.5. Contacting your Org Owner</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#external-user-groups">1.3.3.6. External User Groups</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#external-user-groups-quick-reference">1.3.3.6.1. External User Groups: Quick Reference</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-an-external-user-group">1.3.3.6.2. Creating an External User Group</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#managing-external-users-personal-api-keys">1.3.3.6.3. Managing External Users’ Personal API Keys</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#guide-for-external-users-accepting-invitations">1.3.3.6.4. Guide for External Users: Accepting Invitations</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-api-access">1.3.3.6.5. Setting Up API Access</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transferring-your-product-activation-invitation">1.3.4. Transferring Your Product Activation Invitation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-ngc-org">1.4. Accessing NGC Org</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#activating-your-ngc-product-from-an-ngc-email-invitation">1.4.1. Activating Your NGC Product from an NGC Email Invitation</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ngc-product-activation-by-invitation-new-user">1.4.1.1. NGC Product Activation by Invitation - New User</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ngc-product-activation-by-invitation-existing-user">1.4.1.2. NGC Product Activation by Invitation - Existing User</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#activating-ngc-product-from-an-nvidia-commercial-entitlement-certificate">1.4.2. Activating NGC Product from an NVIDIA Commercial Entitlement Certificate</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#signing-up-for-a-free-individual-ngc-org">1.4.3. Signing Up for a Free Individual NGC Org</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-your-nca-account">1.4.4. Setting up your NCA Account</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-nca-recovery-email">1.4.4.1. Setting Up NCA Recovery Email</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accepting-an-nca-invitation-to-access-ngc">1.4.5. Accepting an NCA Invitation to Access NGC</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-an-external-sso-for-ngc-org-authentication">1.5. Using an External SSO for NGC Org Authentication</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#federating-idp-with-nvidia-cloud-services">1.5.1. Federating IdP with NVIDIA Cloud Services</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#authenticating-and-managing-user-access">1.5.2. Authenticating and Managing User Access</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ngc-idp-membership-rules">1.5.3. NGC IdP Membership Rules</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#activating-your-subscription-offer-dependent">1.6. Activating Your Subscription (Offer Dependent)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#switching-orgs-or-team-after-logging-into-ngc">1.7. Switching Orgs or Team After Logging into NGC</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ngc-api-keys">1.8. NGC API Keys</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#supported-ngc-applications-and-api-key-types">1.8.1. Supported NGC Applications and API Key Types</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-ngc-api-keys">1.8.2. Generating NGC API Keys</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-a-personal-api-key">1.8.2.1. Generating a Personal API Key</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#assigning-services-to-your-personal-api-key">1.8.2.1.1. Assigning Services to Your Personal API Key</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-a-legacy-ngc-api-key">1.8.2.1.2. Generating a Legacy NGC API Key</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#generating-a-service-api-key">1.8.2.2. Generating a Service API Key</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#managing-service-api-keys">1.8.2.2.1. Managing Service API Keys</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#least-privilege-service-key-recipes">1.8.2.2.2. Least-Privilege Service Key Recipes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#secure-sharing-service">1.9. Secure Sharing Service</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#securely-sharing-secrets">1.9.1. Securely Sharing Secrets</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#receiving-a-secure-share-link">1.9.2. Receiving a Secure Share Link</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-your-organization-name">1.9.3. Finding your Organization Name</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notification-services">1.10. Notification Services</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#appendix">1.11. Appendix</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nvidia-ngc-network-protocols">1.11.1. NVIDIA NGC Network Protocols</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+<a class="footer-brand logo" href="https://www.nvidia.com">
+  <img src="_static/nvidia-logo-horiz-rgb-1c-blk-for-screen.svg" class="logo__image only-light" alt="NVIDIA"/>
+  <img src="_static/nvidia-logo-horiz-rgb-1c-wht-for-screen.svg" class="logo__image only-dark" alt="NVIDIA"/>
+</a></div>
+      
+        <div class="footer-item">
+
+<div class="footer-links">
+  
+  
+  <a class="external" href="https://www.nvidia.com/en-us/about-nvidia/privacy-policy/">Privacy Policy</a>
+   | 
+  
+  
+  
+  <a class="external" href="https://www.nvidia.com/en-us/about-nvidia/privacy-center/">Manage My Privacy</a>
+   | 
+  
+  
+  
+  <a class="external" href="https://www.nvidia.com/en-us/preferences/start/">Do Not Sell or Share My Data</a>
+   | 
+  
+  
+  
+  <a class="external" href="https://www.nvidia.com/en-us/about-nvidia/terms-of-service/">Terms of Service</a>
+   | 
+  
+  
+  
+  <a class="external" href="https://www.nvidia.com/en-us/about-nvidia/accessibility/">Accessibility</a>
+   | 
+  
+  
+  
+  <a class="external" href="https://www.nvidia.com/en-us/about-nvidia/company-policies/">Corporate Policies</a>
+   | 
+  
+  
+  
+  <a class="external" href="https://www.nvidia.com/en-us/product-security/">Product Security</a>
+   | 
+  
+  
+  
+  <a class="external" href="https://www.nvidia.com/en-us/contact/">Contact</a>
+  
+  
+  
+</div>
+</div>
+      
+        <div class="footer-item">
+
+
+
+
+  <p class="copyright">
+    
+      Copyright © 2024-2025, NVIDIA Corporation.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item"><p class="last-updated">
+  Last updated on Dec 19, 2025.
+  <br/>
+</p></div>
+      
+        <div class="footer-item">
+<div class="extra_footer">
+  
+      <script type="text/javascript">if (typeof _satellite !== "undefined") {_satellite.pageBottom();}</script>
+    
+  
+</div></div>
+      
+    </div>
+  
+  
+  
+</div>
+
+  </footer>
+  </body>
+</html>
