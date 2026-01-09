@@ -72,16 +72,20 @@ if [[ -z "$IMAGE" || "$IMAGE" == *":latest" ]]; then
 fi
 
 if [[ "$PULL_IMAGE" -eq 1 ]]; then
-  echo "Stage 2/3: Pulling image $IMAGE (this can take a while) ..."
-  if docker pull --progress=plain "$IMAGE"; then
-    echo "Pull complete."
+  if docker image inspect "$IMAGE" >/dev/null 2>&1; then
+    echo "Stage 2/3: Image already present, skipping pull."
   else
-    echo "docker pull --progress not supported, retrying without progress flag..." >&2
-    if docker pull "$IMAGE"; then
+    echo "Stage 2/3: Pulling image $IMAGE (this can take a while) ..."
+    if docker pull --progress=plain "$IMAGE"; then
       echo "Pull complete."
     else
-      echo "Image pull failed. Check credentials (docker login nvcr.io) and tag." >&2
-      exit 1
+      echo "docker pull --progress not supported, retrying without progress flag..." >&2
+      if docker pull "$IMAGE"; then
+        echo "Pull complete."
+      else
+        echo "Image pull failed. Check credentials (docker login nvcr.io) and tag." >&2
+        exit 1
+      fi
     fi
   fi
 fi
