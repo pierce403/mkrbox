@@ -19,6 +19,17 @@ It is aligned with NVIDIA's Embedded Web Viewer + Kit/Isaac streaming approach.
 
 ### If you run the sim in Docker
 - Install Docker + NVIDIA Container Toolkit (needed for GPU-accelerated containers).
+- Create an NVIDIA NGC account (required to pull Isaac Sim containers).
+
+NGC login steps (one-time):
+1. Create an NVIDIA account and sign in to NGC.
+2. Generate an NGC API key.
+3. Login to the container registry:
+   ```bash
+   docker login nvcr.io
+   # username: $oauthtoken
+   # password: <your NGC API key>
+   ```
 
 If you're new to Omniverse/Kit, use **container mode** first. It keeps the setup to Docker + NVIDIA drivers.
 
