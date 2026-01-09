@@ -228,8 +228,89 @@ h2 {
   font-weight: 600;
 }
 
+.connect-panel button.secondary {
+  background: rgba(15, 18, 24, 0.08);
+  color: #0f1218;
+}
+
 .muted {
   color: #5f6b7a;
+}
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 18, 24, 0.55);
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+  z-index: 20;
+}
+
+.modal {
+  width: min(900px, 100%);
+  background: #fff;
+  border-radius: 20px;
+  padding: 1.5rem;
+  display: grid;
+  gap: 1rem;
+  box-shadow: 0 24px 80px rgba(15, 18, 24, 0.25);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.modal-header button {
+  border: none;
+  background: rgba(15, 18, 24, 0.08);
+  padding: 0.5rem 0.9rem;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+.modal-body {
+  display: grid;
+  gap: 1rem;
+}
+
+.step-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.step-card {
+  background: rgba(15, 18, 24, 0.04);
+  padding: 1rem;
+  border-radius: 16px;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.step-card h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.step-card code {
+  background: rgba(255, 255, 255, 0.85);
+  padding: 0.35rem 0.5rem;
+  border-radius: 10px;
+  display: inline-block;
+  font-size: 0.85rem;
+}
+
+.shot {
+  border-radius: 12px;
+  padding: 0.8rem;
+  border: 1px dashed rgba(15, 18, 24, 0.2);
+  color: #5f6b7a;
+  font-size: 0.8rem;
+  background: rgba(255, 255, 255, 0.7);
 }
 
 .control-row {

@@ -46,6 +46,7 @@ Ship a playable "vibe craft" experience:
 - [x] “Connect to sim” settings (localhost by default)
 - [x] WebRTC stream embed (or stub container while sim not ready)
 - [x] AppStreamer client wiring (placeholder bundle)
+- [x] Remote simulator help modal in app
 - [ ] Message send/receive hooks with reconnection + error UI
 
 ---

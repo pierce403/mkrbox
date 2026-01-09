@@ -33,6 +33,7 @@ function App() {
   const [streamStatus, setStreamStatus] = useState('idle')
   const streamRef = useRef(null)
   const streamHandleRef = useRef(null)
+  const [showHelp, setShowHelp] = useState(false)
 
   const sim = useMemo(() => {
     return createMockSim((event) => {
@@ -218,6 +219,13 @@ function App() {
             <button type="button" onClick={handleConnectStream}>
               Connect stream
             </button>
+            <button
+              type="button"
+              className="secondary"
+              onClick={() => setShowHelp(true)}
+            >
+              Remote setup help
+            </button>
             <p className="muted">
               When streaming is enabled, the client will connect to {simHost}:{simPort}.
             </p>
@@ -290,6 +298,67 @@ function App() {
           )}
         </section>
       </div>
+      {showHelp && (
+        <div className="modal-backdrop" onClick={() => setShowHelp(false)}>
+          <div className="modal" onClick={(event) => event.stopPropagation()}>
+            <div className="modal-header">
+              <h2>Remote simulator setup</h2>
+              <button type="button" onClick={() => setShowHelp(false)}>
+                Close
+              </button>
+            </div>
+            <div className="modal-body">
+              <p>
+                Use this when your simulator runs on another machine (like a DGX) and the
+                laptop runs the web app.
+              </p>
+              <div className="step-grid">
+                <div className="step-card">
+                  <h3>Step 1 — Start the sim on the DGX</h3>
+                  <p>Run the simulator on the remote GPU machine.</p>
+                  <code>./run-sim.sh --container --image nvcr.io/nvidia/isaac-sim:&lt;version&gt;</code>
+                  <div className="shot">Screenshot: terminal showing sim boot</div>
+                </div>
+                <div className="step-card">
+                  <h3>Step 2 — Find the sim machine IP</h3>
+                  <p>Run the command that matches your OS.</p>
+                  <div className="command-grid">
+                    <div>
+                      <span>Linux</span>
+                      <code>hostname -I | awk '{print $1}'</code>
+                    </div>
+                    <div>
+                      <span>macOS</span>
+                      <code>ipconfig getifaddr en0</code>
+                    </div>
+                    <div>
+                      <span>Windows</span>
+                      <code>ipconfig</code>
+                    </div>
+                  </div>
+                  <div className="shot">Screenshot: IP highlighted in terminal</div>
+                </div>
+                <div className="step-card">
+                  <h3>Step 3 — Enter host + port</h3>
+                  <p>
+                    Put the IP into the “Sim host” field. Default streaming port is 49100.
+                  </p>
+                  <div className="shot">Screenshot: host + port fields filled</div>
+                </div>
+                <div className="step-card">
+                  <h3>Step 4 — Connect from the app</h3>
+                  <p>Click “Connect stream” and watch the viewport come alive.</p>
+                  <div className="shot">Screenshot: stream connected badge</div>
+                </div>
+              </div>
+              <p className="muted">
+                If the stream doesn’t connect, check firewall rules and confirm the sim
+                machine is reachable on your LAN.
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
