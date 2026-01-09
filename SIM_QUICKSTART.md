@@ -21,9 +21,14 @@ It is aligned with NVIDIA's Embedded Web Viewer + Kit/Isaac streaming approach.
 - Install Docker + NVIDIA Container Toolkit (needed for GPU-accelerated containers).
 - Create an NVIDIA NGC account (required to pull Isaac Sim containers).
 
+What is NGC?
+- NVIDIA NGC (NVIDIA GPU Cloud) is NVIDIA’s container registry and catalog.
+- Sign in: https://ngc.nvidia.com/signin
+- NGC overview: https://docs.nvidia.com/ngc/ngc-overview/index.html
+
 NGC login steps (one-time):
 1. Create an NVIDIA account and sign in to NGC.
-2. Generate an NGC API key.
+2. Generate an NGC API key: https://org.ngc.nvidia.com/setup/api-key
 3. Login to the container registry:
    ```bash
    docker login nvcr.io
