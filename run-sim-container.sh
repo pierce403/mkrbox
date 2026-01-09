@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-IMAGE="${ISAAC_SIM_IMAGE:-}"
+IMAGE=""
 PULL_IMAGE=0
+EXTRA_ARGS=()
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 LOG_DIR="$ROOT_DIR/logs"
 mkdir -p "$LOG_DIR"
@@ -11,13 +12,30 @@ exec > >(tee -a "$LOG_FILE") 2>&1
 
 echo "MKRBOX sim container log: $LOG_FILE"
 
-if [[ "${1:-}" == "--image" && -n "${2:-}" ]]; then
-  IMAGE="$2"
-  shift 2
-fi
-if [[ "${1:-}" == "--pull" ]]; then
-  PULL_IMAGE=1
-  shift
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    --image)
+      IMAGE="${2:-}"
+      shift 2
+      ;;
+    --pull)
+      PULL_IMAGE=1
+      shift
+      ;;
+    --)
+      shift
+      EXTRA_ARGS+=("$@")
+      break
+      ;;
+    *)
+      EXTRA_ARGS+=("$1")
+      shift
+      ;;
+  esac
+done
+
+if [[ -z "$IMAGE" ]]; then
+  IMAGE="${ISAAC_SIM_IMAGE:-}"
 fi
 
 if ! command -v docker >/dev/null 2>&1; then
@@ -58,4 +76,4 @@ fi
 
 docker run --gpus all --rm \
   -e "ACCEPT_EULA=Y" \
-  "$IMAGE" "$@"
+  "$IMAGE" "${EXTRA_ARGS[@]}"
