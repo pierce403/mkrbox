@@ -34,7 +34,7 @@ Goal: "clone repo -> run one bootstrap script -> it installs/sets up everything 
 
 Planned script:
 ```bash
-./scripts/bootstrap.sh
+./scripts/bootstrap.sh --auto
 ```
 
 The bootstrap script should:
@@ -45,6 +45,7 @@ The bootstrap script should:
   - Option A (Kit App Template-based app): download Kit SDK dependencies and build the app
   - Option B (Isaac Sim container): pull the image and prep run scripts (see step 4B)
 - install app deps: `cd app && npm ci`
+Tip: use `--mode=container` if you want to force Isaac Sim container checks.
 
 ## 4) Run the simulator
 Support two modes: Workstation (native app) and Container.
@@ -78,6 +79,10 @@ docker run --gpus all --rm \
 ```
 
 Repo goal: wrap this in `./scripts/run-sim-container.sh` so users don't need to remember flags.
+Or use:
+```bash
+./scripts/run-sim.sh --container --image nvcr.io/nvidia/isaac-sim:<version>
+```
 
 ## 5) Run the web client (game UI)
 In a second terminal:

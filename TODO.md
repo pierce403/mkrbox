@@ -16,6 +16,7 @@ Ship a playable "vibe craft" experience:
 ### Repo structure
 - [x] Create folders: `/app`, `/sim`, `/content`, `/shared`, `/scripts`, `/docs`
 - [x] Add `ARCHITECTURE.md`, `SIM_QUICKSTART.md`, `TODO.md`
+- [x] Add bootstrap/run scripts (`scripts/bootstrap.sh`, `scripts/run-sim.sh`, `scripts/run-app.sh`)
 - [ ] Add basic license + contributing docs
 
 ### Shared protocol
