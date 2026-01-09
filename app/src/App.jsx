@@ -229,6 +229,10 @@ function App() {
             <p className="muted">
               When streaming is enabled, the client will connect to {simHost}:{simPort}.
             </p>
+            <p className="muted">
+              Note: Isaac Sim 5.1.0 livestreaming is not supported on aarch64 (ARM). Use an
+              x86_64 GPU host for streaming.
+            </p>
           </div>
           <div className="control-row">
             <label>

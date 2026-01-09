@@ -93,6 +93,10 @@ docker pull nvcr.io/nvidia/isaac-sim:<version>
 
 Note: there is no `:latest` tag. You must use an explicit version tag from NGC.
 
+Architecture note:
+- Isaac Sim 5.1.0 livestreaming is **not supported on aarch64 (ARM)**.
+- If your sim host is ARM (e.g., DGX Spark), run the sim on an x86_64 GPU machine for streaming.
+
 How to find a tag (beginner-friendly):
 1. Open the Isaac Sim container tags page:
    https://catalog.ngc.nvidia.com/orgs/nvidia/containers/isaac-sim/tags

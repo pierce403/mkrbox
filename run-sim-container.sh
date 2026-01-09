@@ -12,6 +12,7 @@ exec > >(tee -a "$LOG_FILE") 2>&1
 
 echo "MKRBOX sim container log: $LOG_FILE"
 echo "Stage 1/3: Checking prerequisites..."
+ALLOW_AARCH64=0
 
 while [[ $# -gt 0 ]]; do
   case "$1" in
@@ -21,6 +22,10 @@ while [[ $# -gt 0 ]]; do
       ;;
     --pull)
       PULL_IMAGE=1
+      shift
+      ;;
+    --allow-aarch64)
+      ALLOW_AARCH64=1
       shift
       ;;
     --)
@@ -37,6 +42,17 @@ done
 
 if [[ -z "$IMAGE" ]]; then
   IMAGE="${ISAAC_SIM_IMAGE:-}"
+fi
+
+ARCH="$(uname -m)"
+if [[ "$ARCH" == "aarch64" && "$ALLOW_AARCH64" -ne 1 ]]; then
+  echo "Detected aarch64 (ARM). Isaac Sim livestreaming is not supported on aarch64 for 5.1.0." >&2
+  echo "" >&2
+  echo "Next steps:" >&2
+  echo "1) Run the sim on an x86_64 GPU machine for streaming (recommended)." >&2
+  echo "2) Or, run with --allow-aarch64 to continue without livestreaming support." >&2
+  echo "   ./run-sim-container.sh --allow-aarch64 --image nvcr.io/nvidia/isaac-sim:5.1.0" >&2
+  exit 1
 fi
 
 if ! command -v docker >/dev/null 2>&1; then
