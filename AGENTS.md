@@ -25,7 +25,7 @@ Key ideas:
 ## Build & Run Commands
 No build system yet for the static site.
 - Open `index.html` directly or serve with any static server.
-- `./play.sh` runs the React game app (expects `./app` with a `package.json`).
+- `./run-app.sh` runs the React game app (expects `./app` with a `package.json`).
 
 ## Coding & Content Conventions
 - Keep copy grounded: avoid "build anything" claims.

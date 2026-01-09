@@ -14,10 +14,10 @@ Ship a playable "vibe craft" experience:
 ## P0 — Skeleton (must exist for anything else)
 
 ### Repo structure
-- [x] Create folders: `/app`, `/sim`, `/content`, `/shared`, `/scripts`, `/docs`
+- [x] Create folders: `/app`, `/sim`, `/content`, `/shared`, `/docs`
 - [x] Add `ARCHITECTURE.md`, `SIM_QUICKSTART.md`, `TODO.md`
-- [x] Add bootstrap/run scripts (`scripts/bootstrap.sh`, `scripts/run-sim.sh`, `scripts/run-app.sh`)
-- [ ] Add basic license + contributing docs
+- [x] Add bootstrap/run scripts (`bootstrap.sh`, `run-sim.sh`, `run-app.sh`)
+- [x] Add basic license + contributing docs
 
 ### Shared protocol
 - [x] Define message types in `/shared/protocol` (JSON schema + TS/Python types)

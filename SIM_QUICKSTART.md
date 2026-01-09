@@ -34,7 +34,7 @@ Goal: "clone repo -> run one bootstrap script -> it installs/sets up everything 
 
 Planned script:
 ```bash
-./scripts/bootstrap.sh --auto
+./bootstrap.sh --auto
 ```
 
 The bootstrap script should:
@@ -53,14 +53,14 @@ Support two modes: Workstation (native app) and Container.
 ### 4A) Workstation mode (Kit app / USD Viewer-derived)
 Start the sim from repo root:
 ```bash
-./scripts/run-sim.sh
+./run-sim.sh
 ```
 
 First boot can take time. NVIDIA notes to wait until the viewport shows a black background before starting the web client.
 
 Headless mode (optional, for hosted sessions):
 ```bash
-./scripts/run-sim.sh --headless
+./run-sim.sh --headless
 ```
 
 Implementation detail: pass `-no-window` to the built `.kit.sh` / `.kit.bat` launch command.
@@ -78,10 +78,10 @@ docker run --gpus all --rm \
   nvcr.io/nvidia/isaac-sim:<version>
 ```
 
-Repo goal: wrap this in `./scripts/run-sim-container.sh` so users don't need to remember flags.
+Repo goal: wrap this in `./run-sim-container.sh` so users don't need to remember flags.
 Or use:
 ```bash
-./scripts/run-sim.sh --container --image nvcr.io/nvidia/isaac-sim:<version>
+./run-sim.sh --container --image nvcr.io/nvidia/isaac-sim:<version>
 ```
 
 ## 5) Run the web client (game UI)
@@ -127,7 +127,7 @@ Kit sim replies with `mkrbox_state_update`.
 ### Option B: Start from CLI
 Allow:
 ```bash
-./scripts/run-sim.sh --level level01-boot
+./run-sim.sh --level level01-boot
 ```
 
 Which passes a Kit setting like:
@@ -165,5 +165,5 @@ If still broken:
 ---
 
 Want this expanded into actual scripts + a starter web client? Add:
-- `scripts/bootstrap.sh`, `scripts/run-sim.sh`, `scripts/run-app.sh`
+- `bootstrap.sh`, `run-sim.sh`, `run-app.sh`
 - `app/stream.config.json` template + "Connect" UI

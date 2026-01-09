@@ -306,10 +306,10 @@ Repository Layout (proposed)
 /shared/
   /protocol/                  # JSON schema/types for messages
   /types/                     # shared TS/Python models
-/scripts/
-  bootstrap.sh
-  run-sim.sh
-  run-app.sh
+/bootstrap.sh                 # Setup helper
+/run-sim.sh                   # Start Kit sim
+/run-sim-container.sh         # Start Isaac Sim container
+/run-app.sh                   # Start the React app
 /docs/
   ARCHITECTURE.md
   SIM_QUICKSTART.md
