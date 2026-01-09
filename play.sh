@@ -2,16 +2,16 @@
 set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-WEB_DIR="$ROOT_DIR/web"
+APP_DIR="$ROOT_DIR/app"
 
-if [[ ! -d "$WEB_DIR" ]]; then
-  echo "Missing web app directory: $WEB_DIR" >&2
-  echo "Create the React app in ./web (e.g. Vite/CRA) and try again." >&2
+if [[ ! -d "$APP_DIR" ]]; then
+  echo "Missing app directory: $APP_DIR" >&2
+  echo "Create the React app in ./app (e.g. Vite/CRA) and try again." >&2
   exit 1
 fi
 
-if [[ ! -f "$WEB_DIR/package.json" ]]; then
-  echo "Missing package.json in $WEB_DIR" >&2
+if [[ ! -f "$APP_DIR/package.json" ]]; then
+  echo "Missing package.json in $APP_DIR" >&2
   exit 1
 fi
 
@@ -26,7 +26,7 @@ if (( NODE_MAJOR < 18 )); then
   exit 1
 fi
 
-cd "$WEB_DIR"
+cd "$APP_DIR"
 
 if [[ ! -d node_modules ]]; then
   if [[ -f package-lock.json || -f npm-shrinkwrap.json ]]; then
