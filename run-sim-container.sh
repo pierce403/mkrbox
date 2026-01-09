@@ -33,9 +33,16 @@ fi
 
 if [[ -z "$IMAGE" || "$IMAGE" == *":latest" ]]; then
   echo "Isaac Sim image tag is required (no :latest tag exists on NGC)." >&2
-  echo "Set ISAAC_SIM_IMAGE or pass --image, for example:" >&2
-  echo "  ./run-sim-container.sh --pull --image nvcr.io/nvidia/isaac-sim:<version>" >&2
-  echo "Make sure you can pull from NGC (docker login nvcr.io)." >&2
+  echo "" >&2
+  echo "Next steps:" >&2
+  echo "1) Create/Sign in to NVIDIA NGC and generate an API key." >&2
+  echo "2) Login to the registry:" >&2
+  echo "   docker login nvcr.io" >&2
+  echo "   # username: \$oauthtoken" >&2
+  echo "   # password: <your NGC API key>" >&2
+  echo "3) Choose an Isaac Sim image tag from NGC (no 'latest')." >&2
+  echo "4) Run with an explicit tag, for example:" >&2
+  echo "   ./run-sim-container.sh --pull --image nvcr.io/nvidia/isaac-sim:<version>" >&2
   exit 1
 fi
 
