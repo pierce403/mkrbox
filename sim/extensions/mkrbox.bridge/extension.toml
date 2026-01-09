@@ -1,0 +1,11 @@
+[package]
+version = "0.0.1"
+title = "MKRBOX Bridge"
+category = "MKRBOX"
+readme = "README.md"
+
+[dependencies]
+"omni.kit.livestream.messaging" = {}
+
+[[python.module]]
+name = "mkrbox.bridge"

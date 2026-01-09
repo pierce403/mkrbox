@@ -1,0 +1,17 @@
+[settings]
+app.window.title = "MKRBOX Simulator"
+app.window.height = 900
+app.window.width = 1600
+app.viewport.enable = true
+
+# Streaming + messaging
+exts."omni.kit.livestream.native" = {}
+exts."omni.kit.livestream.messaging" = {}
+
+# Core MKRBOX extensions
+exts."mkrbox.bridge" = {}
+exts."mkrbox.core" = {}
+exts."mkrbox.scene" = {}
+
+# Placeholder scene to load on boot
+mkrbox.scene.usd = "${app}/content/scenes/mkrbox.usda"
