@@ -187,7 +187,7 @@ function App() {
             <div className="command-grid">
               <div>
                 <span>Linux</span>
-                <code>hostname -I | awk '{print $1}'</code>
+                <code>{"hostname -I | awk '{print $1}'"}</code>
               </div>
               <div>
                 <span>macOS</span>
@@ -325,7 +325,7 @@ function App() {
                   <div className="command-grid">
                     <div>
                       <span>Linux</span>
-                      <code>hostname -I | awk '{print $1}'</code>
+                      <code>{"hostname -I | awk '{print $1}'"}</code>
                     </div>
                     <div>
                       <span>macOS</span>
