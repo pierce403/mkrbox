@@ -51,6 +51,7 @@ Ship a playable "vibe craft" experience:
 ## P2 — Simulator MVP (cinematic execution)
 
 ### Sim bring-up
+- [x] Scaffold Kit app + extension skeletons (nonfunctional)
 - [ ] Minimal simulator app that loads the MKRBOX scene
 - [ ] Message bridge: receive `mkrbox_chat_request` -> respond
 - [ ] Periodic `mkrbox_state_update` tick
