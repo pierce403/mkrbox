@@ -103,6 +103,8 @@ Or use:
 ./run-app.sh
 ```
 
+Logs are written to `./logs/` (app logs + sim logs).
+
 Before first use, replace `app/public/omniverse/appstreamer.js` with the official
 Embedded Web Viewer client bundle. The placeholder file will otherwise report
 \"AppStreamer client missing\" in the UI.

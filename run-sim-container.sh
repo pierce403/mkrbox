@@ -3,6 +3,13 @@ set -euo pipefail
 
 IMAGE="${ISAAC_SIM_IMAGE:-nvcr.io/nvidia/isaac-sim:latest}"
 PULL_IMAGE=0
+ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+LOG_DIR="$ROOT_DIR/logs"
+mkdir -p "$LOG_DIR"
+LOG_FILE="$LOG_DIR/sim-container-$(date +%Y%m%d-%H%M%S).log"
+exec > >(tee -a "$LOG_FILE") 2>&1
+
+echo "MKRBOX sim container log: $LOG_FILE"
 
 if [[ "${1:-}" == "--image" && -n "${2:-}" ]]; then
   IMAGE="$2"
