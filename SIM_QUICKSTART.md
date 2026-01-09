@@ -20,6 +20,8 @@ It is aligned with NVIDIA's Embedded Web Viewer + Kit/Isaac streaming approach.
 ### If you run the sim in Docker
 - Install Docker + NVIDIA Container Toolkit (needed for GPU-accelerated containers).
 
+If you're new to Omniverse/Kit, use **container mode** first. It keeps the setup to Docker + NVIDIA drivers.
+
 ## 2) Clone the repo
 ```bash
 git lfs install
@@ -46,6 +48,8 @@ The bootstrap script should:
   - Option B (Isaac Sim container): pull the image and prep run scripts (see step 4B)
 - install app deps: `cd app && npm ci`
 Tip: use `--mode=container` if you want to force Isaac Sim container checks.
+
+If bootstrap stops, it prints the exact manual steps to finish setup.
 
 ## 4) Run the simulator
 Support two modes: Workstation (native app) and Container.
@@ -83,12 +87,20 @@ Or use:
 ```bash
 ./run-sim.sh --container --image nvcr.io/nvidia/isaac-sim:<version>
 ```
+Or pull+run in one step:
+```bash
+./run-sim-container.sh --pull --image nvcr.io/nvidia/isaac-sim:<version>
+```
 
 ## 5) Run the web client (game UI)
 In a second terminal:
 ```bash
 cd app
 npm run dev
+```
+Or use:
+```bash
+./run-app.sh
 ```
 
 Then open the printed URL in Chrome/Edge.

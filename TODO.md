@@ -141,6 +141,6 @@ Ship a playable "vibe craft" experience:
 ## Documentation (ongoing)
 
 - [ ] `README.md` with "What is MKRBOX?" + quickstart
-- [ ] `SIM_QUICKSTART.md` with local run steps
+- [x] `SIM_QUICKSTART.md` with local run steps
 - [ ] `MODULES.md`, `LEVELS.md`, `ROUTES.md`
 - [ ] Website copy: concept page + FAQ ("why not in-browser sim?")

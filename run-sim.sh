@@ -45,7 +45,9 @@ fi
 if [[ -z "$KIT_APP" ]]; then
   echo "Kit app not found. Set KIT_ROOT to your Kit SDK install." >&2
   echo "Example: export KIT_ROOT=/path/to/kit-sdk" >&2
-  echo "Tip: run with --container to use Isaac Sim container instead." >&2
+  echo "" >&2
+  echo "If you are new to Kit/Omniverse, use container mode instead:" >&2
+  echo "  ./run-sim.sh --container --image nvcr.io/nvidia/isaac-sim:<version>" >&2
   exit 1
 fi
 

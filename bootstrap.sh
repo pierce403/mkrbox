@@ -6,6 +6,7 @@ APP_DIR="$ROOT_DIR/app"
 AUTO_INSTALL=0
 MODE="auto"
 SKIP_APP=0
+OS_NAME="$(uname -s)"
 
 while [[ $# -gt 0 ]]; do
   case "$1" in
@@ -83,6 +84,48 @@ install_pkgs() {
   esac
 }
 
+install_docker_linux() {
+  local pkg_mgr="$1"
+  case "$pkg_mgr" in
+    apt)
+      install_pkgs "$pkg_mgr" docker.io
+      ;;
+    dnf|yum|pacman)
+      install_pkgs "$pkg_mgr" docker
+      ;;
+    *)
+      return 1
+      ;;
+  esac
+}
+
+ensure_docker_running() {
+  if command -v systemctl >/dev/null 2>&1; then
+    sudo systemctl enable --now docker >/dev/null 2>&1 || true
+  fi
+  if ! docker info >/dev/null 2>&1; then
+    echo "Docker daemon is not running." >&2
+    echo "Start Docker, then re-run: ./bootstrap.sh" >&2
+    return 1
+  fi
+}
+
+print_sim_setup_steps() {
+  cat <<'EOF'
+Next steps:
+  - Start the app: ./run-app.sh
+
+Sim setup options (pick one):
+  1) Container (recommended for beginners)
+     - Install NVIDIA driver + Docker + NVIDIA Container Toolkit
+     - Then run: ./run-sim.sh --container --image nvcr.io/nvidia/isaac-sim:<version>
+  2) Kit SDK (workstation install)
+     - Download a Kit SDK or Kit-based app
+     - export KIT_ROOT=/path/to/kit-sdk
+     - Run: ./run-sim.sh
+EOF
+}
+
 if ! command -v git >/dev/null 2>&1; then
   echo "git is required." >&2
   exit 1
@@ -135,13 +178,27 @@ fi
 
 if [[ "$MODE" == "container" || "$MODE" == "auto" ]]; then
   if ! command -v docker >/dev/null 2>&1; then
-    echo "Docker is required for container-based sim runs." >&2
-    echo "Install Docker and NVIDIA Container Toolkit, then re-run bootstrap." >&2
+    if [[ "$OS_NAME" == "Linux" ]]; then
+      PKG_MGR="$(detect_pkg_mgr)"
+      if [[ -n "$PKG_MGR" ]] && prompt_install "Install Docker via $PKG_MGR?"; then
+        install_docker_linux "$PKG_MGR" || true
+      else
+        echo "Docker is required for container-based sim runs." >&2
+        echo "Install Docker and NVIDIA Container Toolkit, then re-run bootstrap." >&2
+      fi
+    else
+      echo "Docker is required for container-based sim runs." >&2
+      echo "Install Docker Desktop and NVIDIA Container Toolkit (if applicable)." >&2
+    fi
   fi
   if ! command -v nvidia-smi >/dev/null 2>&1; then
     echo "NVIDIA driver not detected (nvidia-smi missing)." >&2
     echo "Install NVIDIA drivers and NVIDIA Container Toolkit for streaming." >&2
   fi
+  if command -v docker >/dev/null 2>&1; then
+    ensure_docker_running || true
+  fi
 fi
 
 echo "Bootstrap complete."
+print_sim_setup_steps
