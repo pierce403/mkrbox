@@ -292,7 +292,7 @@ Subtractive toolpaths, thermal models, kiln cycles, curing times
 Quality metrics based on process conditions
 
 Repository Layout (proposed)
-/web/                         # React viewer + HUD
+/app/                         # React viewer + HUD
 /sim/                         # Simulator app + extensions
   /app/                       # Kit app config, .kit file, launch scripts
   /extensions/mkrbox.bridge/  # Messaging + protocol adapter

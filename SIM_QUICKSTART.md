@@ -44,7 +44,7 @@ The bootstrap script should:
 - fetch/install the sim runtime
   - Option A (Kit App Template-based app): download Kit SDK dependencies and build the app
   - Option B (Isaac Sim container): pull the image and prep run scripts (see step 4B)
-- install web deps: `cd web && npm ci`
+- install app deps: `cd app && npm ci`
 
 ## 4) Run the simulator
 Support two modes: Workstation (native app) and Container.
@@ -82,7 +82,7 @@ Repo goal: wrap this in `./scripts/run-sim-container.sh` so users don't need to 
 ## 5) Run the web client (game UI)
 In a second terminal:
 ```bash
-cd web
+cd app
 npm run dev
 ```
 
@@ -91,7 +91,7 @@ Then open the printed URL in Chrome/Edge.
 Note: the reference solution is peer-to-peer; one sim instance streams to one browser client. Multiple tabs will conflict.
 
 ## 6) Connect the web UI to the sim
-The web UI should read a config like `web/stream.config.json` and default to `127.0.0.1` for local.
+The web UI should read a config like `app/stream.config.json` and default to `127.0.0.1` for local.
 
 The UI should display:
 - "Connected" status
@@ -142,7 +142,7 @@ sudo ufw allow 1024:65535/udp
 sudo ufw reload
 ```
 
-Then change `web/stream.config.json` to the sim machine's IP.
+Then change `app/stream.config.json` to the sim machine's IP.
 
 Ports can be customized via `.kit` settings / command-line flags.
 
@@ -160,5 +160,5 @@ If still broken:
 ---
 
 Want this expanded into actual scripts + a starter web client? Add:
-- `scripts/bootstrap.sh`, `scripts/run-sim.sh`, `scripts/run-web.sh`
-- `web/stream.config.json` template + "Connect" UI
+- `scripts/bootstrap.sh`, `scripts/run-sim.sh`, `scripts/run-app.sh`
+- `app/stream.config.json` template + "Connect" UI

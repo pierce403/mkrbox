@@ -14,12 +14,12 @@ Ship a playable "vibe craft" experience:
 ## P0 — Skeleton (must exist for anything else)
 
 ### Repo structure
-- [ ] Create folders: `/web`, `/sim`, `/content`, `/shared`, `/scripts`, `/docs`
-- [ ] Add `ARCHITECTURE.md`, `SIM_QUICKSTART.md`, `TODO.md`
+- [x] Create folders: `/app`, `/sim`, `/content`, `/shared`, `/scripts`, `/docs`
+- [x] Add `ARCHITECTURE.md`, `SIM_QUICKSTART.md`, `TODO.md`
 - [ ] Add basic license + contributing docs
 
 ### Shared protocol
-- [ ] Define message types in `/shared/protocol` (JSON schema + TS/Python types)
+- [x] Define message types in `/shared/protocol` (JSON schema + TS/Python types)
 - [ ] Add versioning (`protocolVersion`) and compatibility checks
 - [ ] Implement schema validation on both ends
 
@@ -29,21 +29,21 @@ Ship a playable "vibe craft" experience:
 
 ### Core pages
 - [ ] Landing page improvements (clear CTA: Watch demo / Run locally / Creator mode)
-- [ ] `/play` page: viewport + chat + HUD
+- [x] `/play` page: viewport + chat + HUD (mock sim in `/app`)
 - [ ] `/levels` page: level selection + locked/unlocked states
 - [ ] `/docs` page: concept + how it works (non-technical)
 
 ### UI components
-- [ ] Chat panel w/ system + user messages
+- [x] Chat panel w/ system + user messages
 - [ ] Inventory panel (raw materials, tools, modules, consumables)
 - [ ] Bays view (input bay / output bay)
-- [ ] MKR status strip (phase, throughput, stable flag, alarms)
+- [x] MKR status strip (phase, throughput, stable flag, alarms)
 - [ ] Time controls (pause/resume, timewarp factor)
-- [ ] Plan proposal modal (route options + estimates + confirm)
+- [x] Plan proposal modal (route options + estimates + confirm)
 
 ### Connection layer
-- [ ] "Connect to sim" settings (localhost by default)
-- [ ] WebRTC stream embed (or stub container while sim not ready)
+- [ ] “Connect to sim” settings (localhost by default)
+- [x] WebRTC stream embed (or stub container while sim not ready)
 - [ ] Message send/receive hooks with reconnection + error UI
 
 ---
