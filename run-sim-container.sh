@@ -48,7 +48,7 @@ if [[ -z "$IMAGE" || "$IMAGE" == *":latest" ]]; then
   echo "   A tag is the version after the colon, e.g. ':5.1.0'." >&2
   echo "   Example tag shown in NVIDIA docs: nvcr.io/nvidia/isaac-sim:5.1.0" >&2
   echo "5) Run with an explicit tag, for example:" >&2
-  echo "   ./run-sim-container.sh --pull --image nvcr.io/nvidia/isaac-sim:<version>" >&2
+  echo "   ./run-sim-container.sh --pull --image nvcr.io/nvidia/isaac-sim:5.1.0" >&2
   exit 1
 fi
 

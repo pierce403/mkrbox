@@ -100,6 +100,11 @@ How to find a tag (beginner-friendly):
    `nvcr.io/nvidia/isaac-sim:5.1.0`
 3. Use that tag in the pull/run commands.
 
+Copy/paste example (replace the version if you choose a different tag):
+```bash
+./run-sim-container.sh --pull --image nvcr.io/nvidia/isaac-sim:5.1.0
+```
+
 Run it (must accept EULA via env var):
 ```bash
 docker run --gpus all --rm \
