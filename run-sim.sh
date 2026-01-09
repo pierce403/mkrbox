@@ -21,7 +21,7 @@ find_kit_app() {
   local search_root="$1"
   if [[ -d "$search_root" ]]; then
     local found
-    found="$(find "$search_root" -maxdepth 4 -type f \\( -name 'kit' -o -name 'kit.sh' \\) 2>/dev/null | sort -r | head -n 1)"
+    found="$(find "$search_root" -maxdepth 4 -type f 2>/dev/null | grep -E '/kit(\\.sh)?$' | sort -r | head -n 1 || true)"
     if [[ -n "$found" && -x "$found" ]]; then
       echo "$found"
       return 0
