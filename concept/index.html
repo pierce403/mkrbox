@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Concept — MKRBOX</title>
+    <meta
+      name="description"
+      content="MKRBOX concept: a modular 1 m² footprint workcell with ~1 m³ reach, sim-first workflows, and an operator-in-the-loop build loop."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Spline+Sans+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        color-scheme: light;
+        --ink: #0f1218;
+        --ink-soft: #1b2230;
+        --copper: #c7693a;
+        --steel: #5f6b7a;
+        --glass: rgba(255, 255, 255, 0.78);
+        --shadow: 0 24px 80px rgba(18, 20, 28, 0.18);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Space Grotesk", system-ui, -apple-system, sans-serif;
+        color: var(--ink);
+        background: radial-gradient(1100px 780px at 12% 12%, #f6d9c7 0%, #f1e6d8 32%, #e7eef5 70%, #d6e2f1 100%);
+        min-height: 100vh;
+      }
+
+      .noise {
+        position: fixed;
+        inset: 0;
+        opacity: 0.08;
+        pointer-events: none;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='.4'/%3E%3C/svg%3E");
+        mix-blend-mode: multiply;
+      }
+
+      main {
+        display: grid;
+        gap: 2.5rem;
+        padding: 4.5rem clamp(1.5rem, 4vw, 5rem) 5rem;
+      }
+
+      header {
+        display: grid;
+        gap: 1.25rem;
+        max-width: 860px;
+      }
+
+      .kicker {
+        font-family: "Spline Sans Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        font-size: 0.75rem;
+        color: var(--steel);
+      }
+
+      h1 {
+        font-size: clamp(2.3rem, 5vw, 3.8rem);
+        margin: 0;
+        letter-spacing: -0.02em;
+      }
+
+      p {
+        margin: 0;
+        color: var(--ink-soft);
+        line-height: 1.6;
+        font-size: 1.1rem;
+      }
+
+      .cta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+
+      .cta a {
+        text-decoration: none;
+        border-radius: 999px;
+        padding: 0.8rem 1.4rem;
+        font-weight: 600;
+        color: var(--ink);
+        background: rgba(255, 255, 255, 0.9);
+        border: 1px solid rgba(15, 18, 24, 0.12);
+      }
+
+      .cta a.primary {
+        background: var(--ink);
+        color: white;
+      }
+
+      .card {
+        background: var(--glass);
+        border-radius: 22px;
+        border: 1px solid rgba(255, 255, 255, 0.6);
+        padding: 2rem;
+        box-shadow: var(--shadow);
+        display: grid;
+        gap: 1rem;
+      }
+
+      .card h2 {
+        margin: 0;
+        font-size: 1.6rem;
+      }
+
+      .card ul {
+        margin: 0;
+        padding-left: 1.1rem;
+        color: var(--steel);
+        line-height: 1.6;
+      }
+
+      .diagram {
+        background: rgba(255, 255, 255, 0.7);
+        border-radius: 18px;
+        padding: 1.5rem;
+        border: 1px solid rgba(199, 105, 58, 0.2);
+      }
+
+      .diagram svg {
+        width: 100%;
+        height: auto;
+      }
+
+      .diagram text {
+        font-family: "Spline Sans Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+        font-size: 14px;
+        fill: #1b2230;
+      }
+
+      footer {
+        font-family: "Spline Sans Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        font-size: 0.7rem;
+        color: var(--steel);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="noise" aria-hidden="true"></div>
+    <main>
+      <header>
+        <div class="kicker">MKRBOX · Concept</div>
+        <h1>The MKRBOX idea</h1>
+        <p>
+          MKRBOX is a modular 1 m² footprint workcell with a ~1 m³ kinematic reach envelope. It is
+          designed to assemble parts and run experiments within its installed modules and tool
+          library — sim first, hardware second.
+        </p>
+        <div class="cta">
+          <a class="primary" href="/play/">Play the simulator</a>
+          <a href="/join/">Join the build</a>
+          <a href="/">Back to home</a>
+        </div>
+      </header>
+
+      <section class="card">
+        <h2>Operator-in-the-loop</h2>
+        <p>
+          Instead of a closed factory, MKRBOX treats the operator as part of the build loop. When it
+          needs a part, tool, or material, it requests a handoff at the input bay. The operator
+          delivers, the system verifies, and the sequence continues.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>Workflow loop</h2>
+        <ul>
+          <li>Plan tasks and modules in the sim.</li>
+          <li>Run levels, capture failures, and debug the workflow.</li>
+          <li>Deploy to hardware with the same module + tool definitions.</li>
+          <li>Capture telemetry and feed it back into the level design.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>Box anatomy (diagram)</h2>
+        <div class="diagram">
+          <svg viewBox="0 0 640 360" role="img" aria-label="MKRBOX anatomy diagram">
+            <rect x="70" y="40" width="500" height="260" rx="18" fill="rgba(255,255,255,0.6)" stroke="#c7693a" stroke-width="3" />
+            <rect x="95" y="70" width="170" height="70" rx="10" fill="#f2e6db" stroke="#1b2230" stroke-width="1.5" />
+            <rect x="375" y="70" width="170" height="70" rx="10" fill="#f2e6db" stroke="#1b2230" stroke-width="1.5" />
+            <rect x="95" y="180" width="170" height="70" rx="10" fill="#e7eef5" stroke="#1b2230" stroke-width="1.5" />
+            <rect x="375" y="180" width="170" height="70" rx="10" fill="#e7eef5" stroke="#1b2230" stroke-width="1.5" />
+            <circle cx="320" cy="150" r="42" fill="#f29a6a" opacity="0.85" />
+            <text x="122" y="110">Input bay</text>
+            <text x="395" y="110">Output bay</text>
+            <text x="110" y="220">Tool rack</text>
+            <text x="405" y="220">Compute bay</text>
+            <text x="300" y="155">Arm</text>
+            <text x="245" y="290">Sensor suite wraps the enclosure</text>
+          </svg>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Spec snapshot</h2>
+        <ul>
+          <li>Footprint: 1 m² base with a ~1 m³ kinematic reach envelope.</li>
+          <li>Tooling: swappable end-effectors with shared power + data bus.</li>
+          <li>Human-in-loop: input and output bays for operator handoffs.</li>
+          <li>Sim-first: levels and workflows are validated in Omniverse/Isaac sim.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>Simulation + licensing notes</h2>
+        <p>
+          The MKRBOX repo ships the sim logic, levels, and assets. The setup flow downloads NVIDIA
+          simulation dependencies (Kit/Isaac) and asks you to accept NVIDIA terms during install.
+        </p>
+      </section>
+
+      <footer>mkrbox.org · concept overview</footer>
+    </main>
+  </body>
+</html>
