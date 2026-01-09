@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "MKRBOX Protocol Message",
+  "type": "object",
+  "required": ["event_type", "payload"],
+  "properties": {
+    "event_type": {
+      "type": "string",
+      "enum": [
+        "mkrbox_connect",
+        "mkrbox_set_level",
+        "mkrbox_chat_request",
+        "mkrbox_confirm_plan",
+        "mkrbox_supply_inputs",
+        "mkrbox_set_timewarp",
+        "mkrbox_pause",
+        "mkrbox_resume",
+        "mkrbox_emergency_stop",
+        "mkrbox_chat_response",
+        "mkrbox_state_update",
+        "mkrbox_request_inputs",
+        "mkrbox_plan_proposed",
+        "mkrbox_alarm",
+        "mkrbox_level_result"
+      ]
+    },
+    "payload": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": false
+}
