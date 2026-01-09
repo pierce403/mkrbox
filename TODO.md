@@ -43,7 +43,7 @@ Ship a playable "vibe craft" experience:
 - [x] Plan proposal modal (route options + estimates + confirm)
 
 ### Connection layer
-- [ ] “Connect to sim” settings (localhost by default)
+- [x] “Connect to sim” settings (localhost by default)
 - [x] WebRTC stream embed (or stub container while sim not ready)
 - [ ] Message send/receive hooks with reconnection + error UI
 

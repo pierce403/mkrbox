@@ -23,6 +23,12 @@ function App() {
   const [inputRequest, setInputRequest] = useState(null)
   const [connected, setConnected] = useState(false)
   const [draft, setDraft] = useState('')
+  const [simHost, setSimHost] = useState(() => {
+    return localStorage.getItem('mkrbox.simHost') || '127.0.0.1'
+  })
+  const [simPort, setSimPort] = useState(() => {
+    return localStorage.getItem('mkrbox.simPort') || '49100'
+  })
 
   const sim = useMemo(() => {
     return createMockSim((event) => {
@@ -54,6 +60,14 @@ function App() {
       sim.dispose()
     }
   }, [sim])
+
+  useEffect(() => {
+    localStorage.setItem('mkrbox.simHost', simHost)
+  }, [simHost])
+
+  useEffect(() => {
+    localStorage.setItem('mkrbox.simPort', simPort)
+  }, [simPort])
 
   const sendMessage = (event) => {
     sim.handleMessage(event)
@@ -123,6 +137,48 @@ function App() {
           <div className="viewport-placeholder">
             <p>Streaming viewport will render here.</p>
             <p className="muted">Mock sim is active until Omniverse is connected.</p>
+          </div>
+          <div className="connect-panel">
+            <h3>Connect to remote simulator</h3>
+            <p>
+              If the sim is running on another machine (like a DGX), enter its IP
+              here. On the sim machine run:
+            </p>
+            <div className="command-grid">
+              <div>
+                <span>Linux</span>
+                <code>hostname -I | awk '{print $1}'</code>
+              </div>
+              <div>
+                <span>macOS</span>
+                <code>ipconfig getifaddr en0</code>
+              </div>
+              <div>
+                <span>Windows</span>
+                <code>ipconfig</code>
+              </div>
+            </div>
+            <div className="connect-fields">
+              <label>
+                Sim host
+                <input
+                  value={simHost}
+                  onChange={(event) => setSimHost(event.target.value)}
+                  placeholder="127.0.0.1"
+                />
+              </label>
+              <label>
+                Sim port
+                <input
+                  value={simPort}
+                  onChange={(event) => setSimPort(event.target.value)}
+                  placeholder="49100"
+                />
+              </label>
+            </div>
+            <p className="muted">
+              When streaming is enabled, the client will connect to {simHost}:{simPort}.
+            </p>
           </div>
           <div className="control-row">
             <label>
