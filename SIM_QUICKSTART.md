@@ -86,6 +86,8 @@ Pull the container once:
 docker pull nvcr.io/nvidia/isaac-sim:<version>
 ```
 
+Note: there is no `:latest` tag. You must use an explicit version tag from NGC.
+
 Run it (must accept EULA via env var):
 ```bash
 docker run --gpus all --rm \

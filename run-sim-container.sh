@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-IMAGE="${ISAAC_SIM_IMAGE:-nvcr.io/nvidia/isaac-sim:latest}"
+IMAGE="${ISAAC_SIM_IMAGE:-}"
 PULL_IMAGE=0
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 LOG_DIR="$ROOT_DIR/logs"
@@ -28,6 +28,14 @@ fi
 if ! command -v nvidia-smi >/dev/null 2>&1; then
   echo "NVIDIA driver not detected (nvidia-smi missing)." >&2
   echo "Install NVIDIA drivers and NVIDIA Container Toolkit first." >&2
+  exit 1
+fi
+
+if [[ -z "$IMAGE" || "$IMAGE" == *":latest" ]]; then
+  echo "Isaac Sim image tag is required (no :latest tag exists on NGC)." >&2
+  echo "Set ISAAC_SIM_IMAGE or pass --image, for example:" >&2
+  echo "  ./run-sim-container.sh --pull --image nvcr.io/nvidia/isaac-sim:<version>" >&2
+  echo "Make sure you can pull from NGC (docker login nvcr.io)." >&2
   exit 1
 fi
 
