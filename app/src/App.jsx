@@ -22,7 +22,7 @@ function App() {
   })
   const [plan, setPlan] = useState(null)
   const [inputRequest, setInputRequest] = useState(null)
-  const [connected, setConnected] = useState(false)
+  const connected = simState.phase !== 'DISCONNECTED'
   const [draft, setDraft] = useState('')
   const [simHost, setSimHost] = useState(() => {
     return localStorage.getItem('mkrbox.simHost') || '127.0.0.1'
@@ -60,7 +60,6 @@ function App() {
 
   useEffect(() => {
     sim.connect()
-    setConnected(true)
     return () => {
       sim.dispose()
     }

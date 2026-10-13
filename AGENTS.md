@@ -38,6 +38,11 @@ No build system yet for the static site.
 - CTAs must point to real routes (e.g. `/join/`, `/concept/`, `/play/`).
 - Don't promise bundling NVIDIA/Omniverse components in the repo.
 - Keep simulator language explicit about RTX/GPU streaming requirements.
+- GitHub Pages serves the static repository root; `app/` is a separate Vite
+  application. Updating its lockfile does not publish the app to the site.
+- The mock simulator emits an `IDLE` state on connect. Derive the connection
+  badge from that state instead of setting React state directly in an effect;
+  the latter fails `react-hooks/set-state-in-effect` in the current lint setup.
 
 ## Agent Tips
 - For new routes: create a folder with `index.html` (static host friendly).
